@@ -1,18 +1,19 @@
-part of '../search_page.dart';
+part of '../filter_page.dart';
 
-class _BuildFilterModal extends StatefulWidget {
+
+class FilterScreen extends StatefulWidget {
   final FlexibleDraggableScrollableSheetScrollController? scrollController;
 
-  const _BuildFilterModal({
+  const FilterScreen({
     Key? key,
     this.scrollController,
   }) : super(key: key);
 
   @override
-  __BuildFilterModalState createState() => __BuildFilterModalState();
+  _FilterScreenState createState() => _FilterScreenState();
 }
 
-class __BuildFilterModalState extends State<_BuildFilterModal> {
+class _FilterScreenState extends State<FilterScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);

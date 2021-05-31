@@ -52,7 +52,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 maxHeight: 1,
                 context: context,
                 builder: (context, scrollController1, bottomSheetOffset) {
-                  return _BuildFilterModal(
+                  return FilterScreen(
                     scrollController: scrollController1,
                   );
                 },

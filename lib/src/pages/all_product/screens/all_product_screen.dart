@@ -39,10 +39,14 @@ class _AllProductScreenState extends State<AllProductScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
-      appBar: CustomAppBar(
-        context,
-        title: AppLocalizations.of(context)!.categories,
-      ),
+      appBar: CustomAppBar(context,
+          title: AppLocalizations.of(context)!.categories,
+          actions: [
+            IconButton(
+              onPressed: () => Get.toNamed(Routes.search),
+              icon: Icon(FeatherIcons.search),
+            )
+          ]),
       body: Column(
         children: [
           Container(
@@ -59,73 +63,39 @@ class _AllProductScreenState extends State<AllProductScreen> {
                 SizedBox(height: Const.space15),
                 Row(
                   children: [
-                    Expanded(
-                      child: InkWell(
-                        onTap: () {
-                          setState(() {
-                            _priceSort(_isLowerPrice = !_isLowerPrice);
-                          });
-                        },
-                        child: Container(
-                          height: 50.0,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(Const.radius),
-                              bottomLeft: Radius.circular(Const.radius),
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                (_isLowerPrice == true)
-                                    ? FeatherIcons.arrowDown
-                                    : FeatherIcons.arrowUp,
-                                color: ColorLight.fontTitle,
-                                size: 18.0,
-                              ),
-                              SizedBox(width: Const.space12),
-                              AutoSizeText(
-                                AppLocalizations.of(context)!.sort_by,
-                                style: theme.textTheme.bodyText1!.copyWith(
-                                  color: ColorLight.fontTitle,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                    _BuildFilterButton(
+                      icon: (_isLowerPrice == true)
+                          ? FeatherIcons.arrowDown
+                          : FeatherIcons.arrowUp,
+                      label: AppLocalizations.of(context)!.sort_by,
+                      onTap: () {
+                        setState(() {
+                          _priceSort(_isLowerPrice = !_isLowerPrice);
+                        });
+                      },
+                      isSort: true,
                     ),
                     SizedBox(width: 2),
-                    Expanded(
-                      child: Container(
-                        height: 50.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(Const.radius),
-                            bottomRight: Radius.circular(Const.radius),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              FeatherIcons.filter,
-                              color: ColorLight.fontTitle,
-                              size: 18.0,
-                            ),
-                            SizedBox(width: Const.space12),
-                            AutoSizeText(
-                              AppLocalizations.of(context)!.filter,
-                              style: theme.textTheme.bodyText1!.copyWith(
-                                color: ColorLight.fontTitle,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                    _BuildFilterButton(
+                      icon: FeatherIcons.filter,
+                      label: AppLocalizations.of(context)!.filter,
+                      onTap: () {
+                        showFlexibleBottomSheet(
+                          minHeight: 0,
+                          initHeight: 0.5,
+                          maxHeight: 1,
+                          context: context,
+                          builder: (
+                            context,
+                            scrollController1,
+                            bottomSheetOffset,
+                          ) {
+                            return FilterScreen(
+                              scrollController: scrollController1,
+                            );
+                          },
+                        );
+                      },
                     ),
                   ],
                 )
