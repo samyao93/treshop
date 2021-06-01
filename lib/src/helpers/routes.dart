@@ -2,7 +2,9 @@ import 'package:get/get.dart';
 import 'package:treshop/src/pages/all_product/all_product_page.dart';
 import 'package:treshop/src/pages/bottom_navigation_bar/bottom_navigation_bar_page.dart';
 import 'package:treshop/src/pages/cart/cart_page.dart';
+import 'package:treshop/src/pages/checkout/checkout_page.dart';
 import 'package:treshop/src/pages/coupon/coupon_page.dart';
+import 'package:treshop/src/pages/payment/payment_page.dart';
 import 'package:treshop/src/pages/product/product_page.dart';
 import 'package:treshop/src/pages/search/search_page.dart';
 import 'package:treshop/src/pages/sign_up/sign_up_page.dart';
@@ -26,4 +28,6 @@ List<GetPage> allRoutes = [
   GetPage(name: Routes.product, page: () => ProductScreen()),
   GetPage(name: Routes.cart, page: () => CartScreen()),
   GetPage(name: Routes.coupon, page: () => CouponScreen()),
+  GetPage(name: Routes.checkout, page: () => CheckoutScreen()),
+  GetPage(name: Routes.payment, page: () => PaymentScreen()),
 ];

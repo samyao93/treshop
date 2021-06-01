@@ -20,6 +20,8 @@ class Routes {
   static const String product = '/product';
   static const String cart = '/cart';
   static const String coupon = '/coupon';
+  static const String checkout = '/checkout';
+  static const String payment = '/payment';
 }
 
 class CustomIcon {
@@ -45,6 +47,10 @@ class CustomIcon {
   static const String suit = 'assets/suit.svg';
   static const String coupon = 'assets/coupon.svg';
   static const String shopping_bag = 'assets/shopping_bag.svg';
+  static const String visa = 'assets/visa.svg';
+  static const String mastercard = 'assets/mastercard.svg';
+  static const String bca = 'assets/bca.svg';
+  static const String paypal = 'assets/paypal.svg';
 }
 
 class Images {
