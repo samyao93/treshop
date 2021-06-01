@@ -7,7 +7,7 @@ class ColorLight {
   ///
   static const Color primary = Color(0xFFFC8080);
   // static const Color accent = Color(0xFFFF6600);
-  static const Color background = Color(0xFFFFFFFF);
+  static const Color background = Color(0xFFFAFAFA);
   static const Color card = Color(0xFFFFFFFF);
   static const Color fontTitle = Color(0xFF202020);
   static const Color fontSubtitle = Color(0xFF737373);

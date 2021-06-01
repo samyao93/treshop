@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:treshop/src/helpers/themes.dart';
 import 'package:treshop/src/providers/authentication_provider.dart';
+import 'package:treshop/src/providers/cart_provider.dart';
 import 'package:treshop/src/providers/product_provider.dart';
 import 'package:treshop/src/providers/search_provider.dart';
 
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => AuthenticationProvider()),
         ChangeNotifierProvider(create: (context) => SearchProvider()),
         ChangeNotifierProvider(create: (context) => ProductProvider()),
+        ChangeNotifierProvider(create: (context) => CartProvider()),
       ],
       child: Consumer2<ThemeProvider, LocaleProvider>(
         builder: (context, theme, locale, snapshot) {
@@ -52,7 +54,7 @@ class MyApp extends StatelessWidget {
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
             ],
-            initialRoute: Routes.product,
+            initialRoute: Routes.home,
             supportedLocales: L10n.all,
             getPages: allRoutes,
           );

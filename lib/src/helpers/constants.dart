@@ -18,6 +18,7 @@ class Routes {
   static const String all_product = '/all_product';
   static const String favorite = '/favorite';
   static const String product = '/product';
+  static const String cart = '/cart';
 }
 
 class CustomIcon {
@@ -41,6 +42,8 @@ class CustomIcon {
   static const String tshirt = 'assets/tshirt.svg';
   static const String watch = 'assets/watch.svg';
   static const String suit = 'assets/suit.svg';
+  static const String coupon = 'assets/coupon.svg';
+  static const String shopping_bag = 'assets/shopping_bag.svg';
 }
 
 class Images {

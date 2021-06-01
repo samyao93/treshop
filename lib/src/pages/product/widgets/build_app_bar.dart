@@ -6,10 +6,12 @@ class _BuildAppBar extends StatelessWidget {
     required this.product,
     this.onFavoriteTap,
     this.isLiked,
+    this.onLeadingTap,
   }) : super(key: key);
 
   final ProductModel product;
   final VoidCallback? onFavoriteTap;
+  final VoidCallback? onLeadingTap;
   final bool? isLiked;
 
   @override
@@ -17,6 +19,21 @@ class _BuildAppBar extends StatelessWidget {
     final theme = Theme.of(context);
 
     return SliverAppBar(
+      leading: Padding(
+        padding: const EdgeInsets.only(left:Const.space12),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(30.0),
+          onTap:onLeadingTap,
+          child: CircleAvatar(
+            radius: 25.0,
+            backgroundColor: theme.cardColor.withOpacity(.4),
+            child: Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ),
       actions: [
         InkWell(
           borderRadius: BorderRadius.circular(30.0),
