@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/models/cart_model.dart';
 import 'package:treshop/src/models/product_model.dart';
 import 'package:treshop/src/widgets/custom_network_image.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -12,11 +13,45 @@ class ProductCheckoutCard extends StatelessWidget {
     required this.product,
   }) : super(key: key);
 
-  final ProductModel product;
+  final CartModel product;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
+    _colorType(int val) {
+      switch (val) {
+        case 0:
+          return Color(0xFF6D9BE1);
+        case 1:
+          return Color(0xFFBF5E5A);
+        case 2:
+          return Color(0xFFA1ABBD);
+        case 3:
+          return Color(0xFF699156);
+        case 4:
+          return Color(0xFFC58F5E);
+        case 5:
+          return Color(0xFFA872B1);
+        default:
+          return Color(0xFFFFFFFF);
+      }
+    }
+
+    _sizeType(int val) {
+      switch (val) {
+        case 0:
+          return "M";
+        case 1:
+          return "L";
+        case 2:
+          return "XL";
+        case 3:
+          return "XXL";
+        default:
+          return 'M';
+      }
+    }
 
     return Card(
       elevation: 2.0,
@@ -37,7 +72,7 @@ class ProductCheckoutCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomNetworkImage(
-                    image: product.images!.first,
+                    image: product.productImage!,
                     width: 60.0,
                     height: 60.0,
                   ),
@@ -47,7 +82,7 @@ class ProductCheckoutCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         AutoSizeText(
-                          product.name!,
+                          product.productName!,
                           style: theme.textTheme.headline3,
                           maxLines: 1,
                         ),
@@ -62,7 +97,7 @@ class ProductCheckoutCard extends StatelessWidget {
                             SizedBox(width: 5.0),
                             CircleAvatar(
                               radius: 8.0,
-                              backgroundColor: Colors.red,
+                              backgroundColor: _colorType(product.color!),
                             ),
                             SizedBox(width: Const.space8),
                             AutoSizeText(
@@ -72,7 +107,7 @@ class ProductCheckoutCard extends StatelessWidget {
                             ),
                             SizedBox(width: 5.0),
                             AutoSizeText(
-                              'M',
+                              _sizeType(product.size!),
                               style: theme.textTheme.headline4,
                               maxLines: 1,
                             ),
@@ -84,7 +119,7 @@ class ProductCheckoutCard extends StatelessWidget {
                             ),
                             SizedBox(width: 5.0),
                             AutoSizeText(
-                              1.toString(),
+                              product.qty.toString(),
                               style: theme.textTheme.headline4,
                               maxLines: 1,
                             ),
@@ -107,7 +142,7 @@ class ProductCheckoutCard extends StatelessWidget {
                     style: theme.textTheme.subtitle1,
                   ),
                   AutoSizeText(
-                    NumberFormat.currency(symbol: '\$').format(1202),
+                    NumberFormat.currency(symbol: '\$').format(product.price),
                     style: theme.textTheme.headline3,
                   ),
                 ],

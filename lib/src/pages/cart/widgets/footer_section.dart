@@ -2,8 +2,9 @@ part of '../cart_page.dart';
 
 class _FooterSection extends StatelessWidget {
   final int? total;
+  final VoidCallback? onCheckoutTap;
 
-  const _FooterSection({Key? key, this.total}) : super(key: key);
+  const _FooterSection({Key? key, this.total,this.onCheckoutTap}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -83,7 +84,7 @@ class _FooterSection extends StatelessWidget {
             ),
             SizedBox(height: Const.space12),
             CustomElevatedButton(
-              onTap: () {},
+              onTap: onCheckoutTap,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

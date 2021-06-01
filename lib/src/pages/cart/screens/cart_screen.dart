@@ -53,6 +53,14 @@ class _CartScreenState extends State<CartScreen> {
                   ),
                   _FooterSection(
                     total: _total!.toInt(),
+                    onCheckoutTap: () {
+                      Get.toNamed(Routes.checkout,
+                          arguments: CheckoutModel(
+                            products: provider.cartList,
+                            couponId: provider.selectedCoupon,
+                            total: _total,
+                          ));
+                    },
                   )
                 ],
               )

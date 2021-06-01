@@ -22,6 +22,7 @@ class Routes {
   static const String coupon = '/coupon';
   static const String checkout = '/checkout';
   static const String payment = '/payment';
+  static const String shipping = '/shipping';
 }
 
 class CustomIcon {

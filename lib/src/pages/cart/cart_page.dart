@@ -11,6 +11,7 @@ import 'package:treshop/src/helpers/constants.dart';
 import 'package:treshop/src/helpers/screens.dart';
 import 'package:treshop/src/list_data/cart_list.dart';
 import 'package:treshop/src/list_data/coupon_list.dart';
+import 'package:treshop/src/models/checkout_model.dart';
 import 'package:treshop/src/providers/cart_provider.dart';
 import 'package:treshop/src/widgets/cart_card.dart';
 import 'package:treshop/src/widgets/custom_app_bar.dart';

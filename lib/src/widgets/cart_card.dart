@@ -21,17 +21,17 @@ class CartCard extends StatelessWidget {
 
     _colorType(int val) {
       switch (val) {
-        case 1:
+        case 0:
           return Color(0xFF6D9BE1);
-        case 2:
+        case 1:
           return Color(0xFFBF5E5A);
-        case 3:
+        case 2:
           return Color(0xFFA1ABBD);
-        case 4:
+        case 3:
           return Color(0xFF699156);
-        case 5:
+        case 4:
           return Color(0xFFC58F5E);
-        case 6:
+        case 5:
           return Color(0xFFA872B1);
         default:
           return Color(0xFFFFFFFF);
@@ -40,11 +40,11 @@ class CartCard extends StatelessWidget {
 
     _sizeType(int val) {
       switch (val) {
-        case 1:
+        case 0:
           return 'M';
-        case 2:
+        case 1:
           return 'L';
-        case 3:
+        case 2:
           return 'XL';
         default:
           return 'M';

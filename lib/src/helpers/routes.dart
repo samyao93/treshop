@@ -7,6 +7,7 @@ import 'package:treshop/src/pages/coupon/coupon_page.dart';
 import 'package:treshop/src/pages/payment/payment_page.dart';
 import 'package:treshop/src/pages/product/product_page.dart';
 import 'package:treshop/src/pages/search/search_page.dart';
+import 'package:treshop/src/pages/shipping/shipping_page.dart';
 import 'package:treshop/src/pages/sign_up/sign_up_page.dart';
 
 import '../pages/on_boarding/on_boarding_page.dart';
@@ -30,4 +31,5 @@ List<GetPage> allRoutes = [
   GetPage(name: Routes.coupon, page: () => CouponScreen()),
   GetPage(name: Routes.checkout, page: () => CheckoutScreen()),
   GetPage(name: Routes.payment, page: () => PaymentScreen()),
+  GetPage(name: Routes.shipping, page: () => ShippingScreen()),
 ];
