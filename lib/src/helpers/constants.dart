@@ -19,6 +19,7 @@ class Routes {
   static const String favorite = '/favorite';
   static const String product = '/product';
   static const String cart = '/cart';
+  static const String coupon = '/coupon';
 }
 
 class CustomIcon {

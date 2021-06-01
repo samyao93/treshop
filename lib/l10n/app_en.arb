@@ -1,9 +1,11 @@
 {
+  "active": "Active",
   "add_to_cart": "Add to Cart",
   "added_to_cart": "Added to Cart",
   "all": "All",
   "already_have_an_account": "Already have an Account?",
   "authenticated_as": "Authenticated as: ",
+  "available_coupon": "Available Coupon",
   "bag": "Bag",
   "blouse": "Blouse",
   "boys": "Boys",
@@ -92,7 +94,9 @@
   "total": "Total",
   "trendias_Shop": "Trendias Shop",
   "tshirt": "T-Shirt",
+  "use": "Use",
   "username": "Username",
+  "valid_until": "Valid Until:",
   "watch": "Watch",
   "women": "Women"
 }
