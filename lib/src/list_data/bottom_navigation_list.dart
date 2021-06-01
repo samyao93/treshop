@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:treshop/src/pages/favorite/favorite_page.dart';
-import 'package:treshop/src/pages/home/home_page.dart';
-import 'package:treshop/src/pages/shop/shop_page.dart';
+
+import '../pages/favorite/favorite_page.dart';
+import '../pages/home/home_page.dart';
+import '../pages/shop/shop_page.dart';
 
 class BottomNavigationList {
   static List<Widget> pageList(BuildContext context) => [

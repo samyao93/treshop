@@ -1,17 +1,17 @@
 import 'package:get/get.dart';
-import 'package:treshop/src/pages/all_product/all_product_page.dart';
-import 'package:treshop/src/pages/bottom_navigation_bar/bottom_navigation_bar_page.dart';
-import 'package:treshop/src/pages/cart/cart_page.dart';
-import 'package:treshop/src/pages/checkout/checkout_page.dart';
-import 'package:treshop/src/pages/coupon/coupon_page.dart';
-import 'package:treshop/src/pages/payment/payment_page.dart';
-import 'package:treshop/src/pages/product/product_page.dart';
-import 'package:treshop/src/pages/search/search_page.dart';
-import 'package:treshop/src/pages/shipping/shipping_page.dart';
-import 'package:treshop/src/pages/sign_up/sign_up_page.dart';
 
+import '../pages/all_product/all_product_page.dart';
+import '../pages/bottom_navigation_bar/bottom_navigation_bar_page.dart';
+import '../pages/cart/cart_page.dart';
+import '../pages/checkout/checkout_page.dart';
+import '../pages/coupon/coupon_page.dart';
 import '../pages/on_boarding/on_boarding_page.dart';
+import '../pages/payment/payment_page.dart';
+import '../pages/product/product_page.dart';
+import '../pages/search/search_page.dart';
+import '../pages/shipping/shipping_page.dart';
 import '../pages/sign_in/sign_in_page.dart';
+import '../pages/sign_up/sign_up_page.dart';
 import '../pages/splash/splash_page.dart';
 import 'constants.dart';
 

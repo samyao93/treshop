@@ -5,14 +5,15 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
-import 'package:treshop/src/helpers/colors.dart';
-import 'package:treshop/src/helpers/constants.dart';
-import 'package:treshop/src/helpers/screens.dart';
-import 'package:treshop/src/list_data/product_list.dart';
-import 'package:treshop/src/models/product_model.dart';
-import 'package:treshop/src/pages/filter/filter_page.dart';
-import 'package:treshop/src/widgets/custom_app_bar.dart';
-import 'package:treshop/src/widgets/product_card.dart';
+
+import '../../helpers/colors.dart';
+import '../../helpers/constants.dart';
+import '../../helpers/screens.dart';
+import '../../list_data/product_list.dart';
+import '../../models/product_model.dart';
+import '../../widgets/custom_app_bar.dart';
+import '../../widgets/product_card.dart';
+import '../filter/filter_page.dart';
 
 part 'screens/all_product_screen.dart';
 part 'widgets/build_filter_button.dart';

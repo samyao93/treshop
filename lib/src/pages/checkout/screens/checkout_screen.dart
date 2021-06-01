@@ -30,7 +30,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Consumer<CheckoutProvider>(
       builder: (context, checkoutProv, snapshot) {

@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:treshop/src/models/checkout_model.dart';
+
+import '../models/checkout_model.dart';
 
 class CheckoutProvider with ChangeNotifier {
   bool? _isLoading = false;

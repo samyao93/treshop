@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../helpers/snack_toast.dart';
 import '../../list_data/bottom_navigation_list.dart';

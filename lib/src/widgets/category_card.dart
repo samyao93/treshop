@@ -2,8 +2,9 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:treshop/src/helpers/constants.dart';
-import 'package:treshop/src/models/category_model.dart';
+
+import '../helpers/constants.dart';
+import '../models/category_model.dart';
 
 enum CardType { grid, horizontal }
 
@@ -19,8 +20,6 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     _cardType(CardType type) {
       switch (type) {
         case CardType.grid:

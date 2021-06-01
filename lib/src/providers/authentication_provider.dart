@@ -1,9 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-import 'package:get/get.dart';
-import 'package:treshop/src/helpers/constants.dart';
-import 'package:treshop/src/helpers/snack_toast.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
+
+import '../helpers/constants.dart';
+import '../helpers/snack_toast.dart';
 
 enum AuthStatus { not_authenticated, authenticated }
 // enum Gender { male, female }

@@ -9,13 +9,6 @@ class _FooterSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    _couponType(int val) {
-      switch (val) {
-        case 0:
-          break;
-        default:
-      }
-    }
 
     return Consumer<CartProvider>(builder: (context, cart, snapshot) {
       return Container(

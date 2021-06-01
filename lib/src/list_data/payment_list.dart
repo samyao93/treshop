@@ -1,5 +1,5 @@
-import 'package:treshop/src/helpers/constants.dart';
-import 'package:treshop/src/models/payment_model.dart';
+import '../helpers/constants.dart';
+import '../models/payment_model.dart';
 
 class PaymentList {
   static List<PaymentModel> paymentList = [

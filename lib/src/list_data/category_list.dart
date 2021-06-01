@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:treshop/src/helpers/constants.dart';
-import 'package:treshop/src/models/category_model.dart';
+import '../helpers/constants.dart';
+import '../models/category_model.dart';
 
 class CategoryList {
   static List<CategoryModel> categoryList(BuildContext context) => [

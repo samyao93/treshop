@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:treshop/src/models/product_model.dart';
+import '../models/product_model.dart';
 
 class ProductList {
   static List<ProductModel> allProduct = [

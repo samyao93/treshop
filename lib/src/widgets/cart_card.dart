@@ -1,12 +1,12 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:treshop/src/helpers/constants.dart';
-import 'package:treshop/src/models/cart_model.dart';
 
+import '../helpers/constants.dart';
+import '../models/cart_model.dart';
 import 'custom_network_image.dart';
 
 class CartCard extends StatelessWidget {

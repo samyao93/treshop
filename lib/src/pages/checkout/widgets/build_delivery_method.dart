@@ -16,17 +16,7 @@ class _BuildDeliveryMethod extends StatelessWidget {
             onViewAllTap: () => Get.toNamed(Routes.shipping),
           ),
           SizedBox(height: Const.space8),
-          (checkout.shippingSelected == null)
-              ? Padding(
-                  padding: const EdgeInsets.symmetric(vertical: Const.space12),
-                  child: Center(
-                    child: AutoSizeText(
-                      AppLocalizations.of(context)!.payment_method_not_selected,
-                      style: theme.textTheme.subtitle1,
-                    ),
-                  ),
-                )
-              : Container(
+         Container(
                   width: Screens.width(context),
                   height: 60.0,
                   margin: EdgeInsets.symmetric(horizontal: Const.margin),

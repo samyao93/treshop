@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:treshop/src/models/cart_model.dart';
+
+import '../models/cart_model.dart';
 
 class CartProvider with ChangeNotifier {
   List<CartModel> _cartList = [];

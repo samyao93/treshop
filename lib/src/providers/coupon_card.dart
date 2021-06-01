@@ -2,11 +2,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:treshop/src/helpers/constants.dart';
-import 'package:treshop/src/helpers/screens.dart';
-import 'package:treshop/src/models/coupon_model.dart';
+import '../helpers/constants.dart';
+import '../helpers/screens.dart';
+import '../models/coupon_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:treshop/src/widgets/custom_elevated_button.dart';
+import '../widgets/custom_elevated_button.dart';
 
 class CouponCard extends StatelessWidget {
   const CouponCard({
