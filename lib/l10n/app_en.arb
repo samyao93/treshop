@@ -17,6 +17,7 @@
   "categories": "Categories",
   "change": "Change",
   "checkout": "Checkout",
+  "choose_the_destination_address": "Choose the destination address",
   "close": "Close",
   "color": "Color",
   "connect_with_apple_id": "Connect with Apple ID",
@@ -87,9 +88,11 @@
   "search": "Search",
   "search_anything_you_like": "Search anything you like",
   "see_all": "See All",
+  "see_my_orders": "See My Orders",
   "shipping_fee": "Shipping Fee",
   "shirt": "Shirt",
   "shop": "Shop",
+  "shopping_again": "Shopping Again",
   "shopping_bag_is_empty": "Shopping Bag is Empty",
   "show_less": "show less",
   "sign_in": "Sign in",
@@ -102,6 +105,7 @@
   "socks": "Socks",
   "sort": "Sort",
   "sort_by": "Sort By",
+  "success": "Success!",
   "suit": "Suit",
   "total": "Total",
   "trendias_Shop": "Trendias Shop",
@@ -110,5 +114,6 @@
   "username": "Username",
   "valid_until": "Valid Until:",
   "watch": "Watch",
-  "women": "Women"
+  "women": "Women",
+  "your_order_will_be_delivered_soon_thank_you_for_shopping": "Your order will be delivered soon.\nThank you for shopping!"
 }

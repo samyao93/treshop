@@ -2,6 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'package:treshop/src/models/checkout_model.dart';
 
 class CheckoutProvider with ChangeNotifier {
+  bool? _isLoading = false;
+  bool? get isLoading => _isLoading;
+  set isLoading(bool? val) {
+    _isLoading = val;
+    notifyListeners();
+  }
   int? _addressSelected;
   int? get addressSelected => _addressSelected;
   set addressSelected(int? val) {
@@ -16,9 +22,9 @@ class CheckoutProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  int? _shippingSelected;
-  int? get shippingSelected => _shippingSelected;
-  set shippingSelected(int? val) {
+  int _shippingSelected=1;
+  int get shippingSelected => _shippingSelected;
+  set shippingSelected(int val) {
     _shippingSelected = val;
     notifyListeners();
   }

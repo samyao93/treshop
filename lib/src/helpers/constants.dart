@@ -23,6 +23,7 @@ class Routes {
   static const String checkout = '/checkout';
   static const String payment = '/payment';
   static const String shipping = '/shipping';
+  static const String checkout_success = '/checkout_success';
 }
 
 class CustomIcon {
@@ -52,6 +53,7 @@ class CustomIcon {
   static const String mastercard = 'assets/mastercard.svg';
   static const String bca = 'assets/bca.svg';
   static const String paypal = 'assets/paypal.svg';
+  static const String gift = 'assets/gift.svg';
 }
 
 class Images {

@@ -23,7 +23,7 @@ class ShippingScreen extends StatelessWidget {
                 activeColor: theme.primaryColor,
                 groupValue: checkout.shippingSelected,
                 onChanged: (int? v) {
-                  checkout.shippingSelected = v;
+                  checkout.shippingSelected = v!;
                 },
               ),
               title: AutoSizeText(

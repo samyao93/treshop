@@ -32,4 +32,5 @@ List<GetPage> allRoutes = [
   GetPage(name: Routes.checkout, page: () => CheckoutScreen()),
   GetPage(name: Routes.payment, page: () => PaymentScreen()),
   GetPage(name: Routes.shipping, page: () => ShippingScreen()),
+  GetPage(name: Routes.checkout_success, page: () => CheckoutSuccessScreen()),
 ];
