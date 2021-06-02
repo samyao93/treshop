@@ -24,6 +24,9 @@ class Routes {
   static const String payment = '/payment';
   static const String shipping = '/shipping';
   static const String checkout_success = '/checkout_success';
+  static const String profile = '/profile';
+  static const String order = '/order';
+  static const String order_detail = '/order_detail';
 }
 
 class CustomIcon {

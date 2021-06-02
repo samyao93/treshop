@@ -1,4 +1,7 @@
 import 'package:get/get.dart';
+import 'package:treshop/src/pages/order/order_page.dart';
+import 'package:treshop/src/pages/order_detail/order_detail_page.dart';
+import 'package:treshop/src/pages/profile/profile_page.dart';
 
 import '../pages/all_product/all_product_page.dart';
 import '../pages/bottom_navigation_bar/bottom_navigation_bar_page.dart';
@@ -33,4 +36,7 @@ List<GetPage> allRoutes = [
   GetPage(name: Routes.payment, page: () => PaymentScreen()),
   GetPage(name: Routes.shipping, page: () => ShippingScreen()),
   GetPage(name: Routes.checkout_success, page: () => CheckoutSuccessScreen()),
+  GetPage(name: Routes.profile, page: () => BottomNavigationBarScreen(initialIndex: 3)),
+  GetPage(name: Routes.order, page: () => OrderScreen()),
+  GetPage(name: Routes.order_detail, page: () => OrderDetailScreen()),
 ];

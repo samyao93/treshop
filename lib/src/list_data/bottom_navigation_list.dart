@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../pages/favorite/favorite_page.dart';
 import '../pages/home/home_page.dart';
+import '../pages/profile/profile_page.dart';
 import '../pages/shop/shop_page.dart';
 
 class BottomNavigationList {
@@ -11,7 +12,7 @@ class BottomNavigationList {
         HomeScreen(),
         FavoriteScreen(),
         ShopScreen(),
-        Container(),
+        ProfileScreen(),
       ];
   static List<BottomNavigationBarItem> items(BuildContext context) => [
     BottomNavigationBarItem(

@@ -1,0 +1,156 @@
+part of '../order_detail_page.dart';
+
+class OrderDetailScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    OrderModel order = OrderList.orderList[1];
+
+    _statusOrderLabelType(StatusOrder val) {
+      switch (val) {
+        case StatusOrder.on_delivery:
+          return AppLocalizations.of(context)!.on_delivery;
+        case StatusOrder.packaging:
+          return AppLocalizations.of(context)!.packaging;
+        case StatusOrder.success:
+          return AppLocalizations.of(context)!.success;
+        default:
+          return AppLocalizations.of(context)!.not_pay;
+      }
+    }
+
+    return Scaffold(
+      appBar: CustomAppBar(
+        context,
+        title: AppLocalizations.of(context)!.order_detail,
+      ),
+      body: ListView(
+        padding: EdgeInsets.symmetric(horizontal: Const.margin),
+        children: [
+          AutoSizeText(
+            AppLocalizations.of(context)!.status,
+            style: theme.textTheme.subtitle2,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              AutoSizeText(
+                _statusOrderLabelType(order.statusOrder!),
+                style: theme.textTheme.bodyText1!.copyWith(
+                  color: theme.primaryColor,
+                ),
+              ),
+              CustomTextButton(
+                label: AppLocalizations.of(context)!.show,
+                onTap: () {},
+                textColor: theme.primaryColor,
+              )
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              AutoSizeText(AppLocalizations.of(context)!.shopping_date,
+                  style: theme.textTheme.bodyText2),
+              AutoSizeText(DateFormat.yMMMEd().format(order.dateOrder!),
+                  style: theme.textTheme.headline3),
+            ],
+          ),
+          SizedBox(height: Const.space15),
+          AutoSizeText(
+            order.products!.length.toString() +
+                " " +
+                AppLocalizations.of(context)!.items,
+            style: theme.textTheme.headline3,
+          ),
+          SizedBox(height: Const.space8),
+          ListView.builder(
+            itemCount: order.products!.length,
+            shrinkWrap: true,
+            physics: ScrollPhysics(),
+            itemBuilder: (context, index) {
+              var product = order.products![index];
+              return OrderDetailCard(order: product);
+            },
+          ),
+          SizedBox(height: Const.space15),
+          AutoSizeText(
+            AppLocalizations.of(context)!.delivery_status,
+            style: theme.textTheme.headline3,
+          ),
+          SizedBox(height: Const.space8),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 150.0,
+                child: AutoSizeText(
+                  AppLocalizations.of(context)!.shipping_code,
+                  style: theme.textTheme.subtitle1,
+                ),
+              ),
+              Expanded(
+                child: AutoSizeText(
+                  '#ADR-108567298',
+                  style: theme.textTheme.headline4,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: Const.space8),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 150.0,
+                child: AutoSizeText(
+                  AppLocalizations.of(context)!.detail_address,
+                  style: theme.textTheme.subtitle1,
+                ),
+              ),
+              Expanded(
+                child: AutoSizeText(
+                  '403 Oakland Ave Street, A city, Florida, 32104, United States of America',
+                  style: theme.textTheme.headline4,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: Const.space15),
+          AutoSizeText(
+            AppLocalizations.of(context)!.payment_information,
+            style: theme.textTheme.headline3,
+          ),
+          SizedBox(height: Const.space8),
+          _BuildPaymentInformation(
+            label: AppLocalizations.of(context)!.payment_method,
+            trailing: 'PayPal',
+          ),
+          Divider(color: theme.hintColor),
+          _BuildPaymentInformation(
+            label: AppLocalizations.of(context)!.shipping_fee,
+            value: 5,
+          ),
+          SizedBox(height: Const.space8),
+          _BuildPaymentInformation(
+            label: AppLocalizations.of(context)!.discount + ' 10%',
+            value: 5,
+            isDiscount: true,
+          ),
+          SizedBox(height: Const.space8),
+          _BuildPaymentInformation(
+            label: AppLocalizations.of(context)!.price_total,
+            value: 50,
+          ),
+          Divider(color: theme.hintColor),
+          _BuildPaymentInformation(
+            label: AppLocalizations.of(context)!.total,
+            value: 50,
+            isTotal: true,
+          ),
+          SizedBox(height: Const.space25),
+        ],
+      ),
+    );
+  }
+}
