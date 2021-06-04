@@ -63,8 +63,8 @@ class CustomIcon {
 }
 
 class Images {
-  static const String on_boarding_1 = 'assets/on_boarding_1.png';
-  static const String on_boarding_2 = 'assets/on_boarding_2.png';
-  static const String on_boarding_3 = 'assets/on_boarding_3.png';
+  static const String on_boarding_1 = 'assets/on_boarding_1.svg';
+  static const String on_boarding_2 = 'assets/on_boarding_2.svg';
+  static const String on_boarding_3 = 'assets/on_boarding_3.svg';
   static const String shop_deals = 'assets/shop_deals.png';
 }

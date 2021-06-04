@@ -20,7 +20,7 @@ class _OnBoardingCard extends StatelessWidget {
         children: [
           CustomShakeTransition(
             duration: Duration(milliseconds: 700),
-            child: Image.asset(
+            child: SvgPicture.asset(
               data.image!,
               width: Screens.width(context) / 2,
               height: Screens.width(context) / 2,
