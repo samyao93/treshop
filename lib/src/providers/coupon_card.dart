@@ -1,4 +1,3 @@
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -25,6 +24,33 @@ class CouponCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
+    _onTapType(CouponCondition val) {
+      switch (val) {
+        case CouponCondition.not_used:
+          return () {};
+        case CouponCondition.used:
+          return null;
+        case CouponCondition.exprired:
+          return null;
+        default:
+          return null;
+      }
+    }
+
+    _labelType(CouponCondition val) {
+      switch (val) {
+        case CouponCondition.not_used:
+          return buttonLabel;
+        case CouponCondition.used:
+          return AppLocalizations.of(context)!.used;
+        case CouponCondition.exprired:
+          return AppLocalizations.of(context)!.expired;
+        default:
+          return null;
+      }
+    }
+
     return Card(
       elevation: 5.0,
       shape: RoundedRectangleBorder(
@@ -94,8 +120,8 @@ class CouponCard extends StatelessWidget {
                     ],
                   ),
                   CustomElevatedButton(
-                    onTap: onUseTap,
-                    label: buttonLabel,
+                    onTap: _onTapType(coupon.condition!),
+                    label: _labelType(coupon.condition!),
                     color: buttonColor,
                     width: 100.0,
                     height: 30.0,

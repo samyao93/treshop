@@ -19,7 +19,7 @@ class Routes {
   static const String favorite = '/favorite';
   static const String product = '/product';
   static const String cart = '/cart';
-  static const String coupon = '/coupon';
+  static const String select_coupon = '/select_coupon';
   static const String checkout = '/checkout';
   static const String payment = '/payment';
   static const String shipping = '/shipping';
@@ -27,6 +27,9 @@ class Routes {
   static const String profile = '/profile';
   static const String order = '/order';
   static const String order_detail = '/order_detail';
+  static const String tracking_order = '/tracking_order';
+  static const String profile_detail = '/profile_detail';
+  static const String coupon = '/coupon';
 }
 
 class CustomIcon {

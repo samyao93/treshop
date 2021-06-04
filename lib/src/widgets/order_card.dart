@@ -2,14 +2,13 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:treshop/src/helpers/constants.dart';
 import 'package:treshop/src/helpers/screens.dart';
 import 'package:treshop/src/models/order_model.dart';
 
 import 'custom_network_image.dart';
-
-
 
 class OrderCard extends StatelessWidget {
   final OrderModel order;
@@ -50,26 +49,26 @@ class OrderCard extends StatelessWidget {
       }
     }
 
-    _statusOrderColorType(StatusOrder val) {
+    _statusOrderColorType(OrderStatus val) {
       switch (val) {
-        case StatusOrder.on_delivery:
+        case OrderStatus.on_delivery:
           return Color(0xFFE77E1D);
-        case StatusOrder.packaging:
+        case OrderStatus.packaging:
           return Color(0xFFE3E71D);
-        case StatusOrder.success:
+        case OrderStatus.success:
           return Color(0xFF14BD18);
         default:
           return Color(0xFFE3E71D);
       }
     }
 
-    _statusOrderLabelType(StatusOrder val) {
+    _statusOrderLabelType(OrderStatus val) {
       switch (val) {
-        case StatusOrder.on_delivery:
+        case OrderStatus.on_delivery:
           return AppLocalizations.of(context)!.on_delivery;
-        case StatusOrder.packaging:
+        case OrderStatus.packaging:
           return AppLocalizations.of(context)!.packaging;
-        case StatusOrder.success:
+        case OrderStatus.success:
           return AppLocalizations.of(context)!.success;
         default:
           return AppLocalizations.of(context)!.not_pay;
@@ -82,167 +81,173 @@ class OrderCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(Const.radius),
       ),
       margin: EdgeInsets.only(bottom: Const.space15),
-      child: Container(
-        width: Screens.width(context),
-        height: 230.0,
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: Const.space15,
-                vertical: Const.space8,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      AutoSizeText(
-                        AppLocalizations.of(context)!.trendias_Shop,
-                        style: theme.textTheme.headline4,
-                      ),
-                      SizedBox(height: Const.space8),
-                      AutoSizeText(
-                        DateFormat.yMMMd().format(order.dateOrder!),
-                        style: theme.textTheme.subtitle2,
-                      ),
-                    ],
-                  ),
-                  Icon(FeatherIcons.moreVertical, color: theme.hintColor)
-                ],
-              ),
-            ),
-            Divider(color: theme.backgroundColor, thickness: 2.0),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: Const.space15,
-              ),
-              child: Row(
-                children: [
-                  CustomNetworkImage(
-                    image: order.products!.first.productImage!,
-                    width: 65.0,
-                    height: 65.0,
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: Const.space12,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          AutoSizeText(
-                            order.products!.first.productName!,
-                            style: theme.textTheme.headline3,
-                            maxLines: 1,
-                          ),
-                          SizedBox(height: Const.space8),
-                          Row(
-                            children: [
-                              AutoSizeText(
-                                AppLocalizations.of(context)!.color,
-                                style: theme.textTheme.subtitle2,
-                                maxLines: 1,
-                              ),
-                              SizedBox(width: 5.0),
-                              CircleAvatar(
-                                radius: 8.0,
-                                backgroundColor:
-                                    _colorType(order.products!.first.color!),
-                              ),
-                              SizedBox(width: Const.space8),
-                              AutoSizeText(
-                                AppLocalizations.of(context)!.size,
-                                style: theme.textTheme.subtitle2,
-                                maxLines: 1,
-                              ),
-                              SizedBox(width: 5.0),
-                              AutoSizeText(
-                                _sizeType(order.products!.first.size!),
-                                style: theme.textTheme.headline4,
-                                maxLines: 1,
-                              ),
-                              SizedBox(width: Const.space8),
-                              AutoSizeText(
-                                AppLocalizations.of(context)!.qty,
-                                style: theme.textTheme.subtitle2,
-                                maxLines: 1,
-                              ),
-                              SizedBox(width: 5.0),
-                              AutoSizeText(
-                                order.products!.first.qty.toString(),
-                                style: theme.textTheme.headline4,
-                                maxLines: 1,
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: Const.space8),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              AutoSizeText(
-                                NumberFormat.currency(
-                                  symbol: '\$',
-                                ).format(order.products!.first.price),
-                                style: theme.textTheme.headline4,
-                                maxLines: 1,
-                              ),
-                              AutoSizeText(
-                                order.products!.length.toString() +
-                                    " " +
-                                    AppLocalizations.of(context)!.items,
-                                style: theme.textTheme.subtitle1,
-                                maxLines: 1,
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
+      child: InkWell(
+        onTap: ()=>Get.toNamed(Routes.order_detail),
+        borderRadius: BorderRadius.circular(Const.radius),
+        child: Container(
+          width: Screens.width(context),
+          height: 230.0,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: Const.space15,
+                  vertical: Const.space8,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        AutoSizeText(
+                          AppLocalizations.of(context)!.trendias_Shop,
+                          style: theme.textTheme.headline4,
+                        ),
+                        SizedBox(height: Const.space8),
+                        AutoSizeText(
+                          DateFormat.yMMMd().format(order.dateOrder!),
+                          style: theme.textTheme.subtitle2,
+                        ),
+                      ],
                     ),
-                  )
-                ],
+                    Icon(FeatherIcons.moreVertical, color: theme.hintColor)
+                  ],
+                ),
               ),
-            ),
-            Divider(color: theme.backgroundColor, thickness: 2.0),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: Const.margin,
-                vertical: 5.0,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      AutoSizeText(AppLocalizations.of(context)!.total_payment,
-                          style: theme.textTheme.subtitle1),
-                      AutoSizeText(
-                        NumberFormat.currency(symbol: '\$').format(order.total),
-                        style: theme.textTheme.headline4,
-                      ),
-                    ],
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(5.0),
-                    decoration: BoxDecoration(
-                      color: _statusOrderColorType(order.statusOrder!)
-                          .withOpacity(.1),
-                      borderRadius: BorderRadius.circular(Const.radius),
+              Divider(color: theme.backgroundColor, thickness: 2.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: Const.space15,
+                ),
+                child: Row(
+                  children: [
+                    CustomNetworkImage(
+                      image: order.products!.first.productImage!,
+                      width: 65.0,
+                      height: 65.0,
                     ),
-                    child: AutoSizeText(
-                      _statusOrderLabelType(order.statusOrder!),
-                      style: theme.textTheme.bodyText2!.copyWith(
-                        color: _statusOrderColorType(order.statusOrder!),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: Const.space12,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            AutoSizeText(
+                              order.products!.first.productName!,
+                              style: theme.textTheme.headline3,
+                              maxLines: 1,
+                            ),
+                            SizedBox(height: Const.space8),
+                            Row(
+                              children: [
+                                AutoSizeText(
+                                  AppLocalizations.of(context)!.color,
+                                  style: theme.textTheme.subtitle2,
+                                  maxLines: 1,
+                                ),
+                                SizedBox(width: 5.0),
+                                CircleAvatar(
+                                  radius: 8.0,
+                                  backgroundColor:
+                                      _colorType(order.products!.first.color!),
+                                ),
+                                SizedBox(width: Const.space8),
+                                AutoSizeText(
+                                  AppLocalizations.of(context)!.size,
+                                  style: theme.textTheme.subtitle2,
+                                  maxLines: 1,
+                                ),
+                                SizedBox(width: 5.0),
+                                AutoSizeText(
+                                  _sizeType(order.products!.first.size!),
+                                  style: theme.textTheme.headline4,
+                                  maxLines: 1,
+                                ),
+                                SizedBox(width: Const.space8),
+                                AutoSizeText(
+                                  AppLocalizations.of(context)!.qty,
+                                  style: theme.textTheme.subtitle2,
+                                  maxLines: 1,
+                                ),
+                                SizedBox(width: 5.0),
+                                AutoSizeText(
+                                  order.products!.first.qty.toString(),
+                                  style: theme.textTheme.headline4,
+                                  maxLines: 1,
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: Const.space8),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                AutoSizeText(
+                                  NumberFormat.currency(
+                                    symbol: '\$',
+                                  ).format(order.products!.first.price),
+                                  style: theme.textTheme.headline4,
+                                  maxLines: 1,
+                                ),
+                                AutoSizeText(
+                                  order.products!.length.toString() +
+                                      " " +
+                                      AppLocalizations.of(context)!.items,
+                                  style: theme.textTheme.subtitle1,
+                                  maxLines: 1,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+              Divider(color: theme.backgroundColor, thickness: 2.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: Const.margin,
+                  vertical: 5.0,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        AutoSizeText(
+                            AppLocalizations.of(context)!.total_payment,
+                            style: theme.textTheme.subtitle1),
+                        AutoSizeText(
+                          NumberFormat.currency(symbol: '\$')
+                              .format(order.total),
+                          style: theme.textTheme.headline4,
+                        ),
+                      ],
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(5.0),
+                      decoration: BoxDecoration(
+                        color: _statusOrderColorType(order.status!)
+                            .withOpacity(.1),
+                        borderRadius: BorderRadius.circular(Const.radius),
+                      ),
+                      child: AutoSizeText(
+                        _statusOrderLabelType(order.status!),
+                        style: theme.textTheme.bodyText2!.copyWith(
+                          color: _statusOrderColorType(order.status!),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

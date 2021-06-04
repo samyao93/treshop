@@ -22,7 +22,7 @@ class _FooterSection extends StatelessWidget {
         child: Column(
           children: [
             InkWell(
-              onTap: () => Get.toNamed(Routes.coupon),
+              onTap: () => Get.toNamed(Routes.select_coupon),
               borderRadius: BorderRadius.circular(Const.radius),
               child: Container(
                 width: Screens.width(context),

@@ -16,18 +16,14 @@ class ProfileScreen extends StatelessWidget {
         children: [
           ListTile(
             contentPadding: EdgeInsets.zero,
-            onTap: (){
-              //TODO:
-            },
+            onTap: ()=>Get.toNamed(Routes.profile_detail),
             leading: Icon(FeatherIcons.user, color: theme.hintColor),
             title: AutoSizeText(AppLocalizations.of(context)!.detail_profile, style: theme.textTheme.headline3),
             trailing: Icon(FeatherIcons.chevronRight,size:16.0, color: theme.hintColor),
           ),
           ListTile(
             contentPadding: EdgeInsets.zero,
-            onTap: (){
-              //TODO:
-            },
+            onTap: ()=> Get.toNamed(Routes.order),
             leading: Icon(FeatherIcons.truck, color: theme.hintColor),
             title: AutoSizeText(AppLocalizations.of(context)!.my_orders, style: theme.textTheme.headline3),
             trailing: Icon(FeatherIcons.chevronRight,size:16.0, color: theme.hintColor),

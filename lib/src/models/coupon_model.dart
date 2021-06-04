@@ -1,7 +1,11 @@
+
+enum CouponCondition {not_used, used, exprired}
+
 class CouponModel {
   final String? name;
   final int? discount;
   final DateTime? expired;
+  final CouponCondition? condition;
 
-  CouponModel({this.name, this.discount, this.expired});
+  CouponModel({this.name, this.discount, this.expired,this.condition});
 }

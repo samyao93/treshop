@@ -4,7 +4,7 @@ import 'package:treshop/src/models/order_model.dart';
 class OrderList {
   static List<OrderModel> orderList = [
     OrderModel(
-      statusOrder: StatusOrder.packaging,
+      status: OrderStatus.packaging,
       dateOrder: DateTime.now(),
       total: 590,
       products: [
@@ -20,7 +20,7 @@ class OrderList {
       ],
     ),
     OrderModel(
-      statusOrder: StatusOrder.on_delivery,
+      status: OrderStatus.on_delivery,
       dateOrder: DateTime.now(),
       total: 766,
       products: [
@@ -45,7 +45,7 @@ class OrderList {
       ],
     ),
     OrderModel(
-      statusOrder: StatusOrder.success,
+      status: OrderStatus.success,
       dateOrder: DateTime.now(),
       total: 124,
       products: [

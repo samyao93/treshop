@@ -3,7 +3,6 @@ part of '../order_page.dart';
 class OrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Scaffold(
       appBar: CustomAppBar(

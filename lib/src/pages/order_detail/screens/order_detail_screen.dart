@@ -6,13 +6,13 @@ class OrderDetailScreen extends StatelessWidget {
     final theme = Theme.of(context);
     OrderModel order = OrderList.orderList[1];
 
-    _statusOrderLabelType(StatusOrder val) {
+    _statusOrderLabelType(OrderStatus val) {
       switch (val) {
-        case StatusOrder.on_delivery:
+        case OrderStatus.on_delivery:
           return AppLocalizations.of(context)!.on_delivery;
-        case StatusOrder.packaging:
+        case OrderStatus.packaging:
           return AppLocalizations.of(context)!.packaging;
-        case StatusOrder.success:
+        case OrderStatus.success:
           return AppLocalizations.of(context)!.success;
         default:
           return AppLocalizations.of(context)!.not_pay;
@@ -35,14 +35,14 @@ class OrderDetailScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AutoSizeText(
-                _statusOrderLabelType(order.statusOrder!),
+                _statusOrderLabelType(order.status!),
                 style: theme.textTheme.bodyText1!.copyWith(
                   color: theme.primaryColor,
                 ),
               ),
               CustomTextButton(
                 label: AppLocalizations.of(context)!.show,
-                onTap: () {},
+                onTap: () =>Get.toNamed(Routes.tracking_order),
                 textColor: theme.primaryColor,
               )
             ],

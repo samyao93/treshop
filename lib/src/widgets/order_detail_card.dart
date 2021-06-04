@@ -1,13 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
-import 'package:treshop/src/helpers/constants.dart';
-import 'package:treshop/src/helpers/screens.dart';
-import 'package:treshop/src/models/cart_model.dart';
-import 'package:treshop/src/models/order_model.dart';
 
+import '../helpers/constants.dart';
+import '../helpers/screens.dart';
+import '../models/cart_model.dart';
 import 'custom_network_image.dart';
 
 class OrderDetailCard extends StatelessWidget {
