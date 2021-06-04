@@ -10,7 +10,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController? _emailController;
   TextEditingController? _passwordController;
 
-  final _formKey = GlobalKey<FormState>();
+  // final _formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -29,8 +29,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
         return Scaffold(
           appBar: CustomAppBar(context),
           body: Form(
-            key: _formKey,
-            autovalidateMode: AutovalidateMode.onUserInteraction,
+            // key: _formKey,
+            // autovalidateMode: AutovalidateMode.onUserInteraction,
             child: ListView(
               padding: const EdgeInsets.symmetric(horizontal: Const.margin),
               children: [
@@ -152,7 +152,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ? CustomLoadingIndicator()
                     : CustomElevatedButton(
                         onTap: () {
-                          if (_formKey.currentState!.validate()) {
+                          // if (_formKey.currentState!.validate()) {
                             FocusScope.of(context).requestFocus(FocusNode());
                             provider.isLoading = true;
 
@@ -162,7 +162,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               email: _emailController!.text,
                               password: _passwordController!.text,
                             );
-                          }
+                          // }
                         },
                         label: AppLocalizations.of(context)!.sign_up,
                       ),

@@ -29,7 +29,7 @@ class CheckoutSuccessScreen extends StatelessWidget {
               CustomTextButton(
                 label: AppLocalizations.of(context)!.see_my_orders,
                 onTap: () {
-                  Get.offAllNamed(Routes.home); //TODO:
+                  Get.offAllNamed(Routes.order);
                   context.read<CartProvider>().cartList.clear();
                 },
                 textColor: Theme.of(context).primaryColor,

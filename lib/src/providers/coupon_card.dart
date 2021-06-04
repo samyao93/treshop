@@ -51,87 +51,178 @@ class CouponCard extends StatelessWidget {
       }
     }
 
-    return Card(
-      elevation: 5.0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(Const.radius),
-      ),
-      child: Container(
-        width: Screens.width(context),
-        height: 130.0,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
+    return (coupon.condition == CouponCondition.not_used)
+        ? Card(
+            elevation: 5.0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(Const.radius),
+            ),
+            child: Container(
               width: Screens.width(context),
-              height: 50.0,
-              padding: EdgeInsets.symmetric(horizontal: Const.margin),
-              decoration: BoxDecoration(
-                  color: theme.primaryColor,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(Const.radius),
-                    topRight: Radius.circular(Const.radius),
-                  )),
-              child: Row(
+              height: 130.0,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(
-                    Icons.card_giftcard,
-                    size: 25.0,
-                    color: Colors.white,
+                  Container(
+                    width: Screens.width(context),
+                    height: 50.0,
+                    padding: EdgeInsets.symmetric(horizontal: Const.margin),
+                    decoration: BoxDecoration(
+                        color: theme.primaryColor,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(Const.radius),
+                          topRight: Radius.circular(Const.radius),
+                        )),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.card_giftcard,
+                          size: 25.0,
+                          color: Colors.white,
+                        ),
+                        SizedBox(width: Const.space12),
+                        AutoSizeText(coupon.name!,
+                            style: theme.textTheme.headline3),
+                      ],
+                    ),
                   ),
-                  SizedBox(width: Const.space12),
-                  AutoSizeText(coupon.name!, style: theme.textTheme.headline3),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: Const.margin,
+                      vertical: Const.space8,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RichText(
+                              text: TextSpan(children: [
+                                TextSpan(
+                                    text: coupon.discount.toString() + "%",
+                                    style: theme.textTheme.bodyText1!
+                                        .copyWith(fontSize: 25.0)),
+                                TextSpan(
+                                    text: ' OFF',
+                                    style: theme.textTheme.bodyText1),
+                              ]),
+                            ),
+                            RichText(
+                              text: TextSpan(children: [
+                                TextSpan(
+                                    text: AppLocalizations.of(context)!
+                                            .valid_until +
+                                        " ",
+                                    style: theme.textTheme.subtitle2),
+                                TextSpan(
+                                    text: DateFormat.yMMMEd()
+                                        .format(coupon.expired!),
+                                    style: theme.textTheme.subtitle2),
+                              ]),
+                            ),
+                          ],
+                        ),
+                        CustomElevatedButton(
+                          onTap: onUseTap,
+                          label: buttonLabel,
+                          color: buttonColor,
+                          width: 100.0,
+                          height: 30.0,
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: Const.margin,
-                vertical: Const.space8,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          )
+        : Card(
+            elevation: 5.0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(Const.radius),
+            ),
+            child: Container(
+              width: Screens.width(context),
+              height: 130.0,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      RichText(
-                        text: TextSpan(children: [
-                          TextSpan(
-                              text: coupon.discount.toString() + "%",
-                              style: theme.textTheme.bodyText1!
-                                  .copyWith(fontSize: 25.0)),
-                          TextSpan(
-                              text: ' OFF', style: theme.textTheme.bodyText1),
-                        ]),
-                      ),
-                      RichText(
-                        text: TextSpan(children: [
-                          TextSpan(
-                              text: AppLocalizations.of(context)!.valid_until +
-                                  " ",
-                              style: theme.textTheme.subtitle2),
-                          TextSpan(
-                              text: DateFormat.yMMMEd().format(coupon.expired!),
-                              style: theme.textTheme.subtitle2),
-                        ]),
-                      ),
-                    ],
+                  Container(
+                    width: Screens.width(context),
+                    height: 50.0,
+                    padding: EdgeInsets.symmetric(horizontal: Const.margin),
+                    decoration: BoxDecoration(
+                        color: theme.primaryColor,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(Const.radius),
+                          topRight: Radius.circular(Const.radius),
+                        )),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.card_giftcard,
+                          size: 25.0,
+                          color: Colors.white,
+                        ),
+                        SizedBox(width: Const.space12),
+                        AutoSizeText(coupon.name!,
+                            style: theme.textTheme.headline3),
+                      ],
+                    ),
                   ),
-                  CustomElevatedButton(
-                    onTap: _onTapType(coupon.condition!),
-                    label: _labelType(coupon.condition!),
-                    color: buttonColor,
-                    width: 100.0,
-                    height: 30.0,
-                  )
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: Const.margin,
+                      vertical: Const.space8,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RichText(
+                              text: TextSpan(children: [
+                                TextSpan(
+                                    text: coupon.discount.toString() + "%",
+                                    style: theme.textTheme.bodyText1!
+                                        .copyWith(fontSize: 25.0)),
+                                TextSpan(
+                                    text: ' OFF',
+                                    style: theme.textTheme.bodyText1),
+                              ]),
+                            ),
+                            RichText(
+                              text: TextSpan(children: [
+                                TextSpan(
+                                    text: AppLocalizations.of(context)!
+                                            .valid_until +
+                                        " ",
+                                    style: theme.textTheme.subtitle2),
+                                TextSpan(
+                                    text: DateFormat.yMMMEd()
+                                        .format(coupon.expired!),
+                                    style: theme.textTheme.subtitle2),
+                              ]),
+                            ),
+                          ],
+                        ),
+                        CustomElevatedButton(
+                          onTap: _onTapType(coupon.condition!),
+                          label: _labelType(coupon.condition!),
+                          color: buttonColor,
+                          width: 100.0,
+                          height: 30.0,
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-          ],
-        ),
-      ),
-    );
+          );
   }
 }

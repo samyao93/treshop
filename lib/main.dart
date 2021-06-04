@@ -48,15 +48,14 @@ class MyApp extends StatelessWidget {
             theme: themeLight(context),
             darkTheme: themeDark(context),
             themeMode:
-                // (theme.isLightTheme == true) ? ThemeMode.light :
-                 ThemeMode.dark,
+                (theme.isLightTheme == true) ? ThemeMode.light : ThemeMode.dark,
             localizationsDelegates: [
               AppLocalizations.delegate,
               GlobalMaterialLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
             ],
-            initialRoute: Routes.profile,
+            initialRoute: Routes.splash,
             supportedLocales: L10n.all,
             getPages: allRoutes,
           );
