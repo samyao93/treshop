@@ -68,12 +68,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   AutoSizeText(
                     AppLocalizations.of(context)!.trendias_Shop,
-                    style:
-                        theme.textTheme.headline1!.copyWith(fontSize: 25.0),
+                    style: theme.textTheme.headline1!.copyWith(fontSize: 25.0),
                   ),
                   AutoSizeText(
-                    AppLocalizations.of(context)!
-                        .get_popular_fashion_from_home,
+                    AppLocalizations.of(context)!.get_popular_fashion_from_home,
                     style: theme.textTheme.bodyText2,
                   ),
                 ],
@@ -84,8 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
               controller: _searchController,
               onSearchTap: () {
                 FocusScope.of(context).requestFocus(FocusNode());
-                Get.toNamed(Routes.search,
-                    arguments: _searchController?.text);
+                Get.toNamed(Routes.search, arguments: _searchController?.text);
               },
             ),
             SizedBox(height: Const.space25),
@@ -114,7 +111,10 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: Const.space25),
             _BuildLabelSection(
               label: AppLocalizations.of(context)!.categories,
-              onViewAllTap: () {},
+              onViewAllTap: () => Get.toNamed(
+                Routes.all_product,
+                arguments: AppLocalizations.of(context)!.all,
+              ),
             ),
             SizedBox(height: Const.space12),
             StaggeredGridView.countBuilder(

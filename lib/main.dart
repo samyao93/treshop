@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
             ],
-            initialRoute: Routes.profile,
+            initialRoute: Routes.home,
             supportedLocales: L10n.all,
             getPages: allRoutes,
           );
