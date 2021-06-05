@@ -15,7 +15,7 @@ class _HeaderSection extends StatelessWidget {
             top: 0.0,
             left: 0.0,
             right: 0.0,
-            bottom: 150.0,
+            bottom: 100.0,
             child: Container(
               color: theme.primaryColor,
             ),
