@@ -30,6 +30,7 @@ class Routes {
   static const String tracking_order = '/tracking_order';
   static const String profile_detail = '/profile_detail';
   static const String coupon = '/coupon';
+  static const String wallet = '/wallet';
 }
 
 class CustomIcon {

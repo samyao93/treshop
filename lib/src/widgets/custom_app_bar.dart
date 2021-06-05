@@ -11,16 +11,20 @@ AppBar CustomAppBar(
   void Function()? leadingOntap,
   PreferredSizeWidget? bottom,
   Color? backgroundColor,
+  Color? leadingIconColor,
 }) {
   final theme = Theme.of(context);
   return AppBar(
-    backgroundColor: (backgroundColor ==null) ? theme.backgroundColor : backgroundColor,
+    backgroundColor:
+        (backgroundColor == null) ? theme.backgroundColor : backgroundColor,
     centerTitle: centerTitle,
-    leading: enableLeading ? IconButton(
-      icon: Icon(Icons.arrow_back),
-      onPressed: (leadingOntap == null) ? buildBackOnTap : leadingOntap,
-      color: theme.primaryColor,
-    ) : SizedBox(),
+    leading: enableLeading
+        ? IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: (leadingOntap == null) ? buildBackOnTap : leadingOntap,
+            color: leadingIconColor ?? theme.primaryColor,
+          )
+        : SizedBox(),
     title: Text(title ?? '', style: theme.textTheme.headline3),
     actions: actions,
     bottom: bottom,

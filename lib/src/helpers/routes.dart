@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:treshop/src/pages/profile_detail/profile_detail_page.dart';
+import 'package:treshop/src/pages/wallet/wallet_page.dart';
 
 import '../pages/all_product/all_product_page.dart';
 import '../pages/bottom_navigation_bar/bottom_navigation_bar_page.dart';
@@ -43,4 +44,5 @@ List<GetPage> allRoutes = [
   GetPage(name: Routes.tracking_order, page: () => TrackingOrderScreen()),
   GetPage(name: Routes.profile_detail, page: () => ProfileDetailScreen()),
   GetPage(name: Routes.coupon, page: () => CouponScreen()),
+  GetPage(name: Routes.wallet, page: () => WalletScreen()),
 ];
