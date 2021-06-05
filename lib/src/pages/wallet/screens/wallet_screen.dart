@@ -8,7 +8,7 @@ class WalletScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: ()=>Get.back(),
           icon: Icon(
             FeatherIcons.arrowLeft,
           ),

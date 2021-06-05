@@ -31,6 +31,7 @@ class Routes {
   static const String profile_detail = '/profile_detail';
   static const String coupon = '/coupon';
   static const String wallet = '/wallet';
+  static const String chat = '/chat';
 }
 
 class CustomIcon {

@@ -35,9 +35,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           ListTile(
             contentPadding: EdgeInsets.zero,
-            onTap: () {
-              //TODO:
-            },
+            onTap: () =>Get.toNamed(Routes.wallet),
             leading: Icon(FeatherIcons.creditCard, color: theme.hintColor),
             title: AutoSizeText(AppLocalizations.of(context)!.wallet,
                 style: theme.textTheme.headline3),
@@ -55,9 +53,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           ListTile(
             contentPadding: EdgeInsets.zero,
-            onTap: () {
-              //TODO:
-            },
+            onTap: () => Get.toNamed(Routes.chat),
             leading: Icon(FeatherIcons.messageCircle, color: theme.hintColor),
             title: AutoSizeText(AppLocalizations.of(context)!.chat_with_us,
                 style: theme.textTheme.headline3),
