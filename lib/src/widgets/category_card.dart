@@ -114,6 +114,7 @@ class _HorizontalCard extends StatelessWidget {
               AutoSizeText(
                 category.name!,
                 style: theme.textTheme.headline4,
+                textAlign: TextAlign.center,
               )
             ],
           ),

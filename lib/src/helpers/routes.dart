@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:treshop/src/pages/category/category_page.dart';
 import 'package:treshop/src/pages/chat/chat_page.dart';
+import 'package:treshop/src/pages/language/language_page.dart';
 import 'package:treshop/src/pages/profile_detail/profile_detail_page.dart';
 import 'package:treshop/src/pages/wallet/wallet_page.dart';
 
@@ -29,7 +30,7 @@ List<GetPage> allRoutes = [
   ),
   GetPage(
     name: Routes.onBoarding,
-    page: () =>const OnBoardingScreen(),
+    page: () => const OnBoardingScreen(),
   ),
   GetPage(
     name: Routes.signIn,
@@ -45,7 +46,7 @@ List<GetPage> allRoutes = [
   ),
   GetPage(
     name: Routes.search,
-    page: () =>const SearchScreen(),
+    page: () => const SearchScreen(),
   ),
   GetPage(
     name: Routes.shop,
@@ -61,7 +62,7 @@ List<GetPage> allRoutes = [
   ),
   GetPage(
     name: Routes.product,
-    page: () =>const ProductScreen(),
+    page: () => const ProductScreen(),
   ),
   GetPage(
     name: Routes.cart,
@@ -77,11 +78,11 @@ List<GetPage> allRoutes = [
   ),
   GetPage(
     name: Routes.payment,
-    page: () =>const PaymentScreen(),
+    page: () => const PaymentScreen(),
   ),
   GetPage(
     name: Routes.shipping,
-    page: () =>const ShippingScreen(),
+    page: () => const ShippingScreen(),
   ),
   GetPage(
     name: Routes.checkoutSuccess,
@@ -93,7 +94,7 @@ List<GetPage> allRoutes = [
   ),
   GetPage(
     name: Routes.order,
-    page: () =>const OrderScreen(),
+    page: () => const OrderScreen(),
   ),
   GetPage(
     name: Routes.orderDetail,
@@ -105,7 +106,7 @@ List<GetPage> allRoutes = [
   ),
   GetPage(
     name: Routes.profileDetail,
-    page: () =>const ProfileDetailScreen(),
+    page: () => const ProfileDetailScreen(),
   ),
   GetPage(
     name: Routes.coupon,
@@ -122,5 +123,9 @@ List<GetPage> allRoutes = [
   GetPage(
     name: Routes.category,
     page: () => const CategoryScreen(),
+  ),
+  GetPage(
+    name: Routes.language,
+    page: () => const LanguageScreen(),
   ),
 ];

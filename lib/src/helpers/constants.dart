@@ -33,6 +33,7 @@ class Routes {
   static const String wallet = '/wallet';
   static const String chat = '/chat';
   static const String category = '/category';
+  static const String language = '/language';
 }
 
 class CustomIcon {
