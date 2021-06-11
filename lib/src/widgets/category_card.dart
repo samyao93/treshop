@@ -100,9 +100,7 @@ class _HorizontalCard extends StatelessWidget {
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(Const.radius),
-        onTap: () {
-          Get.toNamed(Routes.allProduct, arguments: category.name);
-        },
+        onTap: () => Get.toNamed(Routes.allProduct, arguments: category.name),
         child: SizedBox(
           width: 100.0,
           height: 100.0,
