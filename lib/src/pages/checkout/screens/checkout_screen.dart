@@ -30,7 +30,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return Consumer<CheckoutProvider>(
       builder: (context, checkoutProv, snapshot) {
         _total = _priceTotal! +
@@ -59,11 +58,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 ),
               ),
               _FooterSection(
-                  couponId: _couponId,
-                  checkout: checkout,
-                  discount: _discount,
-                  priceTotal: _priceTotal,
-                  total: _total),
+                couponId: _couponId,
+                checkout: checkout,
+                discount: _discount,
+                priceTotal: _priceTotal,
+                total: _total,
+              ),
             ],
           ),
         );

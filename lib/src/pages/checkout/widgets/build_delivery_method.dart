@@ -1,6 +1,5 @@
 part of '../checkout_page.dart';
 
-
 class _BuildDeliveryMethod extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,59 +15,55 @@ class _BuildDeliveryMethod extends StatelessWidget {
             onViewAllTap: () => Get.toNamed(Routes.shipping),
           ),
           SizedBox(height: Const.space8),
-         Container(
-                  width: Screens.width(context),
-                  height: 60.0,
-                  margin: EdgeInsets.symmetric(horizontal: Const.margin),
-                  padding: EdgeInsets.symmetric(horizontal: Const.margin),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(Const.radius),
-                    color: Color(0xFFE3F1F2),
-                  ),
-                  alignment: Alignment.centerLeft,
-                  child: Row(
+          Container(
+            width: Screens.width(context),
+            height: 60.0,
+            margin: EdgeInsets.symmetric(horizontal: Const.margin),
+            padding: EdgeInsets.symmetric(horizontal: Const.margin),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(Const.radius),
+              color: Color(0xFFE3F1F2),
+            ),
+            alignment: Alignment.centerLeft,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            AutoSizeText(
-                              ShippingList
-                                  .shippingList[checkout.shippingSelected]
-                                  .name!,
-                              style: theme.textTheme.bodyText2!.copyWith(
-                                color: ColorLight.fontTitle,
-                              ),
-                            ),
-                            SizedBox(height: 5.0),
-                            AutoSizeText(
-                              AppLocalizations.of(context)!.estimated +
-                                  " " +
-                                  ShippingList
-                                      .shippingList[
-                                          checkout.shippingSelected]
-                                      .estimate! +
-                                  " " +
-                                  AppLocalizations.of(context)!.days,
-                              style: theme.textTheme.subtitle2!.copyWith(
-                                color: ColorLight.fontSubtitle,
-                              ),
-                            ),
-                          ],
+                      AutoSizeText(
+                        ShippingList
+                            .shippingList[checkout.shippingSelected].name!,
+                        style: theme.textTheme.bodyText2!.copyWith(
+                          color: ColorLight.fontTitle,
                         ),
                       ),
+                      SizedBox(height: 5.0),
                       AutoSizeText(
-                        NumberFormat.currency(symbol: '\$').format(ShippingList
-                            .shippingList[checkout.shippingSelected]
-                            .price),
-                        style: theme.textTheme.headline3!.copyWith(
-                          color: ColorLight.fontTitle,
+                        AppLocalizations.of(context)!.estimated +
+                            " " +
+                            ShippingList.shippingList[checkout.shippingSelected]
+                                .estimate! +
+                            " " +
+                            AppLocalizations.of(context)!.days,
+                        style: theme.textTheme.subtitle2!.copyWith(
+                          color: ColorLight.fontSubtitle,
                         ),
                       ),
                     ],
                   ),
                 ),
+                AutoSizeText(
+                  NumberFormat.currency(symbol: '\$').format(ShippingList
+                      .shippingList[checkout.shippingSelected].price),
+                  style: theme.textTheme.headline3!.copyWith(
+                    color: ColorLight.fontTitle,
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       );
     });

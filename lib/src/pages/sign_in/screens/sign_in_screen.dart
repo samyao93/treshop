@@ -31,13 +31,13 @@ class _SignInScreenState extends State<SignInScreen> {
             child: ListView(
               padding: const EdgeInsets.symmetric(horizontal: Const.margin),
               children: [
-                SizedBox(height:50.0),
+                SizedBox(height: 50.0),
                 SvgPicture.asset(
                   CustomIcon.logo,
                   width: Screens.width(context) / 10,
                   height: Screens.width(context) / 10,
                 ),
-                SizedBox(height:Const.space25),
+                SizedBox(height: Const.space25),
                 CustomSocialButton(
                   label: AppLocalizations.of(context)!.connect_with_apple_id,
                   onTap: () {},
@@ -113,14 +113,14 @@ class _SignInScreenState extends State<SignInScreen> {
                     : CustomElevatedButton(
                         onTap: () {
                           // if (_formKey.currentState!.validate()) {
-                            FocusScope.of(context).requestFocus(FocusNode());
-                            provider.isLoading = true;
+                          FocusScope.of(context).requestFocus(FocusNode());
+                          provider.isLoading = true;
 
-                            provider.signIn(
-                              context,
-                              email: _emailController!.text,
-                              password: _passwordController!.text,
-                            );
+                          provider.signIn(
+                            context,
+                            email: _emailController!.text,
+                            password: _passwordController!.text,
+                          );
                           // }
                         },
                         label: AppLocalizations.of(context)!.sign_in,

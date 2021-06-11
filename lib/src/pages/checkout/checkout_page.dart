@@ -16,7 +16,7 @@ import '../../list_data/coupon_list.dart';
 import '../../list_data/payment_list.dart';
 import '../../list_data/shipping_list.dart';
 import '../../models/checkout_model.dart';
-import '../../providers/address_card.dart';
+import '../../widgets/address_card.dart';
 import '../../providers/cart_provider.dart';
 import '../../providers/checkout_provider.dart';
 import '../../widgets/checkout_product_card.dart';

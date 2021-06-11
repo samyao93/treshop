@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../helpers/constants.dart';
 import '../models/address_model.dart';
-import 'checkout_provider.dart';
+import '../providers/checkout_provider.dart';
 
 class AddressCard extends StatelessWidget {
   const AddressCard({
