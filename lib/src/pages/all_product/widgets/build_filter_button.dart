@@ -29,11 +29,11 @@ class _BuildFilterButton extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: (isSort == true)
-                  ? BorderRadius.only(
+                  ?const BorderRadius.only(
                       topLeft: Radius.circular(Const.radius),
                       bottomLeft: Radius.circular(Const.radius),
                     )
-                  : BorderRadius.only(
+                  :const BorderRadius.only(
                       topRight: Radius.circular(Const.radius),
                       bottomRight: Radius.circular(Const.radius),
                     ),
@@ -46,7 +46,7 @@ class _BuildFilterButton extends StatelessWidget {
                   color: ColorLight.fontTitle,
                   size: 18.0,
                 ),
-                SizedBox(width: Const.space12),
+              const  SizedBox(width: Const.space12),
                 AutoSizeText(
                   label,
                   style: theme.textTheme.bodyText1!.copyWith(

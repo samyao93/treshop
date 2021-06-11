@@ -15,7 +15,7 @@ class _BuildLabelSection extends StatelessWidget {
     final theme = Theme.of(context);
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: Const.margin),
+      padding:const EdgeInsets.symmetric(horizontal: Const.margin),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

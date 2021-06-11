@@ -22,7 +22,7 @@ class ProductCard extends StatelessWidget {
     final theme = Theme.of(context);
 
     return InkWell(
-      onTap: ()=>Get.toNamed(Routes.product,arguments: product),
+      onTap: () => Get.toNamed(Routes.product, arguments: product),
       borderRadius: BorderRadius.circular(Const.radius),
       child: Card(
         margin: EdgeInsets.zero,
@@ -30,7 +30,7 @@ class ProductCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(Const.radius),
         ),
         child: Container(
-          margin: EdgeInsets.all(Const.space12),
+          margin: const EdgeInsets.all(Const.space12),
           height: 240.0,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,7 +53,7 @@ class ProductCard extends StatelessWidget {
                       backgroundColor: theme.cardColor.withOpacity(.4),
                       child: IconButton(
                         onPressed: () {},
-                        icon: Icon(FeatherIcons.heart),
+                        icon: const Icon(FeatherIcons.heart),
                         color: Colors.red,
                         iconSize: 15.0,
                       ),
@@ -61,13 +61,13 @@ class ProductCard extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: Const.space12),
+              const SizedBox(height: Const.space12),
               AutoSizeText(
                 product.name!,
                 style: theme.textTheme.headline4,
                 maxLines: 1,
               ),
-              SizedBox(height: Const.space8),
+              const SizedBox(height: Const.space8),
               AutoSizeText(
                 NumberFormat.currency(
                   symbol: '\$',

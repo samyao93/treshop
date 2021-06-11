@@ -1,6 +1,7 @@
 part of '../profile_page.dart';
 
 class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -13,11 +14,11 @@ class ProfileScreen extends StatelessWidget {
         title: AppLocalizations.of(context)!.profile,
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: Const.margin),
+        padding: const EdgeInsets.symmetric(horizontal: Const.margin),
         children: [
           ListTile(
             contentPadding: EdgeInsets.zero,
-            onTap: () => Get.toNamed(Routes.profile_detail),
+            onTap: () => Get.toNamed(Routes.profileDetail),
             leading: Icon(FeatherIcons.user, color: theme.hintColor),
             title: AutoSizeText(AppLocalizations.of(context)!.detail_profile,
                 style: theme.textTheme.headline3),
@@ -35,7 +36,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           ListTile(
             contentPadding: EdgeInsets.zero,
-            onTap: () =>Get.toNamed(Routes.wallet),
+            onTap: () => Get.toNamed(Routes.wallet),
             leading: Icon(FeatherIcons.creditCard, color: theme.hintColor),
             title: AutoSizeText(AppLocalizations.of(context)!.wallet,
                 style: theme.textTheme.headline3),
@@ -62,9 +63,10 @@ class ProfileScreen extends StatelessWidget {
           ),
           ListTile(
             contentPadding: EdgeInsets.zero,
-            onTap: () {
-              //TODO:
-            },
+            onTap: () => Dialogs.showDialogWithLabel(context,
+                title: AppLocalizations.of(context)!.are_you_sure_want_to_quit,
+                labelButton: AppLocalizations.of(context)!.exit,
+                onTapButton: () => Get.offAllNamed(Routes.signIn)),
             leading: Icon(FeatherIcons.logOut, color: theme.hintColor),
             title: AutoSizeText(AppLocalizations.of(context)!.log_out,
                 style: theme.textTheme.headline3),
@@ -73,9 +75,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           ListTile(
             contentPadding: EdgeInsets.zero,
-            onTap: () {
-              //TODO:
-            },
+            onTap: () {},
             leading: Icon(FeatherIcons.sun, color: theme.hintColor),
             title: AutoSizeText(AppLocalizations.of(context)!.light_mode,
                 style: theme.textTheme.headline3),
@@ -88,7 +88,6 @@ class ProfileScreen extends StatelessWidget {
           ListTile(
             contentPadding: EdgeInsets.zero,
             onTap: () {
-              //TODO:
             },
             title: AutoSizeText(AppLocalizations.of(context)!.help,
                 style: theme.textTheme.headline3),
@@ -97,9 +96,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           ListTile(
             contentPadding: EdgeInsets.zero,
-            onTap: () {
-              //TODO:
-            },
+            onTap: () {},
             title: AutoSizeText(AppLocalizations.of(context)!.privacy_policy,
                 style: theme.textTheme.headline3),
             trailing: Icon(FeatherIcons.chevronRight,
@@ -107,9 +104,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           ListTile(
             contentPadding: EdgeInsets.zero,
-            onTap: () {
-              //TODO:
-            },
+            onTap: () {},
             title: AutoSizeText(AppLocalizations.of(context)!.about_us,
                 style: theme.textTheme.headline3),
             trailing: Icon(FeatherIcons.chevronRight,
@@ -117,9 +112,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           ListTile(
             contentPadding: EdgeInsets.zero,
-            onTap: () {
-              //TODO:
-            },
+            onTap: () {},
             title: AutoSizeText(AppLocalizations.of(context)!.contact_us,
                 style: theme.textTheme.headline3),
             trailing: Icon(FeatherIcons.chevronRight,

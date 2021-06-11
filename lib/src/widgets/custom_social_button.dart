@@ -17,7 +17,7 @@ class CustomSocialButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Container(
+    return SizedBox(
       width: Screens.width(context),
       height: 48.0,
       child: OutlinedButton(
@@ -30,7 +30,7 @@ class CustomSocialButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset(icon),
-            SizedBox(width: Const.space12),
+            const SizedBox(width: Const.space12),
             AutoSizeText(
               label,
               style: theme.textTheme.headline4,

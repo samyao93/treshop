@@ -16,7 +16,7 @@ class _BuildDotsIndicator extends StatelessWidget {
       left: 0.0,
       right: 0.0,
       child: CustomFadeTransition(
-        duration: Duration(milliseconds: 200),
+        duration:const Duration(milliseconds: 200),
         child: CustomDotsIndicator(
           dotsCount: OnBoardingList.onBoardingList(context),
           position: _currentIndex,

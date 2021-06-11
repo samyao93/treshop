@@ -5,7 +5,7 @@ class _BuildPaymentMethod extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    _paymentIconSelected(int? val) {
+    String? _paymentIconSelected(int? val) {
       switch (val) {
         case 0:
           return PaymentList.paymentList[0].icon;
@@ -21,7 +21,7 @@ class _BuildPaymentMethod extends StatelessWidget {
       }
     }
 
-    _paymentNameSelected(int? val) {
+    String? _paymentNameSelected(int? val) {
       switch (val) {
         case 0:
           return PaymentList.paymentList[0].name;
@@ -46,7 +46,7 @@ class _BuildPaymentMethod extends StatelessWidget {
             trailing: AppLocalizations.of(context)!.change,
             onViewAllTap: () => Get.toNamed(Routes.payment),
           ),
-          SizedBox(height: Const.space8),
+        const  SizedBox(height: Const.space8),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: Const.margin),
             child: (checkout.paymentSelected == null)
@@ -70,12 +70,12 @@ class _BuildPaymentMethod extends StatelessWidget {
                           borderRadius: BorderRadius.circular(Const.radius),
                           color: Colors.white,
                         ),
-                        padding: EdgeInsets.all(Const.space8),
+                        padding:const EdgeInsets.all(Const.space8),
                         child: SvgPicture.asset(
                           _paymentIconSelected(checkout.paymentSelected)!,
                         ),
                       ),
-                      SizedBox(width: Const.space12),
+                    const  SizedBox(width: Const.space12),
                       AutoSizeText(
                           _paymentNameSelected(checkout.paymentSelected)!,
                           style: theme.textTheme.bodyText1)

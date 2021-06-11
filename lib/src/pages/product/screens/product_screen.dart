@@ -1,6 +1,7 @@
 part of '../product_page.dart';
 
 class ProductScreen extends StatefulWidget {
+  const ProductScreen({Key? key}) : super(key: key);
   @override
   _ProductScreenState createState() => _ProductScreenState();
 }
@@ -10,7 +11,7 @@ class _ProductScreenState extends State<ProductScreen> {
   int _qty = 1;
   ProductModel? product;
 
-  var rng = new Random();
+  var rng = Random();
 
   @override
   void initState() {
@@ -35,22 +36,21 @@ class _ProductScreenState extends State<ProductScreen> {
                       });
                     },
                     onLeadingTap: () {
-                      Future.delayed(
-                              Duration(microseconds: 0), () => Get.back())
+                      Future.delayed(const Duration(microseconds: 0), Get.back)
                           .then((value) => setState(() {}));
                     }),
                 SliverList(
                   delegate: SliverChildListDelegate(
                     [
-                      SizedBox(height: Const.margin),
+                      const SizedBox(height: Const.margin),
                       _BuildNameAndRating(product: product!),
-                      SizedBox(height: Const.space25),
+                      const SizedBox(height: Const.space25),
                       _BuildDescription(product: product!),
-                      SizedBox(height: Const.space15),
+                      const SizedBox(height: Const.space15),
                       _BuildItemSize(product: product!),
-                      SizedBox(height: Const.space15),
+                      const SizedBox(height: Const.space15),
                       _BuildItemColor(product: product!),
-                      SizedBox(height: Const.space25),
+                      const SizedBox(height: Const.space25),
                     ],
                   ),
                 )

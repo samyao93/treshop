@@ -1,6 +1,5 @@
 part of '../filter_page.dart';
 
-
 class FilterScreen extends StatefulWidget {
   final FlexibleDraggableScrollableSheetScrollController? scrollController;
 
@@ -19,15 +18,15 @@ class _FilterScreenState extends State<FilterScreen> {
     final theme = Theme.of(context);
     return Consumer<SearchProvider>(builder: (context, provider, snapshot) {
       return Material(
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(Const.radius),
           topRight: Radius.circular(Const.radius),
         ),
         child: ListView(
           controller: widget.scrollController,
-          padding: EdgeInsets.symmetric(horizontal: Const.margin),
+          padding: const EdgeInsets.symmetric(horizontal: Const.margin),
           children: [
-            SizedBox(height: Const.space8),
+            const SizedBox(height: Const.space8),
             Center(
               child: Container(
                 width: Screens.width(context) / 10,
@@ -38,31 +37,29 @@ class _FilterScreenState extends State<FilterScreen> {
                 ),
               ),
             ),
-            SizedBox(height: Const.space25),
-            Container(
-              child: Row(
-                children: [
-                  AutoSizeText(
-                    AppLocalizations.of(context)!.filter,
-                    style: theme.textTheme.headline2,
-                  ),
-                  Spacer(),
-                  CustomTextButton(
-                    label: AppLocalizations.of(context)!.close,
-                    onTap: () => Get.back(),
-                    fontSize: 14.0,
-                    textColor: theme.primaryColor,
-                  ),
-                  SizedBox(width: Const.space12),
-                ],
-              ),
+            const SizedBox(height: Const.space25),
+            Row(
+              children: [
+                AutoSizeText(
+                  AppLocalizations.of(context)!.filter,
+                  style: theme.textTheme.headline2,
+                ),
+                const Spacer(),
+                CustomTextButton(
+                  label: AppLocalizations.of(context)!.close,
+                  onTap: Get.back,
+                  fontSize: 14.0,
+                  textColor: theme.primaryColor,
+                ),
+                const SizedBox(width: Const.space12),
+              ],
             ),
-            SizedBox(height: Const.space15),
+            const SizedBox(height: Const.space15),
             AutoSizeText(
               AppLocalizations.of(context)!.size,
               style: theme.textTheme.headline2,
             ),
-            SizedBox(height: Const.space8),
+            const SizedBox(height: Const.space8),
             Row(
               children: SortAndFilterList.sizeList
                   .asMap()
@@ -87,12 +84,12 @@ class _FilterScreenState extends State<FilterScreen> {
                   )
                   .toList(),
             ),
-            SizedBox(height: Const.space15),
+            const SizedBox(height: Const.space15),
             AutoSizeText(
               AppLocalizations.of(context)!.color,
               style: theme.textTheme.headline2,
             ),
-            SizedBox(height: Const.space8),
+            const SizedBox(height: Const.space8),
             Row(
               children: SortAndFilterList.colorList
                   .asMap()
@@ -108,22 +105,22 @@ class _FilterScreenState extends State<FilterScreen> {
                             radius: 20.0,
                             backgroundColor: e.value,
                             child: (provider.colorSelected == e.key)
-                                ? Icon(
+                                ? const Icon(
                                     FeatherIcons.check,
                                     color: Colors.white,
                                   )
-                                : SizedBox(),
+                                : const SizedBox(),
                           )),
                     ),
                   )
                   .toList(),
             ),
-            SizedBox(height: Const.space15),
+            const SizedBox(height: Const.space15),
             AutoSizeText(
               AppLocalizations.of(context)!.categories,
               style: theme.textTheme.headline2,
             ),
-            SizedBox(height: Const.space8),
+            const SizedBox(height: Const.space8),
             Wrap(
               children: SortAndFilterList.categoryList(context)
                   .asMap()
@@ -136,11 +133,11 @@ class _FilterScreenState extends State<FilterScreen> {
                       child: Padding(
                           padding: const EdgeInsets.only(right: Const.space12),
                           child: Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                               horizontal: Const.space15,
                               vertical: 5.0,
                             ),
-                            margin: EdgeInsets.only(bottom: Const.space8),
+                            margin: const EdgeInsets.only(bottom: Const.space8),
                             decoration: BoxDecoration(
                               border: Border.all(
                                 color: (provider.categorySelected == e.key)
@@ -165,14 +162,14 @@ class _FilterScreenState extends State<FilterScreen> {
                   )
                   .toList(),
             ),
-            SizedBox(height: Const.space15),
+            const SizedBox(height: Const.space15),
             AutoSizeText(
               AppLocalizations.of(context)!.brand,
               style: theme.textTheme.headline2,
             ),
-            SizedBox(height: Const.space8),
+            const SizedBox(height: Const.space8),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: Const.space12),
+              padding: const EdgeInsets.symmetric(horizontal: Const.space12),
               decoration: BoxDecoration(
                 color: theme.hintColor.withOpacity(.05),
                 borderRadius: BorderRadius.circular(Const.radius),
@@ -184,7 +181,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   elevation: 16,
                   style: theme.textTheme.subtitle1,
                   isExpanded: true,
-                  hint: AutoSizeText('Select Brand',
+                  hint: AutoSizeText(AppLocalizations.of(context)!.select_brand,
                       style: theme.textTheme.subtitle1),
                   onChanged: (String? newValue) {
                     setState(() {

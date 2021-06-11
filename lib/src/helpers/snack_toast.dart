@@ -31,7 +31,7 @@ void showSnackbar(
     messageText: Text(subtitle, style: theme.textTheme.subtitle2),
     forwardAnimationCurve: Curves.easeInBack,
     backgroundColor: theme.cardColor,
-    icon: Icon(FeatherIcons.checkCircle),
+    icon:const Icon(FeatherIcons.checkCircle),
     snackPosition: position,
   );
 }

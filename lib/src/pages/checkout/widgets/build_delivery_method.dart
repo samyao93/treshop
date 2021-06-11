@@ -14,15 +14,15 @@ class _BuildDeliveryMethod extends StatelessWidget {
             trailing: AppLocalizations.of(context)!.change,
             onViewAllTap: () => Get.toNamed(Routes.shipping),
           ),
-          SizedBox(height: Const.space8),
+          const SizedBox(height: Const.space8),
           Container(
             width: Screens.width(context),
             height: 60.0,
-            margin: EdgeInsets.symmetric(horizontal: Const.margin),
-            padding: EdgeInsets.symmetric(horizontal: Const.margin),
+            margin: const EdgeInsets.symmetric(horizontal: Const.margin),
+            padding: const EdgeInsets.symmetric(horizontal: Const.margin),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Const.radius),
-              color: Color(0xFFE3F1F2),
+              color: const Color(0xFFE3F1F2),
             ),
             alignment: Alignment.centerLeft,
             child: Row(
@@ -39,14 +39,10 @@ class _BuildDeliveryMethod extends StatelessWidget {
                           color: ColorLight.fontTitle,
                         ),
                       ),
-                      SizedBox(height: 5.0),
+                      const SizedBox(height: 5.0),
                       AutoSizeText(
-                        AppLocalizations.of(context)!.estimated +
-                            " " +
-                            ShippingList.shippingList[checkout.shippingSelected]
-                                .estimate! +
-                            " " +
-                            AppLocalizations.of(context)!.days,
+                        // ignore: lines_longer_than_80_chars
+                        '${AppLocalizations.of(context)!.estimated} ${ShippingList.shippingList[checkout.shippingSelected].estimate!} ${AppLocalizations.of(context)!.days}',
                         style: theme.textTheme.subtitle2!.copyWith(
                           color: ColorLight.fontSubtitle,
                         ),

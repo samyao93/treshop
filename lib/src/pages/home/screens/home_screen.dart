@@ -1,6 +1,7 @@
 part of '../home_page.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -11,8 +12,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   TextEditingController? _searchController;
 
-  RefreshController _refreshController =
-      RefreshController(initialRefresh: false);
+  final _refreshController = RefreshController(initialRefresh: false);
 
   @override
   void initState() {
@@ -26,16 +26,16 @@ class _HomeScreenState extends State<HomeScreen> {
     final cart = Provider.of<CartProvider>(context);
     return SmartRefresher(
       controller: _refreshController,
-      header: WaterDropMaterialHeader(),
+      header: const WaterDropMaterialHeader(),
       enablePullDown: true,
       onRefresh: () {
-        Future.delayed(Duration(seconds: 1), () {
+        Future.delayed(const Duration(seconds: 1), () {
           _refreshController.refreshCompleted();
           setState(() {});
         });
       },
       onLoading: () {
-        Future.delayed(Duration(seconds: 1), () {
+        Future.delayed(const Duration(seconds: 1), () {
           _refreshController.loadComplete();
           setState(() {});
         });
@@ -46,13 +46,13 @@ class _HomeScreenState extends State<HomeScreen> {
           title: CircleAvatar(
             radius: 25.0,
             backgroundColor: theme.primaryColor,
-            backgroundImage: CachedNetworkImageProvider(_userImage),
+            backgroundImage: const CachedNetworkImageProvider(_userImage),
           ),
           centerTitle: false,
           actions: [
             IconBadge(
               onTap: () => Get.toNamed(Routes.cart),
-              icon: Icon(FeatherIcons.shoppingCart),
+              icon: const Icon(FeatherIcons.shoppingCart),
               itemCount: cart.cartList.length,
               badgeColor: theme.primaryColor,
             ),
@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: ListView(
           children: [
-            SizedBox(height: Const.space25),
+            const SizedBox(height: Const.space25),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: Const.margin),
               child: Column(
@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            SizedBox(height: Const.space15),
+            const SizedBox(height: Const.space15),
             _BuildSearch(
               controller: _searchController,
               onSearchTap: () {
@@ -85,17 +85,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 Get.toNamed(Routes.search, arguments: _searchController?.text);
               },
             ),
-            SizedBox(height: Const.space25),
+            const SizedBox(height: Const.space25),
             _BuildLabelSection(
               label: AppLocalizations.of(context)!.categories,
               onViewAllTap: () {},
             ),
-            SizedBox(height: Const.space12),
+            const SizedBox(height: Const.space12),
             Container(
               width: Screens.width(context),
               height: 100.0,
               // color: Colors.amber,
-              padding: EdgeInsets.symmetric(horizontal: Const.margin),
+              padding: const EdgeInsets.symmetric(horizontal: Const.margin),
               child: ListView.builder(
                 itemCount: CategoryList.categoryList(context).length,
                 scrollDirection: Axis.horizontal,
@@ -108,25 +108,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
             ),
-            SizedBox(height: Const.space25),
+            const SizedBox(height: Const.space25),
             _BuildLabelSection(
               label: AppLocalizations.of(context)!.categories,
               onViewAllTap: () => Get.toNamed(
-                Routes.all_product,
+                Routes.allProduct,
                 arguments: AppLocalizations.of(context)!.all,
               ),
             ),
-            SizedBox(height: Const.space12),
+            const SizedBox(height: Const.space12),
             StaggeredGridView.countBuilder(
               itemCount: ProductList.allProduct.length,
               crossAxisCount: 4,
-              staggeredTileBuilder: (int index) => StaggeredTile.fit(2),
+              staggeredTileBuilder: (int index) => const StaggeredTile.fit(2),
               mainAxisSpacing: 15.0,
               crossAxisSpacing: 15.0,
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
-              physics: ScrollPhysics(),
-              padding: EdgeInsets.symmetric(
+              physics: const ScrollPhysics(),
+              padding: const EdgeInsets.symmetric(
                 horizontal: 18.0,
               ),
               itemBuilder: (context, index) {

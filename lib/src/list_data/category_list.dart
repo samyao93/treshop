@@ -15,7 +15,7 @@ class CategoryList {
         ),
         CategoryModel(
           name: AppLocalizations.of(context)!.flat_shoes,
-          icon: CustomIcon.flat_shoes,
+          icon: CustomIcon.flatShoes,
         ),
         CategoryModel(
           name: AppLocalizations.of(context)!.hat,
@@ -23,7 +23,7 @@ class CategoryList {
         ),
         CategoryModel(
           name: AppLocalizations.of(context)!.high_hills,
-          icon: CustomIcon.high_hills,
+          icon: CustomIcon.highHills,
         ),
         CategoryModel(
           name: AppLocalizations.of(context)!.jacket,
@@ -137,7 +137,7 @@ class CategoryList {
         ),
         CategoryModel(
           name: AppLocalizations.of(context)!.flat_shoes,
-          icon: CustomIcon.flat_shoes,
+          icon: CustomIcon.flatShoes,
         ),
         CategoryModel(
           name: AppLocalizations.of(context)!.hat,
@@ -145,7 +145,7 @@ class CategoryList {
         ),
         CategoryModel(
           name: AppLocalizations.of(context)!.high_hills,
-          icon: CustomIcon.high_hills,
+          icon: CustomIcon.highHills,
         ),
         CategoryModel(
           name: AppLocalizations.of(context)!.jacket,
@@ -203,7 +203,7 @@ class CategoryList {
         ),
         CategoryModel(
           name: AppLocalizations.of(context)!.flat_shoes,
-          icon: CustomIcon.flat_shoes,
+          icon: CustomIcon.flatShoes,
         ),
         CategoryModel(
           name: AppLocalizations.of(context)!.hat,
@@ -265,7 +265,7 @@ class CategoryList {
         ),
         CategoryModel(
           name: AppLocalizations.of(context)!.flat_shoes,
-          icon: CustomIcon.flat_shoes,
+          icon: CustomIcon.flatShoes,
         ),
         CategoryModel(
           name: AppLocalizations.of(context)!.hat,
@@ -273,7 +273,7 @@ class CategoryList {
         ),
         CategoryModel(
           name: AppLocalizations.of(context)!.high_hills,
-          icon: CustomIcon.high_hills,
+          icon: CustomIcon.highHills,
         ),
         CategoryModel(
           name: AppLocalizations.of(context)!.jacket,

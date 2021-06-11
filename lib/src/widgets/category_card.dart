@@ -20,7 +20,7 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    _cardType(CardType type) {
+    StatelessWidget _cardType(CardType type) {
       switch (type) {
         case CardType.grid:
           return _GridCard(category: category);
@@ -49,7 +49,7 @@ class _GridCard extends StatelessWidget {
     final theme = Theme.of(context);
 
     return Card(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         right: Const.space15,
         bottom: 2.0,
       ),
@@ -58,14 +58,14 @@ class _GridCard extends StatelessWidget {
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(Const.radius),
-        onTap: () => Get.toNamed(Routes.all_product, arguments: category.name),
+        onTap: () => Get.toNamed(Routes.allProduct, arguments: category.name),
         child: SizedBox(
           height: 100.0,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SvgPicture.asset(category.icon!),
-              SizedBox(height: Const.space8),
+              const SizedBox(height: Const.space8),
               AutoSizeText(
                 category.name!,
                 style: theme.textTheme.headline4,
@@ -91,7 +91,7 @@ class _HorizontalCard extends StatelessWidget {
     final theme = Theme.of(context);
 
     return Card(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         right: Const.space15,
         bottom: 2.0,
       ),
@@ -101,7 +101,7 @@ class _HorizontalCard extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(Const.radius),
         onTap: () {
-          Get.toNamed(Routes.all_product,arguments: category.name);
+          Get.toNamed(Routes.allProduct, arguments: category.name);
         },
         child: SizedBox(
           width: 100.0,
@@ -110,7 +110,7 @@ class _HorizontalCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SvgPicture.asset(category.icon!),
-              SizedBox(height: Const.space8),
+              const SizedBox(height: Const.space8),
               AutoSizeText(
                 category.name!,
                 style: theme.textTheme.headline4,

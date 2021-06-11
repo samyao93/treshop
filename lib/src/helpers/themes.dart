@@ -13,15 +13,15 @@ ThemeData themeLight(BuildContext context) {
     errorColor: ColorLight.error,
     hintColor: ColorLight.fontSubtitle,
     indicatorColor: ColorLight.primary,
-    primaryIconTheme: IconThemeData(
+    primaryIconTheme:const IconThemeData(
       color: ColorLight.fontTitle,
     ),
     primaryColor: ColorLight.primary,
-    textSelectionTheme: TextSelectionThemeData(
+    textSelectionTheme:const TextSelectionThemeData(
       cursorColor: ColorLight.primary,
     ),
     scaffoldBackgroundColor: ColorLight.background,
-    appBarTheme: AppBarTheme(
+    appBarTheme:const AppBarTheme(
       elevation: 0,
       centerTitle: true,
     ),
@@ -90,15 +90,15 @@ ThemeData themeDark(BuildContext context) {
     errorColor: ColorDark.error,
     hintColor: ColorDark.fontSubtitle,
     indicatorColor: ColorDark.primary,
-    primaryIconTheme: IconThemeData(
+    primaryIconTheme:const IconThemeData(
       color: ColorDark.fontTitle,
     ),
     primaryColor: ColorDark.primary,
-    textSelectionTheme: TextSelectionThemeData(
+    textSelectionTheme:const TextSelectionThemeData(
       cursorColor: ColorDark.primary,
     ),
     scaffoldBackgroundColor: ColorDark.background,
-    appBarTheme: AppBarTheme(
+    appBarTheme:const AppBarTheme(
       elevation: 0,
       centerTitle: true,
     ),

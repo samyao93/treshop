@@ -1,12 +1,11 @@
 part of '../wallet_page.dart';
 
-
 class _HeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return Container(
+    return SizedBox(
       width: Screens.width(context),
       height: 201.0,
       child: Stack(
@@ -30,7 +29,7 @@ class _HeaderSection extends StatelessWidget {
                 borderRadius: BorderRadius.circular(Const.margin),
                 color: theme.cardColor,
               ),
-              padding: EdgeInsets.all(Const.margin),
+              padding: const EdgeInsets.all(Const.margin),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -67,15 +66,15 @@ class _HeaderSection extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: Const.space8),
+                  const SizedBox(height: Const.space8),
                   Divider(color: theme.hintColor),
-                  SizedBox(height: Const.space8),
+                  const SizedBox(height: Const.space8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         children: [
-                          CircleAvatar(
+                          const CircleAvatar(
                             radius: 22.0,
                             backgroundColor: Color(0xFFA872B1),
                             child: Icon(
@@ -84,7 +83,7 @@ class _HeaderSection extends StatelessWidget {
                               size: 20.0,
                             ),
                           ),
-                          SizedBox(height: 5.0),
+                          const SizedBox(height: 5.0),
                           AutoSizeText(
                             AppLocalizations.of(context)!.top_up,
                             style: theme.textTheme.bodyText2,
@@ -93,7 +92,7 @@ class _HeaderSection extends StatelessWidget {
                       ),
                       Column(
                         children: [
-                          CircleAvatar(
+                          const CircleAvatar(
                             radius: 22.0,
                             backgroundColor: Color(0xFF6D9BE1),
                             child: Icon(
@@ -102,7 +101,7 @@ class _HeaderSection extends StatelessWidget {
                               size: 20.0,
                             ),
                           ),
-                          SizedBox(height: 5.0),
+                          const SizedBox(height: 5.0),
                           AutoSizeText(
                             AppLocalizations.of(context)!.pay,
                             style: theme.textTheme.bodyText2,
@@ -111,7 +110,7 @@ class _HeaderSection extends StatelessWidget {
                       ),
                       Column(
                         children: [
-                          CircleAvatar(
+                          const CircleAvatar(
                             radius: 22.0,
                             backgroundColor: Color(0xFFFBB630),
                             child: Icon(
@@ -120,7 +119,7 @@ class _HeaderSection extends StatelessWidget {
                               size: 20.0,
                             ),
                           ),
-                          SizedBox(height: 5.0),
+                          const SizedBox(height: 5.0),
                           AutoSizeText(
                             AppLocalizations.of(context)!.transfer,
                             style: theme.textTheme.bodyText2,

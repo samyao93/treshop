@@ -8,8 +8,8 @@ import '../helpers/colors.dart';
 import '../helpers/constants.dart';
 import '../providers/theme_provider.dart';
 
-enum TextFieldType { Alphabet, Email, Text, Password, PhoneNumber, Number }
-enum BorderType { Outline, Underline, None }
+enum TextFieldType { alphabet, email, text, password, phoneNumber, number }
+enum BorderType { outline, underline, none }
 
 class CustomTextFormField extends StatelessWidget {
   final TextEditingController? controller;
@@ -27,16 +27,16 @@ class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     Key? key,
     this.controller,
-    this.textFieldType = TextFieldType.Text,
+    this.textFieldType = TextFieldType.text,
     this.hintText,
     this.suffixIcon,
     this.prefixIcon,
     this.obscureText = false,
-    this.borderType = BorderType.None,
+    this.borderType = BorderType.none,
     this.maxLines = 1,
     this.textAlign = TextAlign.left,
     this.inputFormatters,
-    this.enabled=true,
+    this.enabled = true,
   }) : super(key: key);
 
   @override
@@ -53,7 +53,9 @@ class CustomTextFormField extends StatelessWidget {
 
     final emailValidator = MultiValidator([
       RequiredValidator(
-          errorText: AppLocalizations.of(context)!.please_enter_your_email_address),
+        errorText:
+            AppLocalizations.of(context)!.please_enter_your_email_address,
+      ),
       EmailValidator(
           errorText: AppLocalizations.of(context)!.invalid_email_address_format)
     ]);
@@ -91,60 +93,60 @@ class CustomTextFormField extends StatelessWidget {
           errorText: AppLocalizations.of(context)!.invalid_number_format),
     ]);
 
-    _keyboardType(TextFieldType textFieldType) {
+    TextInputType _keyboardType(TextFieldType textFieldType) {
       switch (textFieldType) {
-        case TextFieldType.Alphabet:
+        case TextFieldType.alphabet:
           return TextInputType.text;
-        case TextFieldType.Email:
+        case TextFieldType.email:
           return TextInputType.emailAddress;
-        case TextFieldType.Number:
+        case TextFieldType.number:
           return TextInputType.number;
-        case TextFieldType.Password:
+        case TextFieldType.password:
           return TextInputType.text;
-        case TextFieldType.PhoneNumber:
+        case TextFieldType.phoneNumber:
           return TextInputType.phone;
-        case TextFieldType.Text:
+        case TextFieldType.text:
           return TextInputType.text;
         default:
           return TextInputType.text;
       }
     }
 
-    _validator(TextFieldType textFieldType) {
+    MultiValidator _validator(TextFieldType textFieldType) {
       switch (textFieldType) {
-        case TextFieldType.Alphabet:
+        case TextFieldType.alphabet:
           return alphabetValidator;
-        case TextFieldType.Email:
+        case TextFieldType.email:
           return emailValidator;
-        case TextFieldType.Number:
+        case TextFieldType.number:
           return numberValidator;
-        case TextFieldType.Password:
+        case TextFieldType.password:
           return passwordValidator;
-        case TextFieldType.PhoneNumber:
+        case TextFieldType.phoneNumber:
           return phoneNumberValidator;
-        case TextFieldType.Text:
+        case TextFieldType.text:
           return textValidator;
         default:
           return textValidator;
       }
     }
 
-    _enabledBorder(BorderType borderType) {
+    InputBorder _enabledBorder(BorderType borderType) {
       switch (borderType) {
-        case BorderType.Underline:
+        case BorderType.underline:
           return UnderlineInputBorder(
             borderSide: BorderSide(
               color: theme.disabledColor,
             ),
           );
-        case BorderType.Outline:
+        case BorderType.outline:
           return OutlineInputBorder(
             borderRadius: BorderRadius.circular(Const.radius),
             borderSide: BorderSide(
               color: theme.disabledColor,
             ),
           );
-        case BorderType.None:
+        case BorderType.none:
           return InputBorder.none;
 
         default:
@@ -152,9 +154,9 @@ class CustomTextFormField extends StatelessWidget {
       }
     }
 
-    _focusedBorder(BorderType borderType) {
+    InputBorder _focusedBorder(BorderType borderType) {
       switch (borderType) {
-        case BorderType.Underline:
+        case BorderType.underline:
           return UnderlineInputBorder(
             borderSide: BorderSide(
               color: (mode.isLightTheme != true)
@@ -162,7 +164,7 @@ class CustomTextFormField extends StatelessWidget {
                   : ColorLight.success,
             ),
           );
-        case BorderType.Outline:
+        case BorderType.outline:
           return OutlineInputBorder(
             borderRadius: BorderRadius.circular(Const.radius),
             borderSide: BorderSide(
@@ -171,7 +173,7 @@ class CustomTextFormField extends StatelessWidget {
                   : ColorLight.success,
             ),
           );
-        case BorderType.None:
+        case BorderType.none:
           return InputBorder.none;
 
         default:
@@ -179,38 +181,38 @@ class CustomTextFormField extends StatelessWidget {
       }
     }
 
-    _errorBorder(BorderType borderType) {
+    InputBorder _errorBorder(BorderType borderType) {
       switch (borderType) {
-        case BorderType.Underline:
+        case BorderType.underline:
           return UnderlineInputBorder(
             borderSide: BorderSide(
               color: theme.errorColor,
             ),
           );
-        case BorderType.Outline:
+        case BorderType.outline:
           return OutlineInputBorder(
             borderRadius: BorderRadius.circular(Const.radius),
             borderSide: BorderSide(
               color: theme.errorColor,
             ),
           );
-        case BorderType.None:
+        case BorderType.none:
           return InputBorder.none;
         default:
           return InputBorder.none;
       }
     }
 
-    _contentPadding(BorderType borderType) {
+    EdgeInsets _contentPadding(BorderType borderType) {
       switch (borderType) {
-        case BorderType.Underline:
-          return EdgeInsets.all(0.0);
-        case BorderType.Outline:
-          return EdgeInsets.symmetric(horizontal: Const.margin);
-        case BorderType.None:
-          return EdgeInsets.only(top: 15.0);
+        case BorderType.underline:
+          return const EdgeInsets.all(0.0);
+        case BorderType.outline:
+          return const EdgeInsets.symmetric(horizontal: Const.margin);
+        case BorderType.none:
+          return const EdgeInsets.only(top: 15.0);
         default:
-          return EdgeInsets.symmetric(horizontal: Const.margin);
+          return const EdgeInsets.symmetric(horizontal: Const.margin);
       }
     }
 
@@ -232,7 +234,7 @@ class CustomTextFormField extends StatelessWidget {
         prefixIcon: prefixIcon,
         contentPadding: (suffixIcon == null)
             ? _contentPadding(borderType)
-            : EdgeInsets.only(
+            : const EdgeInsets.only(
                 left: Const.margin,
                 top: 12.0,
               ),

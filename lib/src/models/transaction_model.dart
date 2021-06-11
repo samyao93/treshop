@@ -1,4 +1,4 @@
-enum TransactionType { top_up, pay, transfer }
+enum TransactionType { topUp, pay, transfer }
 
 class TransactionModel {
   final String? title;

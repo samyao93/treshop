@@ -19,26 +19,26 @@ class CartCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    _colorType(int val) {
+    Color _colorType(int val) {
       switch (val) {
         case 0:
-          return Color(0xFF6D9BE1);
+          return const Color(0xFF6D9BE1);
         case 1:
-          return Color(0xFFBF5E5A);
+          return const Color(0xFFBF5E5A);
         case 2:
-          return Color(0xFFA1ABBD);
+          return const Color(0xFFA1ABBD);
         case 3:
-          return Color(0xFF699156);
+          return const Color(0xFF699156);
         case 4:
-          return Color(0xFFC58F5E);
+          return const Color(0xFFC58F5E);
         case 5:
-          return Color(0xFFA872B1);
+          return const Color(0xFFA872B1);
         default:
-          return Color(0xFFFFFFFF);
+          return const Color(0xFFFFFFFF);
       }
     }
 
-    _sizeType(int val) {
+    String _sizeType(int val) {
       switch (val) {
         case 0:
           return 'M';
@@ -52,7 +52,7 @@ class CartCard extends StatelessWidget {
     }
 
     return Slidable(
-      actionPane: SlidableDrawerActionPane(),
+      actionPane: const SlidableDrawerActionPane(),
       secondaryActions: [
         IconSlideAction(
           icon: FeatherIcons.trash,
@@ -63,7 +63,7 @@ class CartCard extends StatelessWidget {
       child: Container(
         height: 120.0,
         color: theme.cardColor,
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: Const.margin,
           vertical: Const.space12,
         ),
@@ -88,7 +88,7 @@ class CartCard extends StatelessWidget {
                       style: theme.textTheme.headline3,
                       maxLines: 1,
                     ),
-                    SizedBox(height: Const.space8),
+                    const SizedBox(height: Const.space8),
                     Row(
                       children: [
                         AutoSizeText(
@@ -96,30 +96,30 @@ class CartCard extends StatelessWidget {
                           style: theme.textTheme.subtitle2,
                           maxLines: 1,
                         ),
-                        SizedBox(width: 5.0),
+                        const SizedBox(width: 5.0),
                         CircleAvatar(
                           radius: 8.0,
                           backgroundColor: _colorType(cart.color!),
                         ),
-                        SizedBox(width: Const.space8),
+                        const SizedBox(width: Const.space8),
                         AutoSizeText(
                           AppLocalizations.of(context)!.size,
                           style: theme.textTheme.subtitle2,
                           maxLines: 1,
                         ),
-                        SizedBox(width: 5.0),
+                        const SizedBox(width: 5.0),
                         AutoSizeText(
                           _sizeType(cart.size!),
                           style: theme.textTheme.headline4,
                           maxLines: 1,
                         ),
-                        SizedBox(width: Const.space8),
+                        const SizedBox(width: Const.space8),
                         AutoSizeText(
                           AppLocalizations.of(context)!.qty,
                           style: theme.textTheme.subtitle2,
                           maxLines: 1,
                         ),
-                        SizedBox(width: 5.0),
+                        const SizedBox(width: 5.0),
                         AutoSizeText(
                           cart.qty.toString(),
                           style: theme.textTheme.headline4,
@@ -127,7 +127,7 @@ class CartCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: Const.space8),
+                    const SizedBox(height: Const.space8),
                     AutoSizeText(
                       NumberFormat.currency(
                         symbol: '\$',

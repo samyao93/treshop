@@ -27,22 +27,22 @@ class _BuildNameAndRating extends StatelessWidget {
               maxLines: 2,
             ),
           ),
-          SizedBox(width: Const.space12),
+    const      SizedBox(width: Const.space12),
           Row(
             children: [
-              Icon(
+           const   Icon(
                 Icons.star,
                 color: ColorLight.warning,
                 size: 14.0,
               ),
-              SizedBox(width: 2.0),
+            const  SizedBox(width: 2.0),
               AutoSizeText(
                 product.rating.toString(),
                 style: theme.textTheme.headline4,
               ),
-              SizedBox(width: Const.space8),
+           const   SizedBox(width: Const.space8),
               AutoSizeText(
-                "(" + product.totalReview.toString() + ")",
+                '(${product.totalReview})',
                 style: theme.textTheme.subtitle2,
               ),
             ],

@@ -10,7 +10,7 @@ class TransactionList {
     TransactionModel(
       title: 'Top up from to PayPal',
       date: DateTime.now(),
-      type: TransactionType.top_up,
+      type: TransactionType.topUp,
     ),
     TransactionModel(
       title: 'Pay with Trecash',

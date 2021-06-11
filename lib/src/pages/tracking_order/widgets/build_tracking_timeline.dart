@@ -1,6 +1,5 @@
 part of '../tracking_order_page.dart';
 
-
 class _TrackingTimeline extends StatelessWidget {
   final TrackingModel tracking;
 
@@ -9,7 +8,7 @@ class _TrackingTimeline extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return Container(
+    return SizedBox(
       width: Screens.width(context),
       height: 70.0,
       child: Row(
@@ -27,7 +26,7 @@ class _TrackingTimeline extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(width: Const.space12),
+          const SizedBox(width: Const.space12),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,12 +41,12 @@ class _TrackingTimeline extends StatelessWidget {
                         maxLines: 1,
                       ),
                     ),
-                    SizedBox(width: Const.space8),
+                    const SizedBox(width: Const.space8),
                     AutoSizeText(DateFormat.yMMMMd().format(DateTime.now()),
                         style: theme.textTheme.subtitle2),
                   ],
                 ),
-                SizedBox(height: Const.space8),
+                const SizedBox(height: Const.space8),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -58,7 +57,7 @@ class _TrackingTimeline extends StatelessWidget {
                         maxLines: 1,
                       ),
                     ),
-                    SizedBox(width: Const.space8),
+                    const SizedBox(width: Const.space8),
                     AutoSizeText(
                       DateFormat('hh:mm').format(tracking.date!),
                       style: theme.textTheme.subtitle2,

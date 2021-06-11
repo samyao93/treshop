@@ -4,25 +4,28 @@ class _FooterSection extends StatelessWidget {
   final int? total;
   final VoidCallback? onCheckoutTap;
 
-  const _FooterSection({Key? key, this.total,this.onCheckoutTap}) : super(key: key);
+  const _FooterSection({
+    Key? key,
+    this.total,
+    this.onCheckoutTap,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-
 
     return Consumer<CartProvider>(builder: (context, cart, snapshot) {
       return Container(
         width: Screens.width(context),
         height: 155.0,
         color: theme.cardColor,
-        padding: EdgeInsets.symmetric(
+        padding:const EdgeInsets.symmetric(
           horizontal: Const.margin,
           vertical: Const.space8,
         ),
         child: Column(
           children: [
             InkWell(
-              onTap: () => Get.toNamed(Routes.select_coupon),
+              onTap: () => Get.toNamed(Routes.selectCoupon),
               borderRadius: BorderRadius.circular(Const.radius),
               child: Container(
                 width: Screens.width(context),
@@ -31,25 +34,22 @@ class _FooterSection extends StatelessWidget {
                   border: Border.all(color: theme.hintColor),
                   borderRadius: BorderRadius.circular(Const.radius),
                 ),
-                padding: EdgeInsets.symmetric(horizontal: Const.space15),
+                padding:const EdgeInsets.symmetric(horizontal: Const.space15),
                 child: Row(
                   children: [
                     SvgPicture.asset(
                       CustomIcon.coupon,
                       color: theme.hintColor,
                     ),
-                    SizedBox(width: Const.space12),
+                 const   SizedBox(width: Const.space12),
                     AutoSizeText(
                       (cart.selectedCoupon != null)
-                          ? CouponList.couponList[cart.selectedCoupon!].name! + " "+
-                              CouponList
-                                  .couponList[cart.selectedCoupon!].discount
-                                  .toString() +
-                              "% OFF"
+       ? '${CouponList.couponList[cart.selectedCoupon!].name!} ${CouponList
+       .couponList[cart.selectedCoupon!].discount}% OFF'
                           : AppLocalizations.of(context)!.enter_your_promo_code,
                       style: theme.textTheme.subtitle2,
                     ),
-                    Spacer(),
+                  const  Spacer(),
                     Icon(
                       Icons.arrow_forward_ios_outlined,
                       color: theme.hintColor,
@@ -59,7 +59,7 @@ class _FooterSection extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: Const.space12),
+          const  SizedBox(height: Const.space12),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -75,18 +75,18 @@ class _FooterSection extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: Const.space12),
+           const SizedBox(height: Const.space12),
             CustomElevatedButton(
               onTap: onCheckoutTap,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
+              const    Icon(
                     FeatherIcons.shoppingBag,
                     color: Colors.white,
                     size: 16.0,
                   ),
-                  SizedBox(width: Const.space12),
+             const     SizedBox(width: Const.space12),
                   AutoSizeText(
                     AppLocalizations.of(context)!.checkout,
                     style: theme.textTheme.button,

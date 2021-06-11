@@ -1,6 +1,7 @@
 part of '../payment_page.dart';
 
 class PaymentScreen extends StatelessWidget {
+  const PaymentScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -13,11 +14,11 @@ class PaymentScreen extends StatelessWidget {
         ),
         body: ListView.builder(
           itemCount: PaymentList.paymentList.length,
-          padding: EdgeInsets.symmetric(horizontal: Const.margin),
+          padding: const EdgeInsets.symmetric(horizontal: Const.margin),
           itemBuilder: (context, index) {
             var payment = PaymentList.paymentList[index];
             return ListTile(
-              contentPadding: EdgeInsets.only(
+              contentPadding: const EdgeInsets.only(
                 bottom: Const.space15,
               ),
               leading: CircleAvatar(

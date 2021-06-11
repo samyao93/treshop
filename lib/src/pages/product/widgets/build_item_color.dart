@@ -21,7 +21,7 @@ class _BuildItemColor extends StatelessWidget {
               AppLocalizations.of(context)!.item_color,
               style: theme.textTheme.headline3,
             ),
-            SizedBox(height: Const.space8),
+         const   SizedBox(height: Const.space8),
             Row(
               children: product.itemColor!
                   .asMap()
@@ -38,8 +38,8 @@ class _BuildItemColor extends StatelessWidget {
                             radius: 20.0,
                             backgroundColor: e.value,
                             child: (provider.itemColorSelected == e.key)
-                                ? Icon(Icons.check, color: Colors.white)
-                                : SizedBox(),
+                                ? const Icon(Icons.check, color: Colors.white)
+                                : const SizedBox(),
                           ),
                         )),
                   )

@@ -20,14 +20,14 @@ class _BuildAppBar extends StatelessWidget {
 
     return SliverAppBar(
       leading: Padding(
-        padding: const EdgeInsets.only(left:Const.space12),
+        padding: const EdgeInsets.only(left: Const.space12),
         child: InkWell(
           borderRadius: BorderRadius.circular(30.0),
-          onTap:onLeadingTap,
+          onTap: onLeadingTap,
           child: CircleAvatar(
             radius: 25.0,
             backgroundColor: theme.cardColor.withOpacity(.4),
-            child: Icon(
+            child: const Icon(
               Icons.arrow_back,
               color: Colors.white,
             ),
@@ -47,31 +47,29 @@ class _BuildAppBar extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(width: Const.margin),
+        const SizedBox(width: Const.margin),
       ],
       pinned: true,
       expandedHeight: 300.0,
       backgroundColor: theme.backgroundColor,
       flexibleSpace: FlexibleSpaceBar(
-        background: Container(
-          child: Swiper(
-            itemCount: product.images?.length,
-            autoplay: false,
-            loop: false,
-            pagination: SwiperPagination(
-              alignment: Alignment.bottomCenter,
-            ),
-            itemBuilder: (context, index) {
-              final image = product.images![index];
-              return CustomNetworkImage(
-                image: image,
-                width: Screens.width(context),
-                height: 300.0,
-                fit: BoxFit.fitWidth,
-                borderRadius: BorderRadius.zero,
-              );
-            },
+        background: Swiper(
+          itemCount: product.images?.length,
+          autoplay: false,
+          loop: false,
+          pagination: const SwiperPagination(
+            alignment: Alignment.bottomCenter,
           ),
+          itemBuilder: (context, index) {
+            final image = product.images![index];
+            return CustomNetworkImage(
+              image: image,
+              width: Screens.width(context),
+              height: 300.0,
+              fit: BoxFit.fitWidth,
+              borderRadius: BorderRadius.zero,
+            );
+          },
         ),
       ),
     );

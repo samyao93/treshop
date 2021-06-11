@@ -15,7 +15,7 @@ class _BuildSearch extends StatelessWidget {
     return Container(
       width: Screens.width(context),
       height: 50.0,
-      margin: EdgeInsets.symmetric(horizontal: Const.margin),
+      margin:const EdgeInsets.symmetric(horizontal: Const.margin),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(Const.radius),
         color: theme.hintColor.withOpacity(.1),
@@ -30,11 +30,11 @@ class _BuildSearch extends StatelessWidget {
           enabledBorder: InputBorder.none,
           focusedBorder: InputBorder.none,
           prefixIcon: IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: onSearchTap,
             color: theme.primaryColor,
           ),
-          contentPadding: EdgeInsets.symmetric(vertical: 15.0),
+          contentPadding:const EdgeInsets.symmetric(vertical: 15.0),
         ),
       ),
     );

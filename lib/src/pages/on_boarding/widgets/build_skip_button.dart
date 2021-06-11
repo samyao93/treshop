@@ -8,16 +8,16 @@ class _BuildSkipButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  (index == 2)
-              ? SizedBox()
+              ?const SizedBox()
               : Positioned(
         top: Const.space25,
         right: Const.margin,
         child: CustomFadeTransition(
           axis: Axis.horizontal,
-          duration: Duration(milliseconds: 200),
+          duration:const Duration(milliseconds: 200),
           child: CustomTextButton(
             label: AppLocalizations.of(context)!.skip,
-            onTap: ()=> Get.toNamed(Routes.sign_in),
+            onTap: ()=> Get.toNamed(Routes.signIn),
           ),
         ),
       );

@@ -30,7 +30,7 @@ class AddressCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(Const.radius),
           child: Container(
             width: 250.0,
-            padding: EdgeInsets.all(Const.space12),
+            padding: const EdgeInsets.all(Const.space12),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Const.radius),
               color: (checkout.addressSelected == index)
@@ -42,7 +42,7 @@ class AddressCard extends StatelessWidget {
               children: [
                 AutoSizeText(address.location!,
                     style: theme.textTheme.headline3),
-                SizedBox(height: 5.0),
+                const SizedBox(height: 5.0),
                 Row(
                   children: [
                     Expanded(
@@ -52,7 +52,7 @@ class AddressCard extends StatelessWidget {
                         maxLines: 1,
                       ),
                     ),
-                    SizedBox(width: 5.0),
+                    const SizedBox(width: 5.0),
                     AutoSizeText(
                       address.phoneNumber.toString(),
                       style: theme.textTheme.bodyText2,
@@ -60,7 +60,7 @@ class AddressCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 5.0),
+                const SizedBox(height: 5.0),
                 AutoSizeText(
                   address.address!,
                   style: theme.textTheme.subtitle2,

@@ -1,6 +1,7 @@
 part of '../profile_detail_page.dart';
 
 class ProfileDetailScreen extends StatefulWidget {
+  const ProfileDetailScreen({Key? key}) : super(key: key);
   @override
   _ProfileDetailScreenState createState() => _ProfileDetailScreenState();
 }
@@ -11,7 +12,6 @@ class _ProfileDetailScreenState extends State<ProfileDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: CustomAppBar(
         context,
@@ -20,33 +20,34 @@ class _ProfileDetailScreenState extends State<ProfileDetailScreen> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: Const.margin),
         children: [
-          _BuildProfileImage(userImage: _userImage),
-          SizedBox(height: Const.space25),
+          const _BuildProfileImage(userImage: _userImage),
+          const SizedBox(height: Const.space25),
           _BuildProfileTile(
             label: AppLocalizations.of(context)!.username,
             text: 'Dickyrey',
             onEditTap: () {},
           ),
-          SizedBox(height: Const.space15),
+          const SizedBox(height: Const.space15),
           _BuildProfileTile(
             label: AppLocalizations.of(context)!.email,
             text: 'example@treshop.co.uk',
             onEditTap: () {},
           ),
-          SizedBox(height: Const.space15),
+          const SizedBox(height: Const.space15),
           _BuildProfileTile(
             label: AppLocalizations.of(context)!.phone_number,
             text: '081345071707',
             onEditTap: () {},
           ),
-          SizedBox(height: Const.space15),
+          const SizedBox(height: Const.space15),
           _BuildProfileTile(
             label: AppLocalizations.of(context)!.primary_address,
             text:
+                // ignore: lines_longer_than_80_chars
                 'Home 403 Oakland Ave Street, A city, Florida, 32104, United States of America',
             onEditTap: () {},
           ),
-          SizedBox(height: Const.space25),
+          const SizedBox(height: Const.space25),
           CustomElevatedButton(
             onTap: () {},
             label: AppLocalizations.of(context)!.save,
@@ -76,7 +77,7 @@ class _BuildProfileTile extends StatelessWidget {
           label,
           style: theme.textTheme.subtitle1,
         ),
-        SizedBox(height: Const.space8),
+        const SizedBox(height: Const.space8),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -87,7 +88,7 @@ class _BuildProfileTile extends StatelessWidget {
                 style: theme.textTheme.bodyText2,
               ),
             ),
-            SizedBox(width: Const.space25),
+            const SizedBox(width: Const.space25),
             InkWell(
               onTap: onEditTap,
               child: AutoSizeText(
@@ -122,7 +123,7 @@ class _BuildProfileImage extends StatelessWidget {
       child: CircleAvatar(
         radius: 50.0,
         backgroundImage: CachedNetworkImageProvider(_userImage),
-        child: CircleAvatar(
+        child: const CircleAvatar(
           radius: 50.0,
           backgroundColor: Colors.black54,
           child: Icon(

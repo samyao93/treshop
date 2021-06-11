@@ -14,12 +14,12 @@ class _OnBoardingCard extends StatelessWidget {
     final theme = Theme.of(context);
     
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: Const.margin),
+      margin:const EdgeInsets.symmetric(horizontal: Const.margin),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CustomShakeTransition(
-            duration: Duration(milliseconds: 700),
+            duration:const Duration(milliseconds: 700),
             child: SvgPicture.asset(
               data.image!,
               width: Screens.width(context) / 2,
@@ -28,7 +28,7 @@ class _OnBoardingCard extends StatelessWidget {
           ),
           SizedBox(height: Screens.width(context) / 5),
           CustomShakeTransition(
-            duration: Duration(milliseconds: 800),
+            duration:const Duration(milliseconds: 800),
             child: AutoSizeText(
               data.title!,
               style: theme.textTheme.headline1,
@@ -37,7 +37,7 @@ class _OnBoardingCard extends StatelessWidget {
           ),
           SizedBox(height: Screens.width(context) / 15),
           CustomShakeTransition(
-            duration: Duration(milliseconds: 900),
+            duration:const Duration(milliseconds: 900),
             child: AutoSizeText(
               data.subtitle!,
               style: theme.textTheme.subtitle1,

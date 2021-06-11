@@ -18,14 +18,14 @@ class __BuildSortModalState extends State<_BuildSortModal> {
     final theme = Theme.of(context);
     return Consumer<SearchProvider>(builder: (context, provider, snapshot) {
       return Material(
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(Const.radius),
           topRight: Radius.circular(Const.radius),
         ),
         child: ListView(
           controller: widget.scrollController,
           children: [
-            SizedBox(height: Const.space8),
+            const SizedBox(height: Const.space8),
             Center(
               child: Container(
                 width: Screens.width(context) / 10,
@@ -36,26 +36,23 @@ class __BuildSortModalState extends State<_BuildSortModal> {
                 ),
               ),
             ),
-            SizedBox(height: Const.space25),
-            Container(
-              child: Row(
-                children: [
-                  SizedBox(width: Const.margin),
-                  AutoSizeText(
-                    AppLocalizations.of(context)!.sort,
-                    style: theme.textTheme.headline2,
-                  ),
-                  Spacer(),
-                  CustomTextButton(
-                    label: AppLocalizations.of(context)!.close,
-                    onTap: () => Get.back(),
-                    fontSize: 14.0,
-                    textColor: theme.primaryColor,
-                  ),
-                  SizedBox(width: Const.space12),
-
-                ],
-              ),
+            const SizedBox(height: Const.space25),
+            Row(
+              children: [
+                const SizedBox(width: Const.margin),
+                AutoSizeText(
+                  AppLocalizations.of(context)!.sort,
+                  style: theme.textTheme.headline2,
+                ),
+                const Spacer(),
+                CustomTextButton(
+                  label: AppLocalizations.of(context)!.close,
+                  onTap: Get.back,
+                  fontSize: 14.0,
+                  textColor: theme.primaryColor,
+                ),
+                const SizedBox(width: Const.space12),
+              ],
             ),
             Column(
               children: SortAndFilterList.sortList(context)
@@ -67,7 +64,9 @@ class __BuildSortModalState extends State<_BuildSortModal> {
                       groupValue: provider.sortSelected,
                       activeColor: theme.primaryColor,
                       autofocus: false,
-                      contentPadding: EdgeInsets.symmetric(horizontal: Const.margin),
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: Const.margin,
+                      ),
                       onChanged: (int? v) {
                         provider.sortSelected = v;
                       },

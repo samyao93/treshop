@@ -1,5 +1,5 @@
 
-enum CouponCondition {not_used, used, exprired}
+enum CouponCondition {notUsed, used, exprired}
 
 class CouponModel {
   final String? name;

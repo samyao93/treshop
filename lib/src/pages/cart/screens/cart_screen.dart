@@ -1,6 +1,7 @@
 part of '../cart_page.dart';
 
 class CartScreen extends StatefulWidget {
+  const CartScreen({Key? key}) : super(key: key);
   @override
   _CartScreenState createState() => _CartScreenState();
 }
@@ -28,11 +29,11 @@ class _CartScreenState extends State<CartScreen> {
             actions: [
               IconButton(
                 onPressed: () => Get.toNamed(Routes.search),
-                icon: Icon(FeatherIcons.search),
+                icon: const Icon(FeatherIcons.search),
               ),
             ],
           ),
-          body: (provider.cartList.length != 0)
+          body: (provider.cartList.isNotEmpty)
               ? Column(
                   children: [
                     Expanded(
@@ -66,7 +67,7 @@ class _CartScreenState extends State<CartScreen> {
                   ],
                 )
               : IllustrationWidget(
-                  icon: CustomIcon.shopping_bag,
+                  icon: CustomIcon.shoppingBag,
                   title: AppLocalizations.of(context)!.shopping_bag_is_empty,
                   subtitle: AppLocalizations.of(context)!
                       .looks_like_you_havent_added_any_item_to_your_cart_yet,

@@ -1,6 +1,7 @@
 part of '../on_boarding_page.dart';
 
 class OnBoardingScreen extends StatefulWidget {
+  const OnBoardingScreen({Key? key}) : super(key: key);
   @override
   _OnBoardingScreenState createState() => _OnBoardingScreenState();
 }

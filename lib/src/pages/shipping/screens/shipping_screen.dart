@@ -1,6 +1,7 @@
 part of '../shipping_page.dart';
 
 class ShippingScreen extends StatelessWidget {
+  const ShippingScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -13,7 +14,7 @@ class ShippingScreen extends StatelessWidget {
         ),
         body: ListView.builder(
           itemCount: ShippingList.shippingList.length,
-          padding: EdgeInsets.symmetric(horizontal: Const.margin),
+          padding: const EdgeInsets.symmetric(horizontal: Const.margin),
           itemBuilder: (context, index) {
             var shipping = ShippingList.shippingList[index];
             return ListTile(
@@ -31,11 +32,8 @@ class ShippingScreen extends StatelessWidget {
                 style: theme.textTheme.headline3,
               ),
               subtitle: AutoSizeText(
-                AppLocalizations.of(context)!.estimated +
-                    " " +
-                    shipping.estimate! +
-                    " " +
-                    AppLocalizations.of(context)!.days,
+                // ignore: lines_longer_than_80_chars
+                '${AppLocalizations.of(context)!.estimated} ${shipping.estimate!} ${AppLocalizations.of(context)!.days}',
                 style: theme.textTheme.subtitle2,
               ),
               trailing: AutoSizeText(

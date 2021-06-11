@@ -1,6 +1,7 @@
 part of '../search_page.dart';
 
 class SearchScreen extends StatefulWidget {
+  const SearchScreen({Key? key}) : super(key: key);
   @override
   _SearchScreenState createState() => _SearchScreenState();
 }
@@ -25,8 +26,8 @@ class _SearchScreenState extends State<SearchScreen> {
     }).toList();
 
     setState(() {
-      this.productList = _productList;
-      this.productFound = _productList.length;
+      productList = _productList;
+      productFound = _productList.length;
     });
   }
 
@@ -42,7 +43,7 @@ class _SearchScreenState extends State<SearchScreen> {
           _HeaderSection(
             searchController: _searchController,
             onSearchTap: () {},
-            onChanged: (v) => searchBook(v),
+            onChanged: searchBook,
             productFound: productFound,
             onFilterTap: () {
               FocusScope.of(context).requestFocus(FocusNode());
@@ -73,7 +74,7 @@ class _SearchScreenState extends State<SearchScreen> {
               );
             },
           ),
-          SizedBox(height: Const.space15),
+        const  SizedBox(height: Const.space15),
           _BodySection(
             itemCount: productList,
           ),

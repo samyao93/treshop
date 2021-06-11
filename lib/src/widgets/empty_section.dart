@@ -16,18 +16,18 @@ class IllustrationWidget extends StatelessWidget {
     final theme = Theme.of(context);
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: Const.margin),
+      margin:const EdgeInsets.symmetric(horizontal: Const.margin),
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset(icon!),
-            SizedBox(height: Const.space25),
+            const SizedBox(height: Const.space25),
             AutoSizeText(
               title!,
               style: theme.textTheme.headline3,
             ),
-            SizedBox(height: Const.space12),
+            const SizedBox(height: Const.space12),
             AutoSizeText(
               subtitle!,
               style: theme.textTheme.subtitle1,

@@ -7,17 +7,17 @@ import '../models/on_boarding_model.dart';
 class OnBoardingList {
   static List<OnBoardingModel> onBoardingList(BuildContext context) => [
     OnBoardingModel(
-      image: Images.on_boarding_1,
+      image: Images.onBoarding1,
       title: AppLocalizations.of(context)!.on_boarding_title_1,
       subtitle: AppLocalizations.of(context)!.on_boarding_subtitle_1,
     ),
     OnBoardingModel(
-      image: Images.on_boarding_2,
+      image: Images.onBoarding2,
       title: AppLocalizations.of(context)!.on_boarding_title_2,
       subtitle: AppLocalizations.of(context)!.on_boarding_subtitle_2,
     ),
     OnBoardingModel(
-      image: Images.on_boarding_3,
+      image: Images.onBoarding3,
       title: AppLocalizations.of(context)!.on_boarding_title_1,
       subtitle: AppLocalizations.of(context)!.on_boarding_subtitle_2,
     ),

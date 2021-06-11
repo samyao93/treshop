@@ -8,11 +8,12 @@ class CustomFadeTransition extends StatelessWidget {
   final Widget child;
   final Axis axis;
 
-  CustomFadeTransition({
+  const CustomFadeTransition({
+    Key? key,
+    required this.duration,
+     this.axis = Axis.vertical,
     required this.child,
-    this.duration = const Duration(milliseconds: 900),
-    this.axis = Axis.horizontal,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class CustomFadeTransition extends StatelessWidget {
       ..add(
         _AniProps.translateX,
         Tween(begin: 30.0, end: 0.0),
-        Duration(milliseconds: 200),
+       const Duration(milliseconds: 200),
         // Curves.fastOutSlowIn,
         Curves.bounceOut,
       );
@@ -30,7 +31,6 @@ class CustomFadeTransition extends StatelessWidget {
       delay: duration,
       duration: duration,
       tween: tween,
-      child: child,
       // curve: ,
       builder: (context, child, value) => Opacity(
         opacity: value.get(_AniProps.opacity),
@@ -41,6 +41,7 @@ class CustomFadeTransition extends StatelessWidget {
           child: child,
         ),
       ),
+      child: child,
     );
   }
 }

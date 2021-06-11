@@ -1,6 +1,7 @@
 part of '../shop_page.dart';
 
 class ShopScreen extends StatelessWidget {
+  const ShopScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -17,7 +18,7 @@ class ShopScreen extends StatelessWidget {
               actions: [
                 IconButton(
                   onPressed: () => Get.toNamed(Routes.search),
-                  icon: Icon(FeatherIcons.search),
+                  icon: const Icon(FeatherIcons.search),
                 ),
               ],
               bottom: TabBar(

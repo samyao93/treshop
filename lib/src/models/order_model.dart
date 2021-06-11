@@ -1,6 +1,6 @@
 import 'package:treshop/src/models/cart_model.dart';
 
-enum OrderStatus {pending, packaging, on_delivery, success }
+enum OrderStatus {pending, packaging, onDelivery, success }
 
 class OrderModel {
   final List<CartModel>? products;

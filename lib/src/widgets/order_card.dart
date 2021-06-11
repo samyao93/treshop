@@ -17,26 +17,26 @@ class OrderCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    _colorType(int val) {
+   Color _colorType(int val) {
       switch (val) {
         case 0:
-          return Color(0xFF6D9BE1);
+          return const Color(0xFF6D9BE1);
         case 1:
-          return Color(0xFFBF5E5A);
+          return const Color(0xFFBF5E5A);
         case 2:
-          return Color(0xFFA1ABBD);
+          return const Color(0xFFA1ABBD);
         case 3:
-          return Color(0xFF699156);
+          return const Color(0xFF699156);
         case 4:
-          return Color(0xFFC58F5E);
+          return const Color(0xFFC58F5E);
         case 5:
-          return Color(0xFFA872B1);
+          return const Color(0xFFA872B1);
         default:
-          return Color(0xFFFFFFFF);
+          return const Color(0xFFFFFFFF);
       }
     }
 
-    _sizeType(int val) {
+   String _sizeType(int val) {
       switch (val) {
         case 0:
           return 'M';
@@ -49,22 +49,22 @@ class OrderCard extends StatelessWidget {
       }
     }
 
-    _statusOrderColorType(OrderStatus val) {
+  Color  _statusOrderColorType(OrderStatus val) {
       switch (val) {
-        case OrderStatus.on_delivery:
-          return Color(0xFFE77E1D);
+        case OrderStatus.onDelivery:
+          return const Color(0xFFE77E1D);
         case OrderStatus.packaging:
-          return Color(0xFFE3E71D);
+          return const Color(0xFFE3E71D);
         case OrderStatus.success:
-          return Color(0xFF14BD18);
+          return const Color(0xFF14BD18);
         default:
-          return Color(0xFFE3E71D);
+          return const Color(0xFFE3E71D);
       }
     }
 
-    _statusOrderLabelType(OrderStatus val) {
+    String _statusOrderLabelType(OrderStatus val) {
       switch (val) {
-        case OrderStatus.on_delivery:
+        case OrderStatus.onDelivery:
           return AppLocalizations.of(context)!.on_delivery;
         case OrderStatus.packaging:
           return AppLocalizations.of(context)!.packaging;
@@ -80,11 +80,11 @@ class OrderCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(Const.radius),
       ),
-      margin: EdgeInsets.only(bottom: Const.space15),
+      margin:const EdgeInsets.only(bottom: Const.space15),
       child: InkWell(
-        onTap: ()=>Get.toNamed(Routes.order_detail),
+        onTap: ()=>Get.toNamed(Routes.orderDetail),
         borderRadius: BorderRadius.circular(Const.radius),
-        child: Container(
+        child: SizedBox(
           width: Screens.width(context),
           height: 230.0,
           child: Column(
@@ -104,7 +104,7 @@ class OrderCard extends StatelessWidget {
                           AppLocalizations.of(context)!.trendias_Shop,
                           style: theme.textTheme.headline4,
                         ),
-                        SizedBox(height: Const.space8),
+                     const   SizedBox(height: Const.space8),
                         AutoSizeText(
                           DateFormat.yMMMd().format(order.dateOrder!),
                           style: theme.textTheme.subtitle2,
@@ -140,7 +140,7 @@ class OrderCard extends StatelessWidget {
                               style: theme.textTheme.headline3,
                               maxLines: 1,
                             ),
-                            SizedBox(height: Const.space8),
+                      const      SizedBox(height: Const.space8),
                             Row(
                               children: [
                                 AutoSizeText(
@@ -148,31 +148,31 @@ class OrderCard extends StatelessWidget {
                                   style: theme.textTheme.subtitle2,
                                   maxLines: 1,
                                 ),
-                                SizedBox(width: 5.0),
+                           const     SizedBox(width: 5.0),
                                 CircleAvatar(
                                   radius: 8.0,
                                   backgroundColor:
                                       _colorType(order.products!.first.color!),
                                 ),
-                                SizedBox(width: Const.space8),
+                            const    SizedBox(width: Const.space8),
                                 AutoSizeText(
                                   AppLocalizations.of(context)!.size,
                                   style: theme.textTheme.subtitle2,
                                   maxLines: 1,
                                 ),
-                                SizedBox(width: 5.0),
+                              const  SizedBox(width: 5.0),
                                 AutoSizeText(
                                   _sizeType(order.products!.first.size!),
                                   style: theme.textTheme.headline4,
                                   maxLines: 1,
                                 ),
-                                SizedBox(width: Const.space8),
+                          const      SizedBox(width: Const.space8),
                                 AutoSizeText(
                                   AppLocalizations.of(context)!.qty,
                                   style: theme.textTheme.subtitle2,
                                   maxLines: 1,
                                 ),
-                                SizedBox(width: 5.0),
+                           const     SizedBox(width: 5.0),
                                 AutoSizeText(
                                   order.products!.first.qty.toString(),
                                   style: theme.textTheme.headline4,
@@ -180,7 +180,7 @@ class OrderCard extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(height: Const.space8),
+                          const  SizedBox(height: Const.space8),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -192,9 +192,7 @@ class OrderCard extends StatelessWidget {
                                   maxLines: 1,
                                 ),
                                 AutoSizeText(
-                                  order.products!.length.toString() +
-                                      " " +
-                                      AppLocalizations.of(context)!.items,
+             '${order.products!.length} ${AppLocalizations.of(context)!.items}',
                                   style: theme.textTheme.subtitle1,
                                   maxLines: 1,
                                 ),
@@ -230,7 +228,7 @@ class OrderCard extends StatelessWidget {
                       ],
                     ),
                     Container(
-                      padding: EdgeInsets.all(5.0),
+                      padding:const EdgeInsets.all(5.0),
                       decoration: BoxDecoration(
                         color: _statusOrderColorType(order.status!)
                             .withOpacity(.1),

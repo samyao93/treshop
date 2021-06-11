@@ -21,7 +21,7 @@ class _BuildItemSize extends StatelessWidget {
               AppLocalizations.of(context)!.item_size,
               style: theme.textTheme.headline3,
             ),
-            SizedBox(height: Const.space8),
+        const    SizedBox(height: Const.space8),
             Row(
               children: product.itemSize!
                   .asMap()

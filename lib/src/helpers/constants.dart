@@ -10,25 +10,25 @@ class Const {
 class Routes {
   static const String splash = '/splash';
   static const String home = '/home';
-  static const String on_boarding = '/on_boarding';
-  static const String sign_in = '/sign_in';
-  static const String sign_up = '/sign_up';
+  static const String onBoarding = '/onBoarding';
+  static const String signIn = '/signIn';
+  static const String signUp = '/signUp';
   static const String search = '/search';
   static const String shop = '/shop';
-  static const String all_product = '/all_product';
+  static const String allProduct = '/allProduct';
   static const String favorite = '/favorite';
   static const String product = '/product';
   static const String cart = '/cart';
-  static const String select_coupon = '/select_coupon';
+  static const String selectCoupon = '/selectCoupon';
   static const String checkout = '/checkout';
   static const String payment = '/payment';
   static const String shipping = '/shipping';
-  static const String checkout_success = '/checkout_success';
+  static const String checkoutSuccess = '/checkoutSuccess';
   static const String profile = '/profile';
   static const String order = '/order';
-  static const String order_detail = '/order_detail';
-  static const String tracking_order = '/tracking_order';
-  static const String profile_detail = '/profile_detail';
+  static const String orderDetail = '/orderDetail';
+  static const String trackingOrder = '/trackingOrder';
+  static const String profileDetail = '/profileDetail';
   static const String coupon = '/coupon';
   static const String wallet = '/wallet';
   static const String chat = '/chat';
@@ -42,9 +42,9 @@ class CustomIcon {
   static const String logo = 'assets/logo.svg';
   static const String bag = 'assets/bag.svg';
   static const String blouse = 'assets/blouse.svg';
-  static const String flat_shoes = 'assets/flat_shoes.svg';
+  static const String flatShoes = 'assets/flat_shoes.svg';
   static const String hat = 'assets/hat.svg';
-  static const String high_hills = 'assets/high_hills.svg';
+  static const String highHills = 'assets/high_hills.svg';
   static const String jacket = 'assets/jacket.svg';
   static const String jeans = 'assets/jeans.svg';
   static const String sandal = 'assets/sandal.svg';
@@ -57,7 +57,7 @@ class CustomIcon {
   static const String watch = 'assets/watch.svg';
   static const String suit = 'assets/suit.svg';
   static const String coupon = 'assets/coupon.svg';
-  static const String shopping_bag = 'assets/shopping_bag.svg';
+  static const String shoppingBag = 'assets/shopping_bag.svg';
   static const String visa = 'assets/visa.svg';
   static const String mastercard = 'assets/mastercard.svg';
   static const String bca = 'assets/bca.svg';
@@ -66,8 +66,8 @@ class CustomIcon {
 }
 
 class Images {
-  static const String on_boarding_1 = 'assets/on_boarding_1.svg';
-  static const String on_boarding_2 = 'assets/on_boarding_2.svg';
-  static const String on_boarding_3 = 'assets/on_boarding_3.svg';
-  static const String shop_deals = 'assets/shop_deals.png';
+  static const String onBoarding1 = 'assets/on_boarding_1.svg';
+  static const String onBoarding2 = 'assets/on_boarding_2.svg';
+  static const String onBoarding3 = 'assets/on_boarding_3.svg';
+  static const String shopDeals = 'assets/shop_deals.png';
 }

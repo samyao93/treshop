@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import '../helpers/constants.dart';
 import '../helpers/snack_toast.dart';
 
-enum AuthStatus { not_authenticated, authenticated }
+enum AuthStatus { notAuthenticated, authenticated }
 // enum Gender { male, female }
 
 class AuthenticationProvider with ChangeNotifier {
@@ -24,7 +24,7 @@ class AuthenticationProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  AuthStatus _authStatus = AuthStatus.not_authenticated;
+  AuthStatus _authStatus = AuthStatus.notAuthenticated;
   AuthStatus get authStatus => _authStatus;
   set authStatus(AuthStatus val) {
     _authStatus = val;
@@ -46,7 +46,7 @@ class AuthenticationProvider with ChangeNotifier {
   }
 
   Future signIn(BuildContext context, {String? email, String? password}) async {
-    return Future.delayed(Duration(seconds: 2), () {
+    return Future.delayed(const Duration(seconds: 2), () {
       Get.offAllNamed(Routes.home);
       authStatus = AuthStatus.authenticated;
       showToast(msg: AppLocalizations.of(context)!.authenticated_as + email!);
@@ -56,10 +56,12 @@ class AuthenticationProvider with ChangeNotifier {
 
   Future signUp(BuildContext context,
       {String? username, String? email, String? password}) async {
-    return Future.delayed(Duration(seconds: 2), () {
-      Get.offAllNamed(Routes.home);
+    return Future.delayed(const Duration(seconds: 2), () async {
+      await Get.offAllNamed(Routes.home);
       authStatus = AuthStatus.authenticated;
-      showToast(msg: AppLocalizations.of(context)!.authenticated_as + username!);
+      await showToast(
+        msg: AppLocalizations.of(context)!.authenticated_as + username!,
+      );
       isLoading = false;
     });
   }

@@ -22,31 +22,105 @@ import '../pages/splash/splash_page.dart';
 import '../pages/tracking_order/tracking_order_page.dart';
 import 'constants.dart';
 
-
 List<GetPage> allRoutes = [
-  GetPage(name: Routes.splash, page: () => SplashScreen()),
-  GetPage(name: Routes.on_boarding, page: () => OnBoardingScreen()),
-  GetPage(name: Routes.sign_in, page: () => SignInScreen()),
-  GetPage(name: Routes.sign_up, page: () => SignUpScreen()),
-  GetPage(name: Routes.home, page: () => BottomNavigationBarScreen(initialIndex: 0)),
-  GetPage(name: Routes.search, page: () => SearchScreen()),
-  GetPage(name: Routes.shop, page: () => BottomNavigationBarScreen(initialIndex: 2)),
-  GetPage(name: Routes.all_product, page: () => AllProductScreen()),
-  GetPage(name: Routes.favorite, page: () => BottomNavigationBarScreen(initialIndex: 1)),
-  GetPage(name: Routes.product, page: () => ProductScreen()),
-  GetPage(name: Routes.cart, page: () => CartScreen()),
-  GetPage(name: Routes.select_coupon, page: () => SelectCouponScreen()),
-  GetPage(name: Routes.checkout, page: () => CheckoutScreen()),
-  GetPage(name: Routes.payment, page: () => PaymentScreen()),
-  GetPage(name: Routes.shipping, page: () => ShippingScreen()),
-  GetPage(name: Routes.checkout_success, page: () => CheckoutSuccessScreen()),
-  GetPage(name: Routes.profile, page: () => BottomNavigationBarScreen(initialIndex: 3)),
-  GetPage(name: Routes.order, page: () => OrderScreen()),
-  GetPage(name: Routes.order_detail, page: () => OrderDetailScreen()),
-  GetPage(name: Routes.tracking_order, page: () => TrackingOrderScreen()),
-  GetPage(name: Routes.profile_detail, page: () => ProfileDetailScreen()),
-  GetPage(name: Routes.coupon, page: () => CouponScreen()),
-  GetPage(name: Routes.wallet, page: () => WalletScreen()),
-  GetPage(name: Routes.chat, page: () => ChatScreen()),
-  GetPage(name: Routes.category, page: () => CategoryScreen()),
+  GetPage(
+    name: Routes.splash,
+    page: () => const SplashScreen(),
+  ),
+  GetPage(
+    name: Routes.onBoarding,
+    page: () =>const OnBoardingScreen(),
+  ),
+  GetPage(
+    name: Routes.signIn,
+    page: () => const SignInScreen(),
+  ),
+  GetPage(
+    name: Routes.signUp,
+    page: () => const SignUpScreen(),
+  ),
+  GetPage(
+    name: Routes.home,
+    page: () => const BottomNavigationBarScreen(initialIndex: 0),
+  ),
+  GetPage(
+    name: Routes.search,
+    page: () =>const SearchScreen(),
+  ),
+  GetPage(
+    name: Routes.shop,
+    page: () => const BottomNavigationBarScreen(initialIndex: 2),
+  ),
+  GetPage(
+    name: Routes.allProduct,
+    page: () => const AllProductScreen(),
+  ),
+  GetPage(
+    name: Routes.favorite,
+    page: () => const BottomNavigationBarScreen(initialIndex: 1),
+  ),
+  GetPage(
+    name: Routes.product,
+    page: () =>const ProductScreen(),
+  ),
+  GetPage(
+    name: Routes.cart,
+    page: () => const CartScreen(),
+  ),
+  GetPage(
+    name: Routes.selectCoupon,
+    page: () => const SelectCouponScreen(),
+  ),
+  GetPage(
+    name: Routes.checkout,
+    page: () => const CheckoutScreen(),
+  ),
+  GetPage(
+    name: Routes.payment,
+    page: () =>const PaymentScreen(),
+  ),
+  GetPage(
+    name: Routes.shipping,
+    page: () =>const ShippingScreen(),
+  ),
+  GetPage(
+    name: Routes.checkoutSuccess,
+    page: () => const CheckoutSuccessScreen(),
+  ),
+  GetPage(
+    name: Routes.profile,
+    page: () => const BottomNavigationBarScreen(initialIndex: 3),
+  ),
+  GetPage(
+    name: Routes.order,
+    page: () =>const OrderScreen(),
+  ),
+  GetPage(
+    name: Routes.orderDetail,
+    page: () => const OrderDetailScreen(),
+  ),
+  GetPage(
+    name: Routes.trackingOrder,
+    page: () => const TrackingOrderScreen(),
+  ),
+  GetPage(
+    name: Routes.profileDetail,
+    page: () =>const ProfileDetailScreen(),
+  ),
+  GetPage(
+    name: Routes.coupon,
+    page: () => const CouponScreen(),
+  ),
+  GetPage(
+    name: Routes.wallet,
+    page: () => const WalletScreen(),
+  ),
+  GetPage(
+    name: Routes.chat,
+    page: () => const ChatScreen(),
+  ),
+  GetPage(
+    name: Routes.category,
+    page: () => const CategoryScreen(),
+  ),
 ];

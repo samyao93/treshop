@@ -20,11 +20,11 @@ AppBar CustomAppBar(
     centerTitle: centerTitle,
     leading: enableLeading
         ? IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
             onPressed: (leadingOntap == null) ? buildBackOnTap : leadingOntap,
             color: leadingIconColor ?? theme.primaryColor,
           )
-        : SizedBox(),
+        : const SizedBox(),
     title: Text(title ?? '', style: theme.textTheme.headline3),
     actions: actions,
     bottom: bottom,

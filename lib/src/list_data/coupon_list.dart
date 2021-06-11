@@ -6,25 +6,25 @@ class CouponList {
       name: 'Gift Card',
       discount: 50,
       expired: DateTime.now(),
-      condition: CouponCondition.not_used,
+      condition: CouponCondition.notUsed,
     ),
     CouponModel(
       name: 'Free Shipping',
       discount: 25,
       expired: DateTime.now(),
-      condition: CouponCondition.not_used,
+      condition: CouponCondition.notUsed,
     ),
     CouponModel(
       name: 'New Member Coupon',
       discount: 10,
       expired: DateTime.now(),
-      condition: CouponCondition.not_used,
+      condition: CouponCondition.notUsed,
     ),
     CouponModel(
       name: 'Special Reward',
       discount: 70,
       expired: DateTime.now(),
-      condition: CouponCondition.not_used,
+      condition: CouponCondition.notUsed,
     ),
   ];
   static List<CouponModel> usedList = [

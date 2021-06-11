@@ -1,14 +1,14 @@
 part of '../chat_page.dart';
 
 class ChatScreen extends StatefulWidget {
+  const ChatScreen({Key? key}) : super(key: key);
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-
   TextEditingController _textController = TextEditingController();
-  ScrollController _scrollController = ScrollController();
+  final _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -62,7 +62,7 @@ class _ChatScreenState extends State<ChatScreen> {
   void sendMessageToBarber(ChatModel chat) {
     _textController.clear();
     Future.delayed(
-        Duration(milliseconds: 500),
+       const Duration(milliseconds: 500),
         () => _scrollController
             .jumpTo(_scrollController.position.maxScrollExtent));
   }

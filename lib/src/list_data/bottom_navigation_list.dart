@@ -9,27 +9,27 @@ import '../pages/shop/shop_page.dart';
 
 class BottomNavigationList {
   static List<Widget> pageList(BuildContext context) => [
-        HomeScreen(),
-        FavoriteScreen(),
-        ShopScreen(),
-        ProfileScreen(),
+        const HomeScreen(),
+        const FavoriteScreen(),
+        const ShopScreen(),
+        const ProfileScreen(),
       ];
   static List<BottomNavigationBarItem> items(BuildContext context) => [
-    BottomNavigationBarItem(
-      icon: Icon(FeatherIcons.home),
-      label: AppLocalizations.of(context)!.home,
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(FeatherIcons.heart),
-      label: AppLocalizations.of(context)!.favorite,
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(FeatherIcons.shoppingBag),
-      label: AppLocalizations.of(context)!.shop,
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(FeatherIcons.user),
-      label: AppLocalizations.of(context)!.profile,
-    ),
-  ];
+        BottomNavigationBarItem(
+          icon: const Icon(FeatherIcons.home),
+          label: AppLocalizations.of(context)!.home,
+        ),
+        BottomNavigationBarItem(
+          icon: const Icon(FeatherIcons.heart),
+          label: AppLocalizations.of(context)!.favorite,
+        ),
+        BottomNavigationBarItem(
+          icon: const Icon(FeatherIcons.shoppingBag),
+          label: AppLocalizations.of(context)!.shop,
+        ),
+        BottomNavigationBarItem(
+          icon: const Icon(FeatherIcons.user),
+          label: AppLocalizations.of(context)!.profile,
+        ),
+      ];
 }

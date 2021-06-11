@@ -15,11 +15,11 @@ class TransactionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    _iconType(TransactionType val) {
+    IconData _iconType(TransactionType val) {
       switch (val) {
         case TransactionType.pay:
           return FeatherIcons.upload;
-        case TransactionType.top_up:
+        case TransactionType.topUp:
           return FeatherIcons.download;
         case TransactionType.transfer:
           return FeatherIcons.refreshCcw;
@@ -28,16 +28,16 @@ class TransactionCard extends StatelessWidget {
       }
     }
 
-    _iconColorType(TransactionType val) {
+    Color _iconColorType(TransactionType val) {
       switch (val) {
         case TransactionType.pay:
-          return Color(0xFFFA1F1F);
-        case TransactionType.top_up:
-          return Color(0xFF56E289);
+          return const Color(0xFFFA1F1F);
+        case TransactionType.topUp:
+          return const Color(0xFF56E289);
         case TransactionType.transfer:
-          return Color(0xFFFA1F1F);
+          return const Color(0xFFFA1F1F);
         default:
-          return Color(0xFFFA1F1F);
+          return const Color(0xFFFA1F1F);
       }
     }
 

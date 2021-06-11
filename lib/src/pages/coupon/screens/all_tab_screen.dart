@@ -12,7 +12,7 @@ class _CouponListTabScreen extends StatelessWidget {
       builder: (context, cart, snapshot) {
         return ListView.builder(
           itemCount: itemCount.length,
-          padding: EdgeInsets.symmetric(
+          padding:const EdgeInsets.symmetric(
             horizontal: Const.margin,
             vertical: Const.margin,
           ),

@@ -1,6 +1,7 @@
 part of '../checkout_page.dart';
 
 class CheckoutSuccessScreen extends StatelessWidget {
+  const CheckoutSuccessScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -12,12 +13,12 @@ class CheckoutSuccessScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IllustrationWidget(
-                icon: CustomIcon.shopping_bag,
+                icon: CustomIcon.shoppingBag,
                 title: AppLocalizations.of(context)!.success,
                 subtitle: AppLocalizations.of(context)!
                     .your_order_will_be_delivered_soon_thank_you_for_shopping,
               ),
-              SizedBox(height: Const.space25),
+              const SizedBox(height: Const.space25),
               CustomElevatedButton(
                 onTap: () {
                   Get.offAllNamed(Routes.home);
@@ -25,7 +26,7 @@ class CheckoutSuccessScreen extends StatelessWidget {
                 },
                 label: AppLocalizations.of(context)!.shopping_again,
               ),
-              SizedBox(height: Const.space15),
+              const SizedBox(height: Const.space15),
               CustomTextButton(
                 label: AppLocalizations.of(context)!.see_my_orders,
                 onTap: () {

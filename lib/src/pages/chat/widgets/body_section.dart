@@ -4,7 +4,11 @@ class _BodySection extends StatelessWidget {
   final ScrollController scrollController;
   final List<ChatModel>? chatList;
 
-  const _BodySection({Key? key,required this.scrollController,  this.chatList}) : super(key: key);
+  const _BodySection({
+    Key? key,
+    required this.scrollController,
+    this.chatList,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -13,7 +17,7 @@ class _BodySection extends StatelessWidget {
       controller: scrollController,
       scrollDirection: Axis.vertical,
       dragStartBehavior: DragStartBehavior.down,
-      padding: EdgeInsets.only(top: 25.0, left: 18.0),
+      padding:const EdgeInsets.only(top: 25.0, left: 18.0),
       itemBuilder: (context, index) {
         var chat = chatList![index];
         return _BuildChatBubble(

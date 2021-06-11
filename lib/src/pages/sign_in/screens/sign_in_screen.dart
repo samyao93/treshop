@@ -1,6 +1,7 @@
 part of '../sign_in_page.dart';
 
 class SignInScreen extends StatefulWidget {
+  const SignInScreen({Key? key}) : super(key: key);
   @override
   _SignInScreenState createState() => _SignInScreenState();
 }
@@ -31,60 +32,60 @@ class _SignInScreenState extends State<SignInScreen> {
             child: ListView(
               padding: const EdgeInsets.symmetric(horizontal: Const.margin),
               children: [
-                SizedBox(height: 50.0),
+                const SizedBox(height: 50.0),
                 SvgPicture.asset(
                   CustomIcon.logo,
                   width: Screens.width(context) / 10,
                   height: Screens.width(context) / 10,
                 ),
-                SizedBox(height: Const.space25),
+                const SizedBox(height: Const.space25),
                 CustomSocialButton(
                   label: AppLocalizations.of(context)!.connect_with_apple_id,
                   onTap: () {},
                   icon: CustomIcon.apple,
                 ),
-                SizedBox(height: Const.space15),
+                const SizedBox(height: Const.space15),
                 CustomSocialButton(
                   label: AppLocalizations.of(context)!.connect_with_google,
                   onTap: () {},
                   icon: CustomIcon.google,
                 ),
-                SizedBox(height: Const.space15),
+                const SizedBox(height: Const.space15),
                 CustomSocialButton(
                   label: AppLocalizations.of(context)!.connect_with_facebook,
                   onTap: () {},
                   icon: CustomIcon.facebook,
                 ),
-                SizedBox(height: Const.space25),
+                const SizedBox(height: Const.space25),
                 Row(
                   children: [
                     Expanded(child: Divider(color: theme.hintColor)),
-                    SizedBox(width: Const.space12),
+                    const SizedBox(width: Const.space12),
                     AutoSizeText(
                       AppLocalizations.of(context)!.or_login_with_email,
                       style: theme.textTheme.headline4,
                     ),
-                    SizedBox(width: Const.space12),
+                    const SizedBox(width: Const.space12),
                     Expanded(child: Divider(color: theme.hintColor)),
                   ],
                 ),
-                SizedBox(height: Const.space25),
+                const SizedBox(height: Const.space25),
                 CustomTextFormField(
                   controller: _emailController,
-                  borderType: BorderType.Outline,
-                  textFieldType: TextFieldType.Email,
+                  borderType: BorderType.outline,
+                  textFieldType: TextFieldType.email,
                   hintText: AppLocalizations.of(context)!.email,
                   prefixIcon: Icon(
                     FeatherIcons.mail,
                     color: theme.primaryColor,
                   ),
                 ),
-                SizedBox(height: Const.space25),
+                const SizedBox(height: Const.space25),
                 CustomTextFormField(
                   controller: _passwordController,
                   obscureText: provider.obscureText,
-                  borderType: BorderType.Outline,
-                  textFieldType: TextFieldType.Password,
+                  borderType: BorderType.outline,
+                  textFieldType: TextFieldType.password,
                   hintText: AppLocalizations.of(context)!.password,
                   prefixIcon: Icon(
                     FeatherIcons.lock,
@@ -98,7 +99,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     onPressed: () => provider.obscureTextChanged(),
                   ),
                 ),
-                SizedBox(height: Const.space12),
+                const SizedBox(height: Const.space12),
                 Align(
                   alignment: Alignment.topRight,
                   child: CustomTextButton(
@@ -107,15 +108,16 @@ class _SignInScreenState extends State<SignInScreen> {
                     onTap: () {},
                   ),
                 ),
-                SizedBox(height: Const.space12),
+                const SizedBox(height: Const.space12),
                 (provider.isLoading)
-                    ? CustomLoadingIndicator()
+                    ?const CustomLoadingIndicator()
                     : CustomElevatedButton(
                         onTap: () {
                           // if (_formKey.currentState!.validate()) {
                           FocusScope.of(context).requestFocus(FocusNode());
                           provider.isLoading = true;
 
+                          // ignore: cascade_invocations
                           provider.signIn(
                             context,
                             email: _emailController!.text,
@@ -125,7 +127,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         },
                         label: AppLocalizations.of(context)!.sign_in,
                       ),
-                SizedBox(height: Const.space12),
+                const SizedBox(height: Const.space12),
                 Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -138,7 +140,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         label: AppLocalizations.of(context)!.register,
                         enableUnderline: true,
                         textColor: theme.primaryColor,
-                        onTap: () => Get.toNamed(Routes.sign_up),
+                        onTap: () => Get.toNamed(Routes.signUp),
                       )
                     ],
                   ),

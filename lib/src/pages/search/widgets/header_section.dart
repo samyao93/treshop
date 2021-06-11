@@ -25,7 +25,7 @@ class _HeaderSection extends StatelessWidget {
     return Container(
       width: Screens.width(context),
       height: 85.0,
-      padding: EdgeInsets.symmetric(horizontal: Const.margin),
+      padding:const EdgeInsets.symmetric(horizontal: Const.margin),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -50,11 +50,11 @@ class _HeaderSection extends StatelessWidget {
                       enabledBorder: InputBorder.none,
                       focusedBorder: InputBorder.none,
                       prefixIcon: IconButton(
-                        icon: Icon(Icons.search),
+                        icon:const Icon(Icons.search),
                         onPressed: onSearchTap,
                         color: theme.primaryColor,
                       ),
-                      contentPadding: EdgeInsets.symmetric(
+                      contentPadding:const EdgeInsets.symmetric(
                         vertical: 15.0,
                         horizontal: 5.0,
                       ),
@@ -62,31 +62,31 @@ class _HeaderSection extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: Const.space12),
+            const  SizedBox(width: Const.space12),
               CustomElevatedButton(
                 onTap: onFilterTap,
-                child: Icon(
+                width: 50.0,
+                height: 50.0,
+                child:const Icon(
                   FeatherIcons.sliders,
                   size: 20.0,
                 ),
-                width: 50.0,
-                height: 50.0,
               ),
-              SizedBox(width: Const.space12),
+            const  SizedBox(width: Const.space12),
               CustomElevatedButton(
                 onTap: onSortTap,
-                child: Icon(
+                width: 50.0,
+                height: 50.0,
+                child:const Icon(
                   FeatherIcons.filter,
                   size: 20.0,
                 ),
-                width: 50.0,
-                height: 50.0,
               ),
             ],
           ),
-          SizedBox(height: Const.space8),
+      const    SizedBox(height: Const.space8),
           AutoSizeText(
-            productFound.toString() +" "+ AppLocalizations.of(context)!.products_found,
+            '$productFound ${AppLocalizations.of(context)!.products_found}',
             style: theme.textTheme.headline3
           )
         ],

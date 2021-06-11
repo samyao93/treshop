@@ -26,7 +26,7 @@ class _FooterSection extends StatelessWidget {
       width: Screens.width(context),
       height: 95.0,
       alignment: Alignment.bottomCenter,
-      margin: EdgeInsets.fromLTRB(
+      margin:const EdgeInsets.fromLTRB(
         Const.margin,
         Const.space12,
         Const.margin,
@@ -45,40 +45,40 @@ class _FooterSection extends StatelessWidget {
                     AppLocalizations.of(context)!.qty,
                     style: theme.textTheme.subtitle1!.copyWith(fontSize: 16.0),
                   ),
-                  SizedBox(width: Const.space8),
+                const  SizedBox(width: Const.space8),
                   InkWell(
                     onTap: onRemoveTap,
                     borderRadius: BorderRadius.circular(25.0),
                     child: CircleAvatar(
                       radius: 12.0,
                       backgroundColor: theme.primaryColor,
-                      child: Icon(
+                      child:const Icon(
                         Icons.remove,
                         color: Colors.white,
                         size: 16,
                       ),
                     ),
                   ),
-                  SizedBox(width: Const.space8),
+               const   SizedBox(width: Const.space8),
                   Text(
                     qty.toString(),
                     style: theme.textTheme.bodyText2!.copyWith(fontSize: 16.0),
                   ),
-                  SizedBox(width: Const.space8),
+               const   SizedBox(width: Const.space8),
                   InkWell(
                     onTap: onAddTap,
                     borderRadius: BorderRadius.circular(25.0),
                     child: CircleAvatar(
                       radius: 12.0,
                       backgroundColor: theme.primaryColor,
-                      child: Icon(
+                      child:const Icon(
                         Icons.add,
                         color: Colors.white,
                         size: 16,
                       ),
                     ),
                   ),
-                  SizedBox(width: Const.space8),
+                const  SizedBox(width: Const.space8),
                 ],
               ),
               Row(
@@ -89,7 +89,7 @@ class _FooterSection extends StatelessWidget {
                       fontSize: 16.0,
                     ),
                   ),
-                  SizedBox(width: Const.space8),
+                const  SizedBox(width: Const.space8),
                   AutoSizeText(
                       NumberFormat.currency(
                         symbol: '\$',
@@ -99,15 +99,15 @@ class _FooterSection extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: Const.space25),
+        const  SizedBox(height: Const.space25),
           CustomElevatedButton(
             onTap: onAddToCartTap,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(FeatherIcons.shoppingCart),
-                SizedBox(width: Const.space15),
+            const    Icon(FeatherIcons.shoppingCart),
+              const  SizedBox(width: Const.space15),
                 AutoSizeText(
                   AppLocalizations.of(context)!.add_to_cart,
                   style: theme.textTheme.button,

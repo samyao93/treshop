@@ -1,6 +1,7 @@
 part of '../coupon_page.dart';
 
 class SelectCouponScreen extends StatelessWidget {
+  const SelectCouponScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Consumer<CartProvider>(builder: (context, cart, snapshot) {
@@ -11,7 +12,7 @@ class SelectCouponScreen extends StatelessWidget {
         ),
         body: ListView.builder(
           itemCount: CouponList.couponList.length,
-          padding: EdgeInsets.symmetric(horizontal: Const.margin),
+          padding: const EdgeInsets.symmetric(horizontal: Const.margin),
           itemBuilder: (context, index) {
             var coupon = CouponList.couponList[index];
 

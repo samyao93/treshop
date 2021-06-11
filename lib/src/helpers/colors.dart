@@ -1,10 +1,6 @@
 import 'dart:ui';
 
 class ColorLight {
-  ///
-  /// [Light Colors]
-  /// [Primary], [Background], [Card], [Title], [Subtitle], [Font Disable], [Button Disable], [Divider]
-  ///
   static const Color primary = Color(0xFFFC8080);
   // static const Color accent = Color(0xFFFF6600);
   static const Color background = Color(0xFFFAFAFA);
@@ -15,10 +11,6 @@ class ColorLight {
   static const Color disabledButton = Color(0xFFB9B9B9);
   static const Color divider = Color(0xFFDCDCDC);
 
-  ///
-  /// [Success], [Warning], [Error],
-  ///
-
   static const Color success = Color(0xFF388E3C);
   static const Color warning = Color(0xFFF57C00);
   static const Color error = Color(0xFFD32F2F);
@@ -26,10 +18,6 @@ class ColorLight {
 }
 
 class ColorDark {
-  ///
-  /// [Dark Colors]
-  /// [Primary], [Background], [Card], [Title], [Subtitle], [Font Disable], [Button Disable], [Divider]
-  ///
   static const Color primary = Color(0xFFFC8080);
   // static const Color accent = Color(0xFFFF6600);
   static const Color background = Color(0xFF303030);
@@ -40,9 +28,6 @@ class ColorDark {
   static const Color disabledButton = Color(0xFF6E6E6E);
   static const Color divider = Color(0xFF494949);
 
-  ///
-  /// [Success], [Warning], [Error],
-  ///
   static const Color success = Color(0xFF81C784);
   static const Color warning = Color(0xFFFFB74D);
   static const Color error = Color(0xFFE57373);

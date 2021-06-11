@@ -1,6 +1,7 @@
 part of '../splash_page.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -10,8 +11,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(
-      Duration(seconds: 3),
-      () => Get.offAllNamed(Routes.on_boarding),
+      const Duration(seconds: 3),
+      () => Get.offAllNamed(Routes.onBoarding),
     );
   }
 

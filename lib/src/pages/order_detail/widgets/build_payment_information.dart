@@ -34,7 +34,7 @@ class _BuildPaymentInformation extends StatelessWidget {
           (value == null)
               ? trailing!
               : (isDiscount == true)
-                  ? '-' + NumberFormat.currency(symbol: '\$').format(value)
+                  ? '-${NumberFormat.currency(symbol: '\$').format(value)}'
                   : NumberFormat.currency(symbol: '\$').format(value),
           style: theme.textTheme.headline3,
         ),

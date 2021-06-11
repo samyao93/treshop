@@ -9,7 +9,7 @@ class OrderList {
       total: 590,
       products: [
         CartModel(
-          productName: "Morrissey print T-shirt",
+          productName: 'Morrissey print T-shirt',
           price: 590,
           color: 2,
           qty: 1,
@@ -20,12 +20,12 @@ class OrderList {
       ],
     ),
     OrderModel(
-      status: OrderStatus.on_delivery,
+      status: OrderStatus.onDelivery,
       dateOrder: DateTime.now(),
       total: 766,
       products: [
         CartModel(
-          productName: "Givenchy 4G-plaque jacket",
+          productName: 'Givenchy 4G-plaque jacket',
           price: 423,
           color: 3,
           qty: 1,
@@ -34,7 +34,7 @@ class OrderList {
               'https://cdn-images.farfetch-contents.com/16/83/86/77/16838677_33425995_1000.jpg',
         ),
         CartModel(
-          productName: "Fendi logo-patch backpack",
+          productName: 'Fendi logo-patch backpack',
           price: 343,
           color: 3,
           qty: 1,
@@ -50,7 +50,7 @@ class OrderList {
       total: 124,
       products: [
         CartModel(
-          productName: "TOM FORD Jago low-top sneakers",
+          productName: 'TOM FORD Jago low-top sneakers',
           price: 124,
           color: 4,
           qty: 1,

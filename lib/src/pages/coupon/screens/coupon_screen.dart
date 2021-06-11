@@ -1,6 +1,8 @@
 part of '../coupon_page.dart';
 
-class CouponScreen extends StatelessWidget {
+class CouponScreen extends StatelessWidget { 
+
+  const CouponScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -11,6 +13,7 @@ class CouponScreen extends StatelessWidget {
           context,
           title: AppLocalizations.of(context)!.my_coupon,
           bottom: PreferredSize(
+            preferredSize:const Size.fromHeight(50.0),
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Const.radius),
@@ -32,7 +35,6 @@ class CouponScreen extends StatelessWidget {
                 ],
               ),
             ),
-            preferredSize: Size.fromHeight(50.0),
           ),
         ),
         body: TabBarView(

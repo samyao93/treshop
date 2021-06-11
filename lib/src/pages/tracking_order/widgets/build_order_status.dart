@@ -7,13 +7,13 @@ class _BuildOrderStatus extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    pendingLineColor(OrderStatus val) {
+    Color pendingLineColor(OrderStatus val) {
       switch (val) {
         case OrderStatus.pending:
           return theme.primaryColor;
         case OrderStatus.packaging:
           return theme.primaryColor;
-        case OrderStatus.on_delivery:
+        case OrderStatus.onDelivery:
           return theme.primaryColor;
         case OrderStatus.success:
           return theme.primaryColor;
@@ -22,13 +22,13 @@ class _BuildOrderStatus extends StatelessWidget {
       }
     }
 
-    pendingIndicatorColor(OrderStatus val) {
+   Color pendingIndicatorColor(OrderStatus val) {
       switch (val) {
         case OrderStatus.pending:
           return Colors.white;
         case OrderStatus.packaging:
           return Colors.white;
-        case OrderStatus.on_delivery:
+        case OrderStatus.onDelivery:
           return Colors.white;
         case OrderStatus.success:
           return Colors.white;
@@ -37,11 +37,11 @@ class _BuildOrderStatus extends StatelessWidget {
       }
     }
 
-    packagingLineColor(OrderStatus val) {
+   Color packagingLineColor(OrderStatus val) {
       switch (val) {
         case OrderStatus.packaging:
           return theme.primaryColor;
-        case OrderStatus.on_delivery:
+        case OrderStatus.onDelivery:
           return theme.primaryColor;
         case OrderStatus.success:
           return theme.primaryColor;
@@ -50,11 +50,11 @@ class _BuildOrderStatus extends StatelessWidget {
       }
     }
 
-    packagingIndicatorColor(OrderStatus val) {
+  Color  packagingIndicatorColor(OrderStatus val) {
       switch (val) {
         case OrderStatus.packaging:
           return Colors.white;
-        case OrderStatus.on_delivery:
+        case OrderStatus.onDelivery:
           return Colors.white;
         case OrderStatus.success:
           return Colors.white;
@@ -63,9 +63,9 @@ class _BuildOrderStatus extends StatelessWidget {
       }
     }
 
-    onDeliveryLineColor(OrderStatus val) {
+   Color onDeliveryLineColor(OrderStatus val) {
       switch (val) {
-        case OrderStatus.on_delivery:
+        case OrderStatus.onDelivery:
           return theme.primaryColor;
         case OrderStatus.success:
           return theme.primaryColor;
@@ -74,9 +74,9 @@ class _BuildOrderStatus extends StatelessWidget {
       }
     }
 
-    onDeliveryIndicatorColor(OrderStatus val) {
+  Color  onDeliveryIndicatorColor(OrderStatus val) {
       switch (val) {
-        case OrderStatus.on_delivery:
+        case OrderStatus.onDelivery:
           return Colors.white;
         case OrderStatus.success:
           return Colors.white;
@@ -85,7 +85,7 @@ class _BuildOrderStatus extends StatelessWidget {
       }
     }
 
-    doneLineColor(OrderStatus val) {
+  Color  doneLineColor(OrderStatus val) {
       switch (val) {
         case OrderStatus.success:
           return theme.primaryColor;
@@ -94,7 +94,7 @@ class _BuildOrderStatus extends StatelessWidget {
       }
     }
 
-    doneIndicatorColor(OrderStatus val) {
+  Color  doneIndicatorColor(OrderStatus val) {
       switch (val) {
         case OrderStatus.success:
           return Colors.white;
@@ -105,7 +105,7 @@ class _BuildOrderStatus extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      constraints: BoxConstraints(
+      constraints: const BoxConstraints(
         maxHeight: 100.0,
         maxWidth: double.infinity,
       ),
@@ -134,7 +134,7 @@ class _BuildOrderStatus extends StatelessWidget {
                 width: double.infinity,
                 height: 50.0,
                 alignment: Alignment.topCenter,
-                padding: EdgeInsets.only(top: 10.0),
+                padding:const EdgeInsets.only(top: 10.0),
                 child: Text(
                   AppLocalizations.of(context)!.not_pay,
                   style: theme.textTheme.subtitle2!.copyWith(
@@ -170,7 +170,7 @@ class _BuildOrderStatus extends StatelessWidget {
                 width: double.infinity,
                 height: 50.0,
                 alignment: Alignment.topCenter,
-                padding: EdgeInsets.only(top: 10.0),
+                padding:const EdgeInsets.only(top: 10.0),
                 child: Text(
                   AppLocalizations.of(context)!.packaging,
                   style: theme.textTheme.subtitle2!.copyWith(
@@ -204,7 +204,7 @@ class _BuildOrderStatus extends StatelessWidget {
                 width: double.infinity,
                 height: 50.0,
                 alignment: Alignment.topCenter,
-                padding: EdgeInsets.only(top: 10.0),
+                padding:const EdgeInsets.only(top: 10.0),
                 child: Text(
                   AppLocalizations.of(context)!.on_delivery,
                   style: theme.textTheme.subtitle2!.copyWith(
@@ -239,7 +239,7 @@ class _BuildOrderStatus extends StatelessWidget {
                 width: double.infinity,
                 height: 50.0,
                 alignment: Alignment.topCenter,
-                padding: EdgeInsets.only(top: 10.0),
+                padding:const EdgeInsets.only(top: 10.0),
                 child: Text(
                   AppLocalizations.of(context)!.success,
                   style: theme.textTheme.subtitle2!.copyWith(

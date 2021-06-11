@@ -1,6 +1,7 @@
 part of '../tracking_order_page.dart';
 
 class TrackingOrderScreen extends StatelessWidget {
+  const TrackingOrderScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -12,10 +13,10 @@ class TrackingOrderScreen extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          _BuildOrderStatus(
+          const _BuildOrderStatus(
             status: OrderStatus.success,
           ),
-          SizedBox(height: Const.space25),
+          const SizedBox(height: Const.space25),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: Const.margin),
             child: AutoSizeText(
@@ -23,12 +24,12 @@ class TrackingOrderScreen extends StatelessWidget {
               style: theme.textTheme.headline3,
             ),
           ),
-          SizedBox(height: Const.space8),
+          const SizedBox(height: Const.space8),
           ListView.builder(
             itemCount: TrackingList.trackingList.length,
             shrinkWrap: true,
-            physics: ScrollPhysics(),
-            padding: EdgeInsets.symmetric(horizontal: Const.margin),
+            physics: const ScrollPhysics(),
+            padding:const EdgeInsets.symmetric(horizontal: Const.margin),
             itemBuilder: (context, index) {
               var tracking = TrackingList.trackingList[index];
               return _TrackingTimeline(tracking: tracking);

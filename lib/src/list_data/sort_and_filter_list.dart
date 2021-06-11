@@ -17,12 +17,12 @@ class SortAndFilterList {
     'XXL',
   ];
   static List<Color> colorList = [
-    Color(0xFF6D9BE1),
-    Color(0xFFBF5E5A),
-    Color(0xFFA1ABBD),
-    Color(0xFF699156),
-    Color(0xFFC58F5E),
-    Color(0xFFA872B1),
+    const Color(0xFF6D9BE1),
+    const Color(0xFFBF5E5A),
+    const Color(0xFFA1ABBD),
+    const Color(0xFF699156),
+    const Color(0xFFC58F5E),
+    const Color(0xFFA872B1),
   ];
   static List<String> categoryList(BuildContext context) => [
         AppLocalizations.of(context)!.all,

@@ -21,7 +21,6 @@ class CustomShakeTransition extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder<double>(
-      child: child,
       duration: duration,
       curve: curve,
       tween: Tween(begin: 1.0, end: 0.0),
@@ -33,6 +32,7 @@ class CustomShakeTransition extends StatelessWidget {
           child: child,
         );
       },
+      child: child,
     );
   }
 }
