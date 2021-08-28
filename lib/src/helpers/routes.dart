@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 import 'package:treshop/src/helpers/constants.dart';
 import 'package:treshop/src/pages/all_product/all_product_page.dart';
 import 'package:treshop/src/pages/bottom_navigation_bar/bottom_navigation_bar_page.dart';
-import 'package:treshop/src/pages/cart/cart_page.dart';
 import 'package:treshop/src/pages/category/category_page.dart';
 import 'package:treshop/src/pages/chat/chat_page.dart';
 import 'package:treshop/src/pages/checkout/checkout_page.dart';

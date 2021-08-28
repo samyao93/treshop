@@ -91,7 +91,6 @@ class _HorizontalCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Card(
       margin: const EdgeInsets.only(
@@ -107,21 +106,11 @@ class _HorizontalCard extends StatelessWidget {
           Routes.allProduct,
           arguments: category.name,
         ),
-        child: SizedBox(
-          width: 100,
-          height: 100,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SvgPicture.asset(category.icon!),
-              const SizedBox(height: Const.space8),
-              AutoSizeText(
-                category.name!,
-                style: theme.textTheme.headline4,
-                textAlign: TextAlign.center,
-              )
-            ],
-          ),
+        child: Container(
+          width: 50,
+          height: 50,
+          padding: const EdgeInsets.all(Const.space8),
+          child: SvgPicture.asset(category.icon!),
         ),
       ),
     );

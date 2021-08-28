@@ -26,7 +26,6 @@ dependencies:
   form_field_validator: ^1.1.0
   get: ^4.1.4
   google_fonts: ^2.1.0
-  icon_badge: ^1.0.0
   intl: ^0.17.0
   octo_image: ^1.0.0+1
   provider: ^5.0.0

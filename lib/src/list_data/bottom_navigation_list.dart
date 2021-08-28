@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:treshop/src/pages/cart/cart_page.dart';
-import 'package:treshop/src/pages/favorite/favorite_page.dart';
 import 'package:treshop/src/pages/home/home_page.dart';
 import 'package:treshop/src/pages/profile/profile_page.dart';
 import 'package:treshop/src/pages/shop/shop_page.dart';
