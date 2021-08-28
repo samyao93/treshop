@@ -22,13 +22,9 @@ class _BuildAppBar extends StatelessWidget {
           decoration: BoxDecoration(
             color: _theme.cardColor,
             borderRadius: BorderRadius.circular(Const.radius),
-          ),
-          child: IconButton(
-            // onPressed: ()=>Get.toNamed<dynamic>(Routes.notification),
-            onPressed: () {},
-            icon: const Icon(
-              FeatherIcons.bell,
-              size: 20,
+            image: const DecorationImage(
+              image: CachedNetworkImageProvider(
+                  'https://i.pinimg.com/564x/c3/ab/e7/c3abe75c5b32f09748acdaa7d8df09dc.jpg'),
             ),
           ),
         ),

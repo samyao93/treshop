@@ -17,7 +17,7 @@ class FavoriteScreen extends StatelessWidget {
         ],
       ),
       body: ResponsiveGridList(
-        desiredItemWidth: 170,
+        desiredItemWidth: 120,
         minSpacing: Const.margin,
         children: ProductList.allProduct.map((e) {
           final product = e;

@@ -10,7 +10,7 @@ class _BodySection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ResponsiveGridList(
-        desiredItemWidth: 170,
+        desiredItemWidth: 120,
         minSpacing: Const.margin,
         children: itemCount.map((e) {
           final product = e;
