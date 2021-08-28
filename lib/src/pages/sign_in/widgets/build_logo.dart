@@ -8,7 +8,7 @@ class _BuildLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomFadeTransition(
-      duration: const Duration(milliseconds: 700),
+      duration: const Duration(milliseconds: 500),
       child: SvgPicture.asset(
         CustomIcon.logo,
         width: Screens.width(context) / 10,
