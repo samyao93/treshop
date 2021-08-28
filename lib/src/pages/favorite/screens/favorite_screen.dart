@@ -7,7 +7,6 @@ class FavoriteScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         context,
-        enableLeading: false,
         title: AppLocalizations.of(context)!.favorites,
         actions: [
           IconButton(

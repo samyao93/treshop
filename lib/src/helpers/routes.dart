@@ -7,6 +7,7 @@ import 'package:treshop/src/pages/category/category_page.dart';
 import 'package:treshop/src/pages/chat/chat_page.dart';
 import 'package:treshop/src/pages/checkout/checkout_page.dart';
 import 'package:treshop/src/pages/coupon/coupon_page.dart';
+import 'package:treshop/src/pages/favorite/favorite_page.dart';
 import 'package:treshop/src/pages/language/language_page.dart';
 import 'package:treshop/src/pages/on_boarding/on_boarding_page.dart';
 import 'package:treshop/src/pages/order/order_page.dart';
@@ -58,7 +59,7 @@ List<GetPage> allRoutes = [
   ),
   GetPage<dynamic>(
     name: Routes.favorite,
-    page: () => const BottomNavigationBarScreen(initialIndex: 1),
+    page: () => const FavoriteScreen(),
   ),
   GetPage<dynamic>(
     name: Routes.product,
@@ -66,7 +67,7 @@ List<GetPage> allRoutes = [
   ),
   GetPage<dynamic>(
     name: Routes.cart,
-    page: () => const CartScreen(),
+    page: () => const BottomNavigationBarScreen(initialIndex: 1),
   ),
   GetPage<dynamic>(
     name: Routes.selectCoupon,

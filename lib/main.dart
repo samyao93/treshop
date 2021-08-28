@@ -42,6 +42,7 @@ class MyApp extends StatelessWidget {
         builder: (context, theme, locale, snapshot) {
           return GetMaterialApp(
             title: 'Treshop',
+            debugShowCheckedModeBanner: false,
             locale: locale.locale,
             theme: themeLight(context),
             darkTheme: themeDark(context),
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
             ],
-            initialRoute: Routes.signIn,
+            initialRoute: Routes.home,
             supportedLocales: L10n.all,
             getPages: allRoutes,
           );

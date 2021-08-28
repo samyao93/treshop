@@ -69,7 +69,7 @@ class ProductCard extends StatelessWidget {
               const SizedBox(height: Const.space8),
               AutoSizeText(
                 NumberFormat.currency(
-                  symbol: r'\$',
+                  symbol: r'$',
                 ).format(product.price),
                 style: theme.textTheme.bodyText2,
                 maxLines: 1,
