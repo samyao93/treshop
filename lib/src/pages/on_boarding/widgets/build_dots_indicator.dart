@@ -13,8 +13,8 @@ class _BuildDotsIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       bottom: Screens.heigth(context) / 5,
-      left: 0.0,
-      right: 0.0,
+      left: 0,
+      right: 0,
       child: CustomFadeTransition(
         duration:const Duration(milliseconds: 200),
         child: CustomDotsIndicator(

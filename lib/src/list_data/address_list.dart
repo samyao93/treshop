@@ -1,4 +1,5 @@
-import '../models/address_model.dart';
+
+import 'package:treshop/src/models/address_model.dart';
 
 class AddressList {
   static List<AddressModel> addressList = [

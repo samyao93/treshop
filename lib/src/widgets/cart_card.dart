@@ -5,9 +5,9 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:intl/intl.dart';
 
-import '../helpers/constants.dart';
-import '../models/cart_model.dart';
-import 'custom_network_image.dart';
+import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/models/cart_model.dart';
+import 'package:treshop/src/widgets/custom_network_image.dart';
 
 class CartCard extends StatelessWidget {
   final CartModel cart;
@@ -61,7 +61,7 @@ class CartCard extends StatelessWidget {
         ),
       ],
       child: Container(
-        height: 120.0,
+        height: 120,
         color: theme.cardColor,
         padding: const EdgeInsets.symmetric(
           horizontal: Const.margin,
@@ -71,14 +71,14 @@ class CartCard extends StatelessWidget {
           children: [
             CustomNetworkImage(
               image: cart.productImage!,
-              width: 120.0,
-              height: 120.0,
+              width: 120,
+              height: 120,
             ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: Const.space12,
-                  vertical: 5.0,
+                  vertical: 5,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,9 +96,9 @@ class CartCard extends StatelessWidget {
                           style: theme.textTheme.subtitle2,
                           maxLines: 1,
                         ),
-                        const SizedBox(width: 5.0),
+                        const SizedBox(width: 5),
                         CircleAvatar(
-                          radius: 8.0,
+                          radius: 8,
                           backgroundColor: _colorType(cart.color!),
                         ),
                         const SizedBox(width: Const.space8),
@@ -107,7 +107,7 @@ class CartCard extends StatelessWidget {
                           style: theme.textTheme.subtitle2,
                           maxLines: 1,
                         ),
-                        const SizedBox(width: 5.0),
+                        const SizedBox(width: 5),
                         AutoSizeText(
                           _sizeType(cart.size!),
                           style: theme.textTheme.headline4,
@@ -119,7 +119,7 @@ class CartCard extends StatelessWidget {
                           style: theme.textTheme.subtitle2,
                           maxLines: 1,
                         ),
-                        const SizedBox(width: 5.0),
+                        const SizedBox(width: 5),
                         AutoSizeText(
                           cart.qty.toString(),
                           style: theme.textTheme.headline4,
@@ -130,7 +130,7 @@ class CartCard extends StatelessWidget {
                     const SizedBox(height: Const.space8),
                     AutoSizeText(
                       NumberFormat.currency(
-                        symbol: '\$',
+                        symbol: r'\$',
                       ).format(cart.price),
                       style: theme.textTheme.headline4,
                       maxLines: 1,

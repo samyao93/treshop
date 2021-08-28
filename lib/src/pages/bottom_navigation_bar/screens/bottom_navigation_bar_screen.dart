@@ -28,7 +28,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   }
 
   Future<bool> _willPopCallback(BuildContext context) async {
-    var now = DateTime.now();
+    final now = DateTime.now();
     if (_selectedIndex != 1) {
       if (_currentBackPressTime == null ||
           now.difference(_currentBackPressTime!) > const Duration(seconds: 4)) {
@@ -66,11 +66,11 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           selectedItemColor: theme.primaryColor,
           unselectedItemColor: theme.hintColor,
           selectedLabelStyle:
-              theme.textTheme.subtitle2!.copyWith(fontSize: 10.0),
+              theme.textTheme.subtitle2!.copyWith(fontSize: 10),
           unselectedLabelStyle:
-              theme.textTheme.subtitle2!.copyWith(fontSize: 10.0),
+              theme.textTheme.subtitle2!.copyWith(fontSize: 10),
           type: BottomNavigationBarType.fixed,
-          iconSize: 16.0,
+          iconSize: 16,
           items: BottomNavigationList.items(context),
         ),
       ),

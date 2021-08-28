@@ -14,7 +14,7 @@ class _BuildSearch extends StatelessWidget {
     final theme = Theme.of(context);
     return Container(
       width: Screens.width(context),
-      height: 50.0,
+      height: 50,
       margin:const EdgeInsets.symmetric(horizontal: Const.margin),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(Const.radius),
@@ -23,7 +23,6 @@ class _BuildSearch extends StatelessWidget {
       child: TextField(
         controller: controller,
         autocorrect: false,
-        autofocus: false,
         style: theme.textTheme.bodyText2,
         decoration: InputDecoration(
           hintText: AppLocalizations.of(context)!.search_anything_you_like,
@@ -34,7 +33,7 @@ class _BuildSearch extends StatelessWidget {
             onPressed: onSearchTap,
             color: theme.primaryColor,
           ),
-          contentPadding:const EdgeInsets.symmetric(vertical: 15.0),
+          contentPadding:const EdgeInsets.symmetric(vertical: 15),
         ),
       ),
     );

@@ -16,7 +16,7 @@ class _FooterSection extends StatelessWidget {
     return Consumer<CartProvider>(builder: (context, cart, snapshot) {
       return Container(
         width: Screens.width(context),
-        height: 155.0,
+        height: 155,
         color: theme.cardColor,
         padding:const EdgeInsets.symmetric(
           horizontal: Const.margin,
@@ -25,11 +25,11 @@ class _FooterSection extends StatelessWidget {
         child: Column(
           children: [
             InkWell(
-              onTap: () => Get.toNamed(Routes.selectCoupon),
+              onTap: () => Get.toNamed<dynamic>(Routes.selectCoupon),
               borderRadius: BorderRadius.circular(Const.radius),
               child: Container(
                 width: Screens.width(context),
-                height: 45.0,
+                height: 45,
                 decoration: BoxDecoration(
                   border: Border.all(color: theme.hintColor),
                   borderRadius: BorderRadius.circular(Const.radius),
@@ -53,7 +53,7 @@ class _FooterSection extends StatelessWidget {
                     Icon(
                       Icons.arrow_forward_ios_outlined,
                       color: theme.hintColor,
-                      size: 12.0,
+                      size: 12,
                     )
                   ],
                 ),
@@ -69,7 +69,7 @@ class _FooterSection extends StatelessWidget {
                 ),
                 AutoSizeText(
                   NumberFormat.currency(
-                    symbol: '\$',
+                    symbol: r'\$',
                   ).format(total),
                   style: theme.textTheme.headline3,
                 ),
@@ -84,7 +84,7 @@ class _FooterSection extends StatelessWidget {
               const    Icon(
                     FeatherIcons.shoppingBag,
                     color: Colors.white,
-                    size: 16.0,
+                    size: 16,
                   ),
              const     SizedBox(width: Const.space12),
                   AutoSizeText(

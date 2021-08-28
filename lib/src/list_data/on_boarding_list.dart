@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-import '../helpers/constants.dart';
-import '../models/on_boarding_model.dart';
+import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/models/on_boarding_model.dart';
+ 
 
 class OnBoardingList {
   static List<OnBoardingModel> onBoardingList(BuildContext context) => [

@@ -21,7 +21,7 @@ class CheckoutSuccessScreen extends StatelessWidget {
               const SizedBox(height: Const.space25),
               CustomElevatedButton(
                 onTap: () {
-                  Get.offAllNamed(Routes.home);
+                  Get.offAllNamed<dynamic>(Routes.home);
                   context.read<CartProvider>().cartList.clear();
                 },
                 label: AppLocalizations.of(context)!.shopping_again,
@@ -30,7 +30,7 @@ class CheckoutSuccessScreen extends StatelessWidget {
               CustomTextButton(
                 label: AppLocalizations.of(context)!.see_my_orders,
                 onTap: () {
-                  Get.offAllNamed(Routes.order);
+                  Get.offAllNamed<dynamic>(Routes.order);
                   context.read<CartProvider>().cartList.clear();
                 },
                 textColor: Theme.of(context).primaryColor,

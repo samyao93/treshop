@@ -1,7 +1,5 @@
 part of '../product_page.dart';
 
-
-
 class _BuildNameAndRating extends StatelessWidget {
   const _BuildNameAndRating({
     Key? key,
@@ -13,7 +11,7 @@ class _BuildNameAndRating extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: Const.margin),
       child: Row(
@@ -27,20 +25,20 @@ class _BuildNameAndRating extends StatelessWidget {
               maxLines: 2,
             ),
           ),
-    const      SizedBox(width: Const.space12),
+          const SizedBox(width: Const.space12),
           Row(
             children: [
-           const   Icon(
+              const Icon(
                 Icons.star,
                 color: ColorLight.warning,
-                size: 14.0,
+                size: 14,
               ),
-            const  SizedBox(width: 2.0),
+              const SizedBox(width: 2),
               AutoSizeText(
                 product.rating.toString(),
                 style: theme.textTheme.headline4,
               ),
-           const   SizedBox(width: Const.space8),
+              const SizedBox(width: Const.space8),
               AutoSizeText(
                 '(${product.totalReview})',
                 style: theme.textTheme.subtitle2,

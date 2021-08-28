@@ -1,5 +1,6 @@
-import '../models/chat_model.dart';
-import '../models/message_model.dart';
+
+import 'package:treshop/src/models/chat_model.dart';
+import 'package:treshop/src/models/message_model.dart';
 
 class MessageList {
   static List<MessageModel> messageList = [
@@ -50,7 +51,7 @@ class MessageList {
     ),
     ChatModel(
       isByMe: false,
-      message: 'I\'m fine thankyou?',
+      message: 'Im fine thankyou?',
       isRead: true,
       sendTime: DateTime.parse('2021-04-12T10:15:42.000000Z'),
     ),
@@ -80,7 +81,7 @@ class MessageList {
     ),
     ChatModel(
       isByMe: true,
-      message: 'I\'m so',
+      message: 'Im so',
       isRead: false,
       sendTime: DateTime.parse('2021-04-12T10:41:42.000000Z'),
     ),

@@ -2,9 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
-
-import '../helpers/constants.dart';
-import '../helpers/snack_toast.dart';
+import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/helpers/snack_toast.dart';
 
 enum AuthStatus { notAuthenticated, authenticated }
 // enum Gender { male, female }
@@ -46,23 +45,31 @@ class AuthenticationProvider with ChangeNotifier {
   }
 
   Future signIn(BuildContext context, {String? email, String? password}) async {
-    return Future.delayed(const Duration(seconds: 2), () {
-      Get.offAllNamed(Routes.home);
+    return Future<dynamic>.delayed(const Duration(seconds: 2), () {
+      Get.offAllNamed<dynamic>(Routes.home);
       authStatus = AuthStatus.authenticated;
       showToast(msg: AppLocalizations.of(context)!.authenticated_as + email!);
       isLoading = false;
     });
   }
 
-  Future signUp(BuildContext context,
-      {String? username, String? email, String? password}) async {
-    return Future.delayed(const Duration(seconds: 2), () async {
-      await Get.offAllNamed(Routes.home);
-      authStatus = AuthStatus.authenticated;
-      await showToast(
-        msg: AppLocalizations.of(context)!.authenticated_as + username!,
-      );
-      isLoading = false;
-    });
+  Future signUp(
+    BuildContext context, {
+    String? username,
+    String? email,
+    String? password,
+  }) async {
+    return Future<dynamic>.delayed(
+      const Duration(seconds: 2),
+      () async {
+        await Get.offAllNamed<dynamic>(Routes.home);
+        authStatus = AuthStatus.authenticated;
+        await showToast(
+          // ignore: use_build_context_synchronously
+          msg: AppLocalizations.of(context)!.authenticated_as + username!,
+        );
+        isLoading = false;
+      },
+    );
   }
 }

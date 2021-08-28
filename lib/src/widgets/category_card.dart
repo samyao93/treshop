@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import '../helpers/constants.dart';
-import '../models/category_model.dart';
+import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/models/category_model.dart';
 
 enum CardType { grid, horizontal }
 
@@ -51,16 +51,19 @@ class _GridCard extends StatelessWidget {
     return Card(
       margin: const EdgeInsets.only(
         right: Const.space15,
-        bottom: 2.0,
+        bottom: 2,
       ),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(Const.radius),
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(Const.radius),
-        onTap: () => Get.toNamed(Routes.allProduct, arguments: category.name),
+        onTap: () => Get.toNamed<dynamic>(
+          Routes.allProduct,
+          arguments: category.name,
+        ),
         child: SizedBox(
-          height: 100.0,
+          height: 100,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -93,17 +96,20 @@ class _HorizontalCard extends StatelessWidget {
     return Card(
       margin: const EdgeInsets.only(
         right: Const.space15,
-        bottom: 2.0,
+        bottom: 2,
       ),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(Const.radius),
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(Const.radius),
-        onTap: () => Get.toNamed(Routes.allProduct, arguments: category.name),
+        onTap: () => Get.toNamed<dynamic>(
+          Routes.allProduct,
+          arguments: category.name,
+        ),
         child: SizedBox(
-          width: 100.0,
-          height: 100.0,
+          width: 100,
+          height: 100,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

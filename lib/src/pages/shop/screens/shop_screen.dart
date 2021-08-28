@@ -17,7 +17,7 @@ class ShopScreen extends StatelessWidget {
               title: AppLocalizations.of(context)!.categories,
               actions: [
                 IconButton(
-                  onPressed: () => Get.toNamed(Routes.search),
+                  onPressed: () => Get.toNamed<dynamic>(Routes.search),
                   icon: const Icon(FeatherIcons.search),
                 ),
               ],

@@ -23,12 +23,12 @@ class CustomShakeTransition extends StatelessWidget {
     return TweenAnimationBuilder<double>(
       duration: duration,
       curve: curve,
-      tween: Tween(begin: 1.0, end: 0.0),
+      tween: Tween(begin: 1, end: 0),
       builder: (context, value, child) {
         return Transform.translate(
           offset: axis == Axis.horizontal
-              ? Offset(value * offset, 0.0)
-              : Offset(0.0,value * offset),
+              ? Offset(value * offset, 0)
+              : Offset(0,value * offset),
           child: child,
         );
       },

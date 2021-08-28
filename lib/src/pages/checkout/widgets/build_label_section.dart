@@ -24,7 +24,7 @@ class _BuildLabelSection extends StatelessWidget {
           Text(label, style: theme.textTheme.headline3),
           InkWell(
             onTap: onViewAllTap,
-            borderRadius: BorderRadius.circular(15.0),
+            borderRadius: BorderRadius.circular(15),
             child: Text(
               trailing ?? AppLocalizations.of(context)!.see_all,
               style: theme.textTheme.subtitle1!

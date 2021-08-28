@@ -13,7 +13,7 @@ class CouponScreen extends StatelessWidget {
           context,
           title: AppLocalizations.of(context)!.my_coupon,
           bottom: PreferredSize(
-            preferredSize:const Size.fromHeight(50.0),
+            preferredSize:const Size.fromHeight(50),
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Const.radius),

@@ -33,9 +33,9 @@ class _BuildItemSize extends StatelessWidget {
                         onTap: () {
                           provider.itemSizeSelected = e.key;
                         },
-                        borderRadius: BorderRadius.circular(25.0),
+                        borderRadius: BorderRadius.circular(25),
                         child: CircleAvatar(
-                          radius: 20.0,
+                          radius: 20,
                           backgroundColor: theme.cardColor,
                           child: AutoSizeText(
                             e.value,

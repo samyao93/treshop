@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 
-import '../helpers/constants.dart';
-import '../helpers/screens.dart';
-import '../models/coupon_model.dart';
-import '../widgets/custom_elevated_button.dart';
+import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/helpers/screens.dart';
+import 'package:treshop/src/models/coupon_model.dart';
+import 'package:treshop/src/widgets/custom_elevated_button.dart';
 
 class CouponCard extends StatelessWidget {
   const CouponCard({
@@ -56,19 +56,19 @@ class CouponCard extends StatelessWidget {
 
     return (coupon.condition == CouponCondition.notUsed)
         ? Card(
-            elevation: 5.0,
+            elevation: 5,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(Const.radius),
             ),
             child: SizedBox(
               width: Screens.width(context),
-              height: 130.0,
+              height: 130,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     width: Screens.width(context),
-                    height: 50.0,
+                    height: 50,
                     padding: const EdgeInsets.symmetric(
                       horizontal: Const.margin,
                     ),
@@ -82,7 +82,7 @@ class CouponCard extends StatelessWidget {
                       children: [
                         const Icon(
                           Icons.card_giftcard,
-                          size: 25.0,
+                          size: 25,
                           color: Colors.white,
                         ),
                         const SizedBox(width: Const.space12),
@@ -108,7 +108,7 @@ class CouponCard extends StatelessWidget {
                                 TextSpan(
                                     text: '${coupon.discount}%',
                                     style: theme.textTheme.bodyText1!
-                                        .copyWith(fontSize: 25.0)),
+                                        .copyWith(fontSize: 25)),
                                 TextSpan(
                                     text: ' OFF',
                                     style: theme.textTheme.bodyText1),
@@ -132,8 +132,8 @@ class CouponCard extends StatelessWidget {
                           onTap: onUseTap,
                           label: buttonLabel,
                           color: buttonColor,
-                          width: 100.0,
-                          height: 30.0,
+                          width: 100,
+                          height: 30,
                         )
                       ],
                     ),
@@ -143,19 +143,19 @@ class CouponCard extends StatelessWidget {
             ),
           )
         : Card(
-            elevation: 5.0,
+            elevation: 5,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(Const.radius),
             ),
             child: SizedBox(
               width: Screens.width(context),
-              height: 130.0,
+              height: 130,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     width: Screens.width(context),
-                    height: 50.0,
+                    height: 50,
                     padding: const EdgeInsets.symmetric(
                       horizontal: Const.margin,
                     ),
@@ -169,7 +169,7 @@ class CouponCard extends StatelessWidget {
                       children: [
                       const  Icon(
                           Icons.card_giftcard,
-                          size: 25.0,
+                          size: 25,
                           color: Colors.white,
                         ),
                      const   SizedBox(width: Const.space12),
@@ -195,7 +195,7 @@ class CouponCard extends StatelessWidget {
                                 TextSpan(
                                     text: '${coupon.discount}%',
                                     style: theme.textTheme.bodyText1!
-                                        .copyWith(fontSize: 25.0)),
+                                        .copyWith(fontSize: 25)),
                                 TextSpan(
                                     text: ' OFF',
                                     style: theme.textTheme.bodyText1),
@@ -219,8 +219,8 @@ class CouponCard extends StatelessWidget {
                           onTap: _onTapType(coupon.condition!),
                           label: _labelType(coupon.condition!),
                           color: buttonColor,
-                          width: 100.0,
-                          height: 30.0,
+                          width: 100,
+                          height: 30,
                         )
                       ],
                     ),

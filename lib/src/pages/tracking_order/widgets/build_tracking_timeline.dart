@@ -10,18 +10,18 @@ class _TrackingTimeline extends StatelessWidget {
 
     return SizedBox(
       width: Screens.width(context),
-      height: 70.0,
+      height: 70,
       child: Row(
         children: [
           Column(
             children: [
               CircleAvatar(
-                radius: 10.0,
+                radius: 10,
                 backgroundColor: theme.primaryColor,
               ),
               Container(
-                width: 2.0,
-                height: 50.0,
+                width: 2,
+                height: 50,
                 color: theme.hintColor,
               ),
             ],

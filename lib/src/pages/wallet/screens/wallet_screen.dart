@@ -46,7 +46,7 @@ class WalletScreen extends StatelessWidget {
             physics: const ScrollPhysics(),
             shrinkWrap: true,
             itemBuilder: (context, index) {
-              var transaction = TransactionList.transactionList[index];
+              final transaction = TransactionList.transactionList[index];
               return TransactionCard(transaction: transaction);
             },
           )

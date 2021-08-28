@@ -8,8 +8,8 @@ import 'package:treshop/src/helpers/screens.dart';
 import 'package:treshop/src/list_data/tracking_list.dart';
 import 'package:treshop/src/models/tracking_model.dart';
 
-import '../../models/order_model.dart';
-import '../../widgets/custom_app_bar.dart';
+import 'package:treshop/src/models/order_model.dart';
+import 'package:treshop/src/widgets/custom_app_bar.dart';
 
 part 'screens/tracking_order_screen.dart';
 part 'widgets/build_order_status.dart';

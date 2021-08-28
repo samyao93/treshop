@@ -47,7 +47,7 @@ class _SearchScreenState extends State<SearchScreen> {
             productFound: productFound,
             onFilterTap: () {
               FocusScope.of(context).requestFocus(FocusNode());
-              showFlexibleBottomSheet(
+              showFlexibleBottomSheet<dynamic>(
                 minHeight: 0,
                 initHeight: 0.5,
                 maxHeight: 1,
@@ -61,7 +61,7 @@ class _SearchScreenState extends State<SearchScreen> {
             },
             onSortTap: () {
               FocusScope.of(context).requestFocus(FocusNode());
-              showFlexibleBottomSheet(
+              showFlexibleBottomSheet<dynamic>(
                 minHeight: 0,
                 initHeight: 0.5,
                 maxHeight: 1,

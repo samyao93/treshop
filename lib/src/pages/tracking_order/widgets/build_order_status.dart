@@ -106,8 +106,7 @@ class _BuildOrderStatus extends StatelessWidget {
     return Container(
       width: double.infinity,
       constraints: const BoxConstraints(
-        maxHeight: 100.0,
-        maxWidth: double.infinity,
+        maxHeight: 100, 
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -132,13 +131,13 @@ class _BuildOrderStatus extends StatelessWidget {
               ),
               endChild: Container(
                 width: double.infinity,
-                height: 50.0,
+                height: 50,
                 alignment: Alignment.topCenter,
-                padding:const EdgeInsets.only(top: 10.0),
+                padding:const EdgeInsets.only(top: 10),
                 child: Text(
                   AppLocalizations.of(context)!.not_pay,
                   style: theme.textTheme.subtitle2!.copyWith(
-                    height: 1.0,
+                    height: 1,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -148,8 +147,7 @@ class _BuildOrderStatus extends StatelessWidget {
           Expanded(
             child: TimelineTile(
               axis: TimelineAxis.horizontal,
-              alignment: TimelineAlign.center,
-              isFirst: false,
+              alignment: TimelineAlign.center, 
               lineXY: .2,
               beforeLineStyle: LineStyle(
                 color: packagingLineColor(status),
@@ -168,13 +166,13 @@ class _BuildOrderStatus extends StatelessWidget {
               ),
               endChild: Container(
                 width: double.infinity,
-                height: 50.0,
+                height: 50,
                 alignment: Alignment.topCenter,
-                padding:const EdgeInsets.only(top: 10.0),
+                padding:const EdgeInsets.only(top: 10),
                 child: Text(
                   AppLocalizations.of(context)!.packaging,
                   style: theme.textTheme.subtitle2!.copyWith(
-                    height: 1.0,
+                    height: 1,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -184,8 +182,7 @@ class _BuildOrderStatus extends StatelessWidget {
           Expanded(
             child: TimelineTile(
               axis: TimelineAxis.horizontal,
-              alignment: TimelineAlign.center,
-              isFirst: false,
+              alignment: TimelineAlign.center, 
               lineXY: .2,
               beforeLineStyle: LineStyle(
                 color: onDeliveryLineColor(status),
@@ -202,13 +199,13 @@ class _BuildOrderStatus extends StatelessWidget {
               ),
               endChild: Container(
                 width: double.infinity,
-                height: 50.0,
+                height: 50,
                 alignment: Alignment.topCenter,
-                padding:const EdgeInsets.only(top: 10.0),
+                padding:const EdgeInsets.only(top: 10),
                 child: Text(
                   AppLocalizations.of(context)!.on_delivery,
                   style: theme.textTheme.subtitle2!.copyWith(
-                    height: 1.0,
+                    height: 1,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -218,8 +215,7 @@ class _BuildOrderStatus extends StatelessWidget {
           Expanded(
             child: TimelineTile(
               axis: TimelineAxis.horizontal,
-              alignment: TimelineAlign.center,
-              isFirst: false,
+              alignment: TimelineAlign.center, 
               isLast: true,
               lineXY: .2,
               beforeLineStyle: LineStyle(
@@ -237,13 +233,13 @@ class _BuildOrderStatus extends StatelessWidget {
               ),
               endChild: Container(
                 width: double.infinity,
-                height: 50.0,
+                height: 50,
                 alignment: Alignment.topCenter,
-                padding:const EdgeInsets.only(top: 10.0),
+                padding:const EdgeInsets.only(top: 10),
                 child: Text(
                   AppLocalizations.of(context)!.success,
                   style: theme.textTheme.subtitle2!.copyWith(
-                    height: 1.0,
+                    height: 1,
                   ),
                   textAlign: TextAlign.center,
                 ),

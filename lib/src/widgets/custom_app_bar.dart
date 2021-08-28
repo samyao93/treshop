@@ -32,5 +32,5 @@ AppBar CustomAppBar(
 }
 
 void buildBackOnTap() {
-  Get.back();
+  Get.back<dynamic>();
 }

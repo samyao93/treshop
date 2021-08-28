@@ -11,12 +11,12 @@ class _ProductScreenState extends State<ProductScreen> {
   int _qty = 1;
   ProductModel? product;
 
-  var rng = Random();
+  Random rng = Random();
 
   @override
   void initState() {
     super.initState();
-    product = Get.arguments;
+    product = Get.arguments as ProductModel;
   }
 
   @override
@@ -36,7 +36,8 @@ class _ProductScreenState extends State<ProductScreen> {
                       });
                     },
                     onLeadingTap: () {
-                      Future.delayed(const Duration(microseconds: 0), Get.back)
+                      Future.delayed(
+                              const Duration(microseconds: 100), Get.back)
                           .then((value) => setState(() {}));
                     }),
                 SliverList(

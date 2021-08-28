@@ -20,35 +20,34 @@ class _BuildChatBubble extends StatelessWidget {
       child: Container(
           margin: const EdgeInsets.only(bottom: 24),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               CircleAvatar(
-                radius: 25.0,
+                radius: 25,
                 backgroundColor: Colors.black12,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8),
                   child: SvgPicture.asset(
                     CustomIcon.logo,
                   ),
                 ),
               ),
-              const SizedBox(width: 10.0),
+              const SizedBox(width: 10),
               Container(
-                margin: const EdgeInsets.only(right: 25.0),
-                padding: const EdgeInsets.all(12.0),
+                margin: const EdgeInsets.only(right: 25),
+                padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
                   color: Colors.amber.withOpacity(.2),
                   borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(15.0),
-                    bottomLeft: Radius.circular(15.0),
-                    bottomRight: Radius.circular(15.0),
+                    topRight: Radius.circular(15),
+                    bottomLeft: Radius.circular(15),
+                    bottomRight: Radius.circular(15),
                   ),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(chat.message!, style: theme.textTheme.bodyText2),
-                    const SizedBox(height: 5.0),
+                    const SizedBox(height: 5),
                     Text(DateFormat.jm().format(chat.sendTime!),
                         style: theme.textTheme.subtitle2),
                   ],
@@ -69,16 +68,16 @@ class _BuildChatBubble extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              const SizedBox(width: 10.0),
+              const SizedBox(width: 10),
               Container(
-                margin: const EdgeInsets.only(right: 25.0),
-                padding: const EdgeInsets.all(12.0),
+                margin: const EdgeInsets.only(right: 25),
+                padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
                   color: theme.primaryColor,
                   borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(15.0),
-                    bottomLeft: Radius.circular(15.0),
-                    bottomRight: Radius.circular(15.0),
+                    topLeft: Radius.circular(15),
+                    bottomLeft: Radius.circular(15),
+                    bottomRight: Radius.circular(15),
                   ),
                 ),
                 child: Column(
@@ -89,7 +88,7 @@ class _BuildChatBubble extends StatelessWidget {
                       style: theme.textTheme.bodyText2!
                           .copyWith(color: theme.backgroundColor),
                     ),
-                    const SizedBox(height: 5.0),
+                    const SizedBox(height: 5),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -100,7 +99,7 @@ class _BuildChatBubble extends StatelessWidget {
                         ),
                         const SizedBox(width: 8),
                         Icon(chat.isRead! ? Icons.done_all : Icons.done,
-                            color: theme.backgroundColor, size: 10.0),
+                            color: theme.backgroundColor, size: 10),
                       ],
                     ),
                   ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'colors.dart';
+import 'package:treshop/src/helpers/colors.dart';
+ 
 
 ThemeData themeLight(BuildContext context) {
   return ThemeData(
@@ -28,52 +28,52 @@ ThemeData themeLight(BuildContext context) {
     textTheme: GoogleFonts.poppinsTextTheme().copyWith(
       headline1: GoogleFonts.poppins(
         color: ColorLight.fontTitle,
-        fontSize: 20.0,
+        fontSize: 20,
         fontWeight: FontWeight.w500,
       ),
       headline2: GoogleFonts.poppins(
         color: ColorLight.fontTitle,
-        fontSize: 18.0,
+        fontSize: 18,
         fontWeight: FontWeight.w500,
       ),
       headline3: GoogleFonts.poppins(
         color: ColorLight.fontTitle,
-        fontSize: 16.0,
+        fontSize: 16,
         fontWeight: FontWeight.w500,
       ),
       headline4: GoogleFonts.poppins(
         color: ColorLight.fontTitle,
-        fontSize: 14.0,
+        fontSize: 14,
         fontWeight: FontWeight.w500,
       ),
       headline5: GoogleFonts.poppins(
         color: ColorLight.fontTitle,
-        fontSize: 12.0,
+        fontSize: 12,
         fontWeight: FontWeight.w500,
       ),
       bodyText1: GoogleFonts.poppins(
         color: ColorLight.fontTitle,
-        fontSize: 16.0,
+        fontSize: 16,
         fontWeight: FontWeight.normal,
       ),
       bodyText2: GoogleFonts.poppins(
         color: ColorLight.fontTitle,
-        fontSize: 14.0,
+        fontSize: 14,
         fontWeight: FontWeight.normal,
       ),
       subtitle1: GoogleFonts.poppins(
         color: ColorLight.fontSubtitle,
-        fontSize: 14.0,
+        fontSize: 14,
         fontWeight: FontWeight.normal,
       ),
       subtitle2: GoogleFonts.poppins(
         color: ColorLight.fontSubtitle,
-        fontSize: 12.0,
+        fontSize: 12,
         fontWeight: FontWeight.normal,
       ),
       button: GoogleFonts.poppins(
         color: Colors.white,
-        fontSize: 14.0,
+        fontSize: 14,
         fontWeight: FontWeight.normal,
       ),
     ),
@@ -105,52 +105,52 @@ ThemeData themeDark(BuildContext context) {
     textTheme: GoogleFonts.poppinsTextTheme().copyWith(
       headline1: GoogleFonts.poppins(
         color: ColorDark.fontTitle,
-        fontSize: 20.0,
+        fontSize: 20,
         fontWeight: FontWeight.w500,
       ),
       headline2: GoogleFonts.poppins(
         color: ColorDark.fontTitle,
-        fontSize: 18.0,
+        fontSize: 18,
         fontWeight: FontWeight.w500,
       ),
       headline3: GoogleFonts.poppins(
         color: ColorDark.fontTitle,
-        fontSize: 16.0,
+        fontSize: 16,
         fontWeight: FontWeight.w500,
       ),
       headline4: GoogleFonts.poppins(
         color: ColorDark.fontTitle,
-        fontSize: 14.0,
+        fontSize: 14,
         fontWeight: FontWeight.w500,
       ),
       headline5: GoogleFonts.poppins(
         color: ColorDark.fontTitle,
-        fontSize: 12.0,
+        fontSize: 12,
         fontWeight: FontWeight.w500,
       ),
       bodyText1: GoogleFonts.poppins(
         color: ColorDark.fontTitle,
-        fontSize: 16.0,
+        fontSize: 16,
         fontWeight: FontWeight.normal,
       ),
       bodyText2: GoogleFonts.poppins(
         color: ColorDark.fontTitle,
-        fontSize: 14.0,
+        fontSize: 14,
         fontWeight: FontWeight.normal,
       ),
       subtitle1: GoogleFonts.poppins(
         color: ColorDark.fontSubtitle,
-        fontSize: 14.0,
+        fontSize: 14,
         fontWeight: FontWeight.normal,
       ),
       subtitle2: GoogleFonts.poppins(
         color: ColorDark.fontSubtitle,
-        fontSize: 12.0,
+        fontSize: 12,
         fontWeight: FontWeight.normal,
       ),
       button: GoogleFonts.poppins(
         color: Colors.white,
-        fontSize: 14.0,
+        fontSize: 14,
         fontWeight: FontWeight.normal,
       ),
     ),

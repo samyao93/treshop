@@ -19,7 +19,7 @@ class LanguageScreen extends StatelessWidget {
     }
 
     return Consumer<LocaleProvider>(builder: (context, locale, snapshot) {
-      var lang = locale.locale ?? Localizations.localeOf(context);
+      final lang = locale.locale ?? Localizations.localeOf(context);
 
       return Scaffold(
         appBar: CustomAppBar(
@@ -27,7 +27,7 @@ class LanguageScreen extends StatelessWidget {
           title: AppLocalizations.of(context)!.change_language,
         ),
         body: Card(
-          elevation: 6.0,
+          elevation: 6,
           margin: const EdgeInsets.symmetric(horizontal: Const.margin),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: Const.space8),

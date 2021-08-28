@@ -24,7 +24,7 @@ class _HeaderSection extends StatelessWidget {
 
     return Container(
       width: Screens.width(context),
-      height: 85.0,
+      height: 85,
       padding:const EdgeInsets.symmetric(horizontal: Const.margin),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,7 +33,7 @@ class _HeaderSection extends StatelessWidget {
             children: [
               Expanded(
                 child: Container(
-                  height: 50.0,
+                  height: 50,
                   decoration: BoxDecoration(
                     color: theme.hintColor.withOpacity(.05),
                     borderRadius: BorderRadius.circular(Const.radius),
@@ -41,7 +41,6 @@ class _HeaderSection extends StatelessWidget {
                   child: TextField(
                     controller: searchController,
                     autocorrect: false,
-                    autofocus: false,
                     style: theme.textTheme.bodyText2,
                     onChanged: onChanged,
                     decoration: InputDecoration(
@@ -55,8 +54,8 @@ class _HeaderSection extends StatelessWidget {
                         color: theme.primaryColor,
                       ),
                       contentPadding:const EdgeInsets.symmetric(
-                        vertical: 15.0,
-                        horizontal: 5.0,
+                        vertical: 15,
+                        horizontal: 5,
                       ),
                     ),
                   ),
@@ -65,21 +64,21 @@ class _HeaderSection extends StatelessWidget {
             const  SizedBox(width: Const.space12),
               CustomElevatedButton(
                 onTap: onFilterTap,
-                width: 50.0,
-                height: 50.0,
+                width: 50,
+                height: 50,
                 child:const Icon(
                   FeatherIcons.sliders,
-                  size: 20.0,
+                  size: 20,
                 ),
               ),
             const  SizedBox(width: Const.space12),
               CustomElevatedButton(
                 onTap: onSortTap,
-                width: 50.0,
-                height: 50.0,
+                width: 50,
+                height: 50,
                 child:const Icon(
                   FeatherIcons.filter,
-                  size: 20.0,
+                  size: 20,
                 ),
               ),
             ],

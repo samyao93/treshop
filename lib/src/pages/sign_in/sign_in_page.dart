@@ -5,14 +5,14 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
+import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/helpers/screens.dart';
+import 'package:treshop/src/providers/authentication_provider.dart';
+import 'package:treshop/src/widgets/custom_elevated_button.dart';
+import 'package:treshop/src/widgets/custom_loading_indicator.dart';
+import 'package:treshop/src/widgets/custom_social_button.dart';
+import 'package:treshop/src/widgets/custom_text_button.dart';
+import 'package:treshop/src/widgets/custom_text_form_field.dart';
 
-import '../../helpers/constants.dart';
-import '../../helpers/screens.dart';
-import '../../providers/authentication_provider.dart';
-import '../../widgets/custom_elevated_button.dart';
-import '../../widgets/custom_loading_indicator.dart';
-import '../../widgets/custom_social_button.dart';
-import '../../widgets/custom_text_button.dart';
-import '../../widgets/custom_text_form_field.dart';
 
 part 'screens/sign_in_screen.dart';

@@ -12,12 +12,12 @@ class _BuildDeliveryMethod extends StatelessWidget {
           _BuildLabelSection(
             label: AppLocalizations.of(context)!.delivery_method,
             trailing: AppLocalizations.of(context)!.change,
-            onViewAllTap: () => Get.toNamed(Routes.shipping),
+            onViewAllTap: () => Get.toNamed<dynamic>(Routes.shipping),
           ),
           const SizedBox(height: Const.space8),
           Container(
             width: Screens.width(context),
-            height: 60.0,
+            height: 60,
             margin: const EdgeInsets.symmetric(horizontal: Const.margin),
             padding: const EdgeInsets.symmetric(horizontal: Const.margin),
             decoration: BoxDecoration(
@@ -39,7 +39,7 @@ class _BuildDeliveryMethod extends StatelessWidget {
                           color: ColorLight.fontTitle,
                         ),
                       ),
-                      const SizedBox(height: 5.0),
+                      const SizedBox(height: 5),
                       AutoSizeText(
                         // ignore: lines_longer_than_80_chars
                         '${AppLocalizations.of(context)!.estimated} ${ShippingList.shippingList[checkout.shippingSelected].estimate!} ${AppLocalizations.of(context)!.days}',
@@ -51,7 +51,7 @@ class _BuildDeliveryMethod extends StatelessWidget {
                   ),
                 ),
                 AutoSizeText(
-                  NumberFormat.currency(symbol: '\$').format(ShippingList
+                  NumberFormat.currency(symbol: r'\$').format(ShippingList
                       .shippingList[checkout.shippingSelected].price),
                   style: theme.textTheme.headline3!.copyWith(
                     color: ColorLight.fontTitle,

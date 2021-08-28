@@ -1,13 +1,13 @@
 import 'dart:ui';
 
-import '../models/product_model.dart';
+import 'package:treshop/src/models/product_model.dart';
 
 class ProductList {
   static List<ProductModel> allProduct = [
     ProductModel(
       name: 'Morrissey print T-shirt',
       price: 590,
-      rating: 5.0,
+      rating: 5,
       // ignore: lines_longer_than_80_chars
       // ignore: lines_longer_than_80_chars
       description: 'Supplied by a premier sneaker marketplace dealing with unworn, already sold out, in demand rarities. Each product is rigorously inspected by experienced experts guaranteeing authenticity. Supreme continues their series of celebrities wearing the box logo t-shirt with music legend Morrissey for Spring 2016. Just like the previous editions, this was another instant sell-out now coveted by many. Featuring a round neck, short sleeves and a graphic print.\n\nMade in United States',
@@ -30,7 +30,7 @@ class ProductList {
     ProductModel(
       name: 'Givenchy 4G-plaque jacket',
       price: 423,
-      rating: 5.0,
+      rating: 5,
       // ignore: lines_longer_than_80_chars
       // ignore: lines_longer_than_80_chars
       description: 'Versatility is key to a modern wardrobe. This black jacket from Givenchy has zipped detailing and a removable hood, making it a practical choice for whatever the weather brings.',
@@ -53,7 +53,7 @@ class ProductList {
     ProductModel(
       name: 'Fendi logo-patch backpack',
       price: 343,
-      rating: 5.0,
+      rating: 5,
       // ignore: lines_longer_than_80_chars
       // ignore: lines_longer_than_80_chars
       description: 'Are you the type of person that has to have everything with you at all times? Designed with a spacious slouch body, this Fendi logo-print backpack can accommodate all you have to carry. Kitchen sink included.',
@@ -76,7 +76,7 @@ class ProductList {
     ProductModel(
       name: 'Kenzo embroidered-logo wool jumper',
       price: 562,
-      rating: 5.0,
+      rating: 5,
       // ignore: lines_longer_than_80_chars
       description: "Steer clear of dull moments when equipped with this embroidered-logo jumper from Kenzo. It's soft cream tone and contrasting playful logo are the perfect combination for day-to-day attire.",
       totalReview: 120,
@@ -98,7 +98,7 @@ class ProductList {
     ProductModel(
       name: 'TOM FORD Jago low-top sneakers',
       price: 124,
-      rating: 5.0,
+      rating: 5,
       // ignore: lines_longer_than_80_chars
       description: 'A sporty design with a focus on functionality, Tom Ford’s Jago sneakers are the ultimate casual pair. This design is set atop a multi-sectioned sole that has been constructed through artisanal moulding techniques, ensuring a comfortable fit. This lace-up pair is finished with practical tabs and an elasticated strap for an easy slip-on.',
       totalReview: 120,
@@ -120,7 +120,7 @@ class ProductList {
     ProductModel(
       name: 'Valentino embroidered VLogo bucket hat',
       price: 335,
-      rating: 5.0,
+      rating: 5,
       // ignore: lines_longer_than_80_chars
       description: 'Presented in a vibrant yellow hue, this bucket hat adds an exuberant flair to any casual collection. The design is accented with a subtle yet unmistakable VLogo, a Valentino symbol that carries the promise of an instant style uplift.',
       totalReview: 120,
@@ -141,7 +141,7 @@ class ProductList {
     ProductModel(
       name: 'Bell & Ross BR 05 Black Steel & Gold 40mm',
       price: 429,
-      rating: 5.0,
+      rating: 5,
       // ignore: lines_longer_than_80_chars
       description: "Let your timekeeping collection take flight. Bell & Ross find their inspiration from vintage and historic aviation technical aspects, reflecting these details throughout each piece. Their latest icon comes in the form of this BR 05 Black Steel & Gold 40mm, fit with two chronograph counters intended to measure and control short time periods to adapt to the pace of modern life. You'll never miss a second.",
       totalReview: 120,
@@ -163,7 +163,7 @@ class ProductList {
     ProductModel(
       name: 'Maison Margiela distressed-knit layered jumper',
       price: 2332,
-      rating: 5.0,
+      rating: 5,
       // ignore: lines_longer_than_80_chars
       description: "The fox motif is synonymous with record label turned fashion house Maison Kitsuné; after all, 'Kitsune' translates from Japanese to 'fox'. This wool cardigan features the animal emblem embroidered onto the chest in a patch construction.",
       totalReview: 120,
@@ -185,7 +185,7 @@ class ProductList {
     ProductModel(
       name: 'Etro illustration-print lyocell T-shirt',
       price: 332,
-      rating: 5.0,
+      rating: 5,
       // ignore: lines_longer_than_80_chars
       description: "material of this product meets our conscious criteria. For example, it's either organic, recycled, upcycled or independently recognised as being better for the environment (such as linen, ramie, TENCEL™ etc.).",
       totalReview: 120,
@@ -207,7 +207,7 @@ class ProductList {
     ProductModel(
       name: 'Balenciaga Resorts logo-embroidered cap',
       price: 590,
-      rating: 5.0,
+      rating: 5,
       // ignore: lines_longer_than_80_chars
       description: "Balenciaga showcased a videogame set in 2030 for their AW21 collection. Users take on the role of Balenciaga-clad avatars navigating an optimistic post-pandemic world, presumably one where Balenciaga Hotels & Resorts - as embroidered on this cap - exist. Cut from organic cotton, this everyday accessory ensures you're there in spirit.",
       totalReview: 120,

@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-
-import '../helpers/constants.dart';
-import '../helpers/screens.dart';
-import '../models/product_model.dart';
-import 'custom_network_image.dart';
+import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/helpers/screens.dart';
+import 'package:treshop/src/models/product_model.dart';
+import 'package:treshop/src/widgets/custom_network_image.dart';
+ 
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
@@ -22,7 +22,7 @@ class ProductCard extends StatelessWidget {
     final theme = Theme.of(context);
 
     return InkWell(
-      onTap: () => Get.toNamed(Routes.product, arguments: product),
+      onTap: () => Get.toNamed<dynamic>(Routes.product, arguments: product),
       borderRadius: BorderRadius.circular(Const.radius),
       child: Card(
         margin: EdgeInsets.zero,
@@ -31,7 +31,7 @@ class ProductCard extends StatelessWidget {
         ),
         child: Container(
           margin: const EdgeInsets.all(Const.space12),
-          height: 240.0,
+          height: 240,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -41,21 +41,20 @@ class ProductCard extends StatelessWidget {
                     image: product.images!.first,
                     borderRadius: BorderRadius.circular(
                       Const.radius,
-                    ),
-                    fit: BoxFit.cover,
+                    ), 
                     height: Screens.width(context) / 2.0,
                   ),
                   Positioned(
                     right: Const.space8,
                     bottom: Const.space8,
                     child: CircleAvatar(
-                      radius: 15.0,
+                      radius: 15,
                       backgroundColor: theme.cardColor.withOpacity(.4),
                       child: IconButton(
                         onPressed: () {},
                         icon: const Icon(FeatherIcons.heart),
                         color: Colors.red,
-                        iconSize: 15.0,
+                        iconSize: 15,
                       ),
                     ),
                   )
@@ -70,7 +69,7 @@ class ProductCard extends StatelessWidget {
               const SizedBox(height: Const.space8),
               AutoSizeText(
                 NumberFormat.currency(
-                  symbol: '\$',
+                  symbol: r'\$',
                 ).format(product.price),
                 style: theme.textTheme.bodyText2,
                 maxLines: 1,

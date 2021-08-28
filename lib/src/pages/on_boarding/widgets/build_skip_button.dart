@@ -17,7 +17,7 @@ class _BuildSkipButton extends StatelessWidget {
           duration:const Duration(milliseconds: 200),
           child: CustomTextButton(
             label: AppLocalizations.of(context)!.skip,
-            onTap: ()=> Get.toNamed(Routes.signIn),
+            onTap: ()=> Get.toNamed<dynamic>(Routes.signIn),
           ),
         ),
       );

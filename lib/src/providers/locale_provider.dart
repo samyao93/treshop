@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../l10n/l10n.dart';
+import 'package:treshop/l10n/l10n.dart';
+ 
 
 class LocaleProvider with ChangeNotifier{
   Locale? _locale;

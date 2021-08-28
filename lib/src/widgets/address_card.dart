@@ -2,9 +2,9 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../helpers/constants.dart';
-import '../models/address_model.dart';
-import '../providers/checkout_provider.dart';
+import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/models/address_model.dart';
+import 'package:treshop/src/providers/checkout_provider.dart';
 
 class AddressCard extends StatelessWidget {
   const AddressCard({
@@ -29,7 +29,7 @@ class AddressCard extends StatelessWidget {
           onTap: onAddressTap,
           borderRadius: BorderRadius.circular(Const.radius),
           child: Container(
-            width: 250.0,
+            width: 250,
             padding: const EdgeInsets.all(Const.space12),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Const.radius),
@@ -42,7 +42,7 @@ class AddressCard extends StatelessWidget {
               children: [
                 AutoSizeText(address.location!,
                     style: theme.textTheme.headline3),
-                const SizedBox(height: 5.0),
+                const SizedBox(height: 5),
                 Row(
                   children: [
                     Expanded(
@@ -52,7 +52,7 @@ class AddressCard extends StatelessWidget {
                         maxLines: 1,
                       ),
                     ),
-                    const SizedBox(width: 5.0),
+                    const SizedBox(width: 5),
                     AutoSizeText(
                       address.phoneNumber.toString(),
                       style: theme.textTheme.bodyText2,
@@ -60,7 +60,7 @@ class AddressCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 5.0),
+                const SizedBox(height: 5),
                 AutoSizeText(
                   address.address!,
                   style: theme.textTheme.subtitle2,

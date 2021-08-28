@@ -10,11 +10,9 @@ class _BodySection extends StatelessWidget {
 
     return PageView.builder(
       itemCount: OnBoardingList.onBoardingList(context).length,
-      scrollDirection: Axis.horizontal,
-      pageSnapping: true,
       onPageChanged:onPageChanged,
       itemBuilder: (context, index) {
-        var data = OnBoardingList.onBoardingList(context)[index];
+        final data = OnBoardingList.onBoardingList(context)[index];
         return _OnBoardingCard(data: data);
       },
     );

@@ -13,14 +13,13 @@ class _BuildChatTextBox extends StatelessWidget {
     final theme = Theme.of(context);
     return Consumer<ThemeProvider>(builder: (context, state, snapshot) {
       return Card(
-        margin: const EdgeInsets.all(0.0),
+        margin:  EdgeInsets.zero,
         
         child: Container(
           width: Screens.width(context),
-          height: 60.0,
+          height: 60,
           color: theme.backgroundColor,
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               IconButton(
                 icon:const Icon(Icons.file_upload),
@@ -31,8 +30,8 @@ class _BuildChatTextBox extends StatelessWidget {
               ),
               Expanded(
                 child: Container(
-                  height: 45.0,
-                  padding:const EdgeInsets.symmetric(horizontal: 12.0),
+                  height: 45,
+                  padding:const EdgeInsets.symmetric(horizontal: 12),
                   decoration: BoxDecoration(
                     color: state.isLightTheme
                         ? ColorLight.background
@@ -51,7 +50,7 @@ class _BuildChatTextBox extends StatelessWidget {
                           focusedBorder: InputBorder.none,
                           enabledBorder: InputBorder.none,
                           contentPadding:const EdgeInsets.symmetric(
-                              horizontal: 5.0, vertical: 15.0)),
+                              horizontal: 5, vertical: 15)),
                     ),
                   ),
                 ),

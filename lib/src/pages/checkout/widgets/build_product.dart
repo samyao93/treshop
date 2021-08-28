@@ -24,7 +24,7 @@ class _BuildProducts extends StatelessWidget {
         const SizedBox(height: Const.space8),
         SizedBox(
           width: Screens.width(context),
-          height: 140.0,
+          height: 140,
           child: ListView.builder(
             itemCount: checkout!.products!.length,
             scrollDirection: Axis.horizontal,
@@ -33,7 +33,7 @@ class _BuildProducts extends StatelessWidget {
               horizontal: Const.margin,
             ),
             itemBuilder: (context, index) {
-              var product = checkout!.products![index];
+              final product = checkout!.products![index];
 
               return ProductCheckoutCard(product: product);
             },

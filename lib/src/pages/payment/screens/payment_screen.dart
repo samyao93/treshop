@@ -16,20 +16,20 @@ class PaymentScreen extends StatelessWidget {
           itemCount: PaymentList.paymentList.length,
           padding: const EdgeInsets.symmetric(horizontal: Const.margin),
           itemBuilder: (context, index) {
-            var payment = PaymentList.paymentList[index];
+            final payment = PaymentList.paymentList[index];
             return ListTile(
               contentPadding: const EdgeInsets.only(
                 bottom: Const.space15,
               ),
               leading: CircleAvatar(
-                radius: 25.0,
+                radius: 25,
                 backgroundColor: theme.hintColor.withOpacity(.5),
                 child: Padding(
                   padding: const EdgeInsets.all(Const.space12),
                   child: SvgPicture.asset(
                     payment.icon!,
-                    width: 50.0,
-                    height: 50.0,
+                    width: 50,
+                    height: 50,
                   ),
                 ),
               ),

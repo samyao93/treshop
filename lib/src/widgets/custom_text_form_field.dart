@@ -3,10 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:provider/provider.dart';
-
-import '../helpers/colors.dart';
-import '../helpers/constants.dart';
-import '../providers/theme_provider.dart';
+import 'package:treshop/src/helpers/colors.dart';
+import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/providers/theme_provider.dart';
+ 
 
 enum TextFieldType { alphabet, email, text, password, phoneNumber, number }
 enum BorderType { outline, underline, none }
@@ -206,11 +206,11 @@ class CustomTextFormField extends StatelessWidget {
     EdgeInsets _contentPadding(BorderType borderType) {
       switch (borderType) {
         case BorderType.underline:
-          return const EdgeInsets.all(0.0);
+          return  EdgeInsets.zero;
         case BorderType.outline:
           return const EdgeInsets.symmetric(horizontal: Const.margin);
         case BorderType.none:
-          return const EdgeInsets.only(top: 15.0);
+          return const EdgeInsets.only(top: 15);
         default:
           return const EdgeInsets.symmetric(horizontal: Const.margin);
       }
@@ -219,12 +219,10 @@ class CustomTextFormField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       maxLines: maxLines,
-      autofocus: false,
       enabled: enabled,
       textAlign: textAlign ?? TextAlign.left,
       obscureText: obscureText ?? false,
       style: theme.textTheme.bodyText1,
-      inputFormatters: (inputFormatters != []) ? inputFormatters : [],
       keyboardType: _keyboardType(textFieldType),
       validator: _validator(textFieldType),
       decoration: InputDecoration(
@@ -236,7 +234,7 @@ class CustomTextFormField extends StatelessWidget {
             ? _contentPadding(borderType)
             : const EdgeInsets.only(
                 left: Const.margin,
-                top: 12.0,
+                top: 12,
               ),
         enabledBorder: _enabledBorder(borderType),
         focusedBorder: _focusedBorder(borderType),

@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 
-import '../helpers/constants.dart';
-import '../helpers/screens.dart';
-import '../models/cart_model.dart';
-import 'custom_network_image.dart';
+import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/helpers/screens.dart';
+import 'package:treshop/src/models/cart_model.dart';
+import 'package:treshop/src/widgets/custom_network_image.dart';
 
 class OrderDetailCard extends StatelessWidget {
   final CartModel order;
@@ -48,14 +48,14 @@ class OrderDetailCard extends StatelessWidget {
     }
 
     return Card(
-      elevation: 8.0,
+      elevation: 8,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(Const.radius),
       ),
       margin: const EdgeInsets.only(bottom: Const.space15),
       child: SizedBox(
         width: Screens.width(context),
-        height: 157.0,
+        height: 157,
         child: Column(
           children: [
             Padding(
@@ -67,8 +67,8 @@ class OrderDetailCard extends StatelessWidget {
                 children: [
                   CustomNetworkImage(
                     image: order.productImage!,
-                    width: 65.0,
-                    height: 65.0,
+                    width: 65,
+                    height: 65,
                   ),
                   Expanded(
                     child: Padding(
@@ -91,9 +91,9 @@ class OrderDetailCard extends StatelessWidget {
                                 style: theme.textTheme.subtitle2,
                                 maxLines: 1,
                               ),
-                              const SizedBox(width: 5.0),
+                              const SizedBox(width: 5),
                               CircleAvatar(
-                                radius: 8.0,
+                                radius: 8,
                                 backgroundColor: _colorType(order.color!),
                               ),
                               const SizedBox(width: Const.space8),
@@ -102,7 +102,7 @@ class OrderDetailCard extends StatelessWidget {
                                 style: theme.textTheme.subtitle2,
                                 maxLines: 1,
                               ),
-                              const SizedBox(width: 5.0),
+                              const SizedBox(width: 5),
                               AutoSizeText(
                                 _sizeType(order.size!),
                                 style: theme.textTheme.headline4,
@@ -114,7 +114,7 @@ class OrderDetailCard extends StatelessWidget {
                                 style: theme.textTheme.subtitle2,
                                 maxLines: 1,
                               ),
-                              const SizedBox(width: 5.0),
+                              const SizedBox(width: 5),
                               AutoSizeText(
                                 order.qty.toString(),
                                 style: theme.textTheme.headline4,
@@ -130,11 +130,11 @@ class OrderDetailCard extends StatelessWidget {
                 ],
               ),
             ),
-            Divider(color: theme.backgroundColor, thickness: 2.0),
+            Divider(color: theme.backgroundColor, thickness: 2),
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: Const.margin,
-                vertical: 5.0,
+                vertical: 5,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -145,7 +145,7 @@ class OrderDetailCard extends StatelessWidget {
                       AutoSizeText(AppLocalizations.of(context)!.total_payment,
                           style: theme.textTheme.subtitle1),
                       AutoSizeText(
-                        NumberFormat.currency(symbol: '\$').format(order.price),
+                        NumberFormat.currency(symbol: r'\$').format(order.price),
                         style: theme.textTheme.headline4,
                       ),
                     ],

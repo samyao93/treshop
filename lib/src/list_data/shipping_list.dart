@@ -1,4 +1,5 @@
-import '../models/shipping_model.dart';
+ 
+import 'package:treshop/src/models/shipping_model.dart';
 
 class ShippingList {
   static List<ShippingModel> shippingList = [

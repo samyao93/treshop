@@ -1,130 +1,130 @@
 import 'package:get/get.dart';
+import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/pages/all_product/all_product_page.dart';
+import 'package:treshop/src/pages/bottom_navigation_bar/bottom_navigation_bar_page.dart';
+import 'package:treshop/src/pages/cart/cart_page.dart';
 import 'package:treshop/src/pages/category/category_page.dart';
 import 'package:treshop/src/pages/chat/chat_page.dart';
+import 'package:treshop/src/pages/checkout/checkout_page.dart';
+import 'package:treshop/src/pages/coupon/coupon_page.dart';
 import 'package:treshop/src/pages/language/language_page.dart';
+import 'package:treshop/src/pages/on_boarding/on_boarding_page.dart';
+import 'package:treshop/src/pages/order/order_page.dart';
+import 'package:treshop/src/pages/order_detail/order_detail_page.dart';
+import 'package:treshop/src/pages/payment/payment_page.dart';
+import 'package:treshop/src/pages/product/product_page.dart';
 import 'package:treshop/src/pages/profile_detail/profile_detail_page.dart';
+import 'package:treshop/src/pages/search/search_page.dart';
+import 'package:treshop/src/pages/shipping/shipping_page.dart';
+import 'package:treshop/src/pages/sign_in/sign_in_page.dart';
+import 'package:treshop/src/pages/sign_up/sign_up_page.dart';
+import 'package:treshop/src/pages/splash/splash_page.dart';
+import 'package:treshop/src/pages/tracking_order/tracking_order_page.dart';
 import 'package:treshop/src/pages/wallet/wallet_page.dart';
 
-import '../pages/all_product/all_product_page.dart';
-import '../pages/bottom_navigation_bar/bottom_navigation_bar_page.dart';
-import '../pages/cart/cart_page.dart';
-import '../pages/checkout/checkout_page.dart';
-import '../pages/coupon/coupon_page.dart';
-import '../pages/on_boarding/on_boarding_page.dart';
-import '../pages/order/order_page.dart';
-import '../pages/order_detail/order_detail_page.dart';
-import '../pages/payment/payment_page.dart';
-import '../pages/product/product_page.dart';
-import '../pages/search/search_page.dart';
-import '../pages/shipping/shipping_page.dart';
-import '../pages/sign_in/sign_in_page.dart';
-import '../pages/sign_up/sign_up_page.dart';
-import '../pages/splash/splash_page.dart';
-import '../pages/tracking_order/tracking_order_page.dart';
-import 'constants.dart';
 
 List<GetPage> allRoutes = [
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.splash,
     page: () => const SplashScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.onBoarding,
     page: () => const OnBoardingScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.signIn,
     page: () => const SignInScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.signUp,
     page: () => const SignUpScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.home,
-    page: () => const BottomNavigationBarScreen(initialIndex: 0),
+    page: () => const BottomNavigationBarScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.search,
     page: () => const SearchScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.shop,
     page: () => const BottomNavigationBarScreen(initialIndex: 2),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.allProduct,
     page: () => const AllProductScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.favorite,
     page: () => const BottomNavigationBarScreen(initialIndex: 1),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.product,
     page: () => const ProductScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.cart,
     page: () => const CartScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.selectCoupon,
     page: () => const SelectCouponScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.checkout,
     page: () => const CheckoutScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.payment,
     page: () => const PaymentScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.shipping,
     page: () => const ShippingScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.checkoutSuccess,
     page: () => const CheckoutSuccessScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.profile,
     page: () => const BottomNavigationBarScreen(initialIndex: 3),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.order,
     page: () => const OrderScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.orderDetail,
     page: () => const OrderDetailScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.trackingOrder,
     page: () => const TrackingOrderScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.profileDetail,
     page: () => const ProfileDetailScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.coupon,
     page: () => const CouponScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.wallet,
     page: () => const WalletScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.chat,
     page: () => const ChatScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.category,
     page: () => const CategoryScreen(),
   ),
-  GetPage(
+  GetPage<dynamic>(
     name: Routes.language,
     page: () => const LanguageScreen(),
   ),

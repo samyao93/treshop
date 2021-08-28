@@ -43,12 +43,12 @@ class TransactionCard extends StatelessWidget {
 
     return ListTile(
       leading: CircleAvatar(
-        radius: 22.0,
+        radius: 22,
         backgroundColor: _iconColorType(transaction.type!).withOpacity(.2),
         child: Icon(
           _iconType(transaction.type!),
           color: _iconColorType(transaction.type!),
-          size: 20.0,
+          size: 20,
         ),
       ),
       title: AutoSizeText(
@@ -61,7 +61,7 @@ class TransactionCard extends StatelessWidget {
         style: theme.textTheme.subtitle2,
       ),
       trailing: AutoSizeText(
-        NumberFormat.currency(symbol: '\$').format(200),
+        NumberFormat.currency(symbol: r'\$').format(200),
         style: theme.textTheme.headline3,
       ),
     );

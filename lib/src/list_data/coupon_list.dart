@@ -1,4 +1,6 @@
-import '../models/coupon_model.dart';
+ 
+
+import 'package:treshop/src/models/coupon_model.dart';
 
 class CouponList {
   static List<CouponModel> couponList = [

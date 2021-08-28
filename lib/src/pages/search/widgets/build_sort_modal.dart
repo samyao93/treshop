@@ -48,7 +48,6 @@ class __BuildSortModalState extends State<_BuildSortModal> {
                 CustomTextButton(
                   label: AppLocalizations.of(context)!.close,
                   onTap: Get.back,
-                  fontSize: 14.0,
                   textColor: theme.primaryColor,
                 ),
                 const SizedBox(width: Const.space12),

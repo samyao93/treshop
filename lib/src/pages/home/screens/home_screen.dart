@@ -12,7 +12,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   TextEditingController? _searchController;
 
-  final _refreshController = RefreshController(initialRefresh: false);
+  final _refreshController = RefreshController();
 
   @override
   void initState() {
@@ -27,7 +27,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return SmartRefresher(
       controller: _refreshController,
       header: const WaterDropMaterialHeader(),
-      enablePullDown: true,
       onRefresh: () {
         Future.delayed(const Duration(seconds: 1), () {
           _refreshController.refreshCompleted();
@@ -44,14 +43,14 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           backgroundColor: theme.backgroundColor,
           title: CircleAvatar(
-            radius: 25.0,
+            radius: 25,
             backgroundColor: theme.primaryColor,
             backgroundImage: const CachedNetworkImageProvider(_userImage),
           ),
           centerTitle: false,
           actions: [
             IconBadge(
-              onTap: () => Get.toNamed(Routes.cart),
+              onTap: () => Get.toNamed<dynamic>(Routes.cart),
               icon: const Icon(FeatherIcons.shoppingCart),
               itemCount: cart.cartList.length,
               badgeColor: theme.primaryColor,
@@ -68,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   AutoSizeText(
                     AppLocalizations.of(context)!.trendias_Shop,
-                    style: theme.textTheme.headline1!.copyWith(fontSize: 25.0),
+                    style: theme.textTheme.headline1!.copyWith(fontSize: 25),
                   ),
                   AutoSizeText(
                     AppLocalizations.of(context)!.get_popular_fashion_from_home,
@@ -82,7 +81,8 @@ class _HomeScreenState extends State<HomeScreen> {
               controller: _searchController,
               onSearchTap: () {
                 FocusScope.of(context).requestFocus(FocusNode());
-                Get.toNamed(Routes.search, arguments: _searchController?.text);
+                Get.toNamed<dynamic>(Routes.search,
+                    arguments: _searchController?.text);
               },
             ),
             const SizedBox(height: Const.space25),
@@ -93,14 +93,14 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: Const.space12),
             Container(
               width: Screens.width(context),
-              height: 100.0,
+              height: 100,
               // color: Colors.amber,
               padding: const EdgeInsets.symmetric(horizontal: Const.margin),
               child: ListView.builder(
                 itemCount: CategoryList.categoryList(context).length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  var category = CategoryList.categoryList(context)[index];
+                  final category = CategoryList.categoryList(context)[index];
                   return CategoryCard(
                     category: category,
                     cardType: CardType.horizontal,
@@ -111,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: Const.space25),
             _BuildLabelSection(
               label: AppLocalizations.of(context)!.categories,
-              onViewAllTap: () => Get.toNamed(
+              onViewAllTap: () => Get.toNamed<dynamic>(
                 Routes.allProduct,
                 arguments: AppLocalizations.of(context)!.all,
               ),
@@ -121,16 +121,15 @@ class _HomeScreenState extends State<HomeScreen> {
               itemCount: ProductList.allProduct.length,
               crossAxisCount: 4,
               staggeredTileBuilder: (int index) => const StaggeredTile.fit(2),
-              mainAxisSpacing: 15.0,
-              crossAxisSpacing: 15.0,
-              scrollDirection: Axis.vertical,
+              mainAxisSpacing: 15,
+              crossAxisSpacing: 15, 
               shrinkWrap: true,
               physics: const ScrollPhysics(),
               padding: const EdgeInsets.symmetric(
-                horizontal: 18.0,
+                horizontal: 18,
               ),
               itemBuilder: (context, index) {
-                var product = ProductList.allProduct[index];
+                final product = ProductList.allProduct[index];
                 return ProductCard(product: product);
               },
             ),

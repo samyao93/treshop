@@ -1,4 +1,5 @@
-import 'chat_model.dart';
+
+import 'package:treshop/src/models/chat_model.dart';
 
 class MessageModel {
   final bool? isOnline;

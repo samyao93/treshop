@@ -24,7 +24,7 @@ class _BuildPriceDetail extends StatelessWidget {
                 style: theme.textTheme.headline4,
               ),
               TextSpan(
-                text: NumberFormat.currency(symbol: '\$').format(value),
+                text: NumberFormat.currency(symbol: r'\$').format(value),
                 style: theme.textTheme.headline4,
               ),
             ],

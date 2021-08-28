@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
-
-import '../widgets/custom_elevated_button.dart';
-import 'colors.dart';
+import 'package:treshop/src/helpers/colors.dart';
+import 'package:treshop/src/widgets/custom_elevated_button.dart';
 
 class Dialogs {
  static Future showDialogWithLabel(
@@ -14,14 +13,14 @@ class Dialogs {
     bool barrierDismissible = false,
   }) {
     final theme = Theme.of(context);
-    return showDialog(
+    return showDialog<dynamic>(
       context: context,
       barrierDismissible: barrierDismissible,
       builder: (context) {
         return AlertDialog(
           backgroundColor: theme.cardColor,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25.0),
+            borderRadius: BorderRadius.circular(25),
           ),
           content: SizedBox(
             height: 150,
@@ -34,9 +33,9 @@ class Dialogs {
                   style: theme.textTheme.bodyText1,
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 25.0),
+                const SizedBox(height: 25),
                 SizedBox(
-                  height: 45.0,
+                  height: 45,
                   child: Row(
                     children: [
                       Expanded(
@@ -47,12 +46,11 @@ class Dialogs {
                           label: AppLocalizations.of(context)?.cancel,
                         ),
                       ),
-                      const SizedBox(width: 15.0),
+                      const SizedBox(width: 15),
                       Expanded(
                         child: CustomElevatedButton(
                           onTap: onTapButton,
                           label: labelButton,
-                          labelColor: Colors.white,
                         ),
                       ),
                     ],

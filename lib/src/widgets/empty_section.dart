@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../helpers/constants.dart';
+import 'package:treshop/src/helpers/constants.dart';
 
 class IllustrationWidget extends StatelessWidget {
   final String? icon;

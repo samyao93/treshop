@@ -19,7 +19,6 @@ class _OnBoardingCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CustomShakeTransition(
-            duration:const Duration(milliseconds: 700),
             child: SvgPicture.asset(
               data.image!,
               width: Screens.width(context) / 2,

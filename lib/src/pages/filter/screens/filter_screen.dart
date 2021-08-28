@@ -48,7 +48,6 @@ class _FilterScreenState extends State<FilterScreen> {
                 CustomTextButton(
                   label: AppLocalizations.of(context)!.close,
                   onTap: Get.back,
-                  fontSize: 14.0,
                   textColor: theme.primaryColor,
                 ),
                 const SizedBox(width: Const.space12),
@@ -102,7 +101,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       child: Padding(
                           padding: const EdgeInsets.only(right: Const.space12),
                           child: CircleAvatar(
-                            radius: 20.0,
+                            radius: 20,
                             backgroundColor: e.value,
                             child: (provider.colorSelected == e.key)
                                 ? const Icon(
@@ -135,7 +134,7 @@ class _FilterScreenState extends State<FilterScreen> {
                           child: Container(
                             padding: const EdgeInsets.symmetric(
                               horizontal: Const.space15,
-                              vertical: 5.0,
+                              vertical: 5,
                             ),
                             margin: const EdgeInsets.only(bottom: Const.space8),
                             decoration: BoxDecoration(
@@ -177,7 +176,6 @@ class _FilterScreenState extends State<FilterScreen> {
               child: DropdownButtonHideUnderline(
                 child: DropdownButton<String>(
                   value: provider.brandSelected,
-                  iconSize: 24,
                   elevation: 16,
                   style: theme.textTheme.subtitle1,
                   isExpanded: true,
@@ -185,7 +183,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       style: theme.textTheme.subtitle1),
                   onChanged: (String? newValue) {
                     setState(() {
-                      provider.brandSelected = newValue!;
+                      provider.brandSelected = newValue;
                     });
                   },
                   items: SortAndFilterList.brandList

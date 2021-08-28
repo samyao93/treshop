@@ -1,7 +1,5 @@
 part of '../checkout_page.dart';
 
-
-
 class _FooterSection extends StatelessWidget {
   final int? couponId;
   final CheckoutModel? checkout;
@@ -24,7 +22,7 @@ class _FooterSection extends StatelessWidget {
     return Consumer<CheckoutProvider>(builder: (context, provider, snapshot) {
       return Container(
         width: Screens.width(context),
-        height: 218.0,
+        height: 218,
         padding: const EdgeInsets.symmetric(
           horizontal: Const.margin,
           vertical: Const.space12,
@@ -39,15 +37,16 @@ class _FooterSection extends StatelessWidget {
               value: ShippingList.shippingList[provider.shippingSelected].price,
             ),
             const SizedBox(height: Const.space8),
-            (couponId == null)
-                ? const SizedBox()
-                : _BuildPriceDetail(
-                    isDiscount: true,
-                    title:
-                        // ignore: lines_longer_than_80_chars
-                        '${AppLocalizations.of(context)!.discount} ${CouponList.couponList[checkout!.couponId!].discount}%',
-                    value: discount?.toInt(),
-                  ),
+            if (couponId == null)
+              const SizedBox()
+            else
+              _BuildPriceDetail(
+                isDiscount: true,
+                title:
+                    // ignore: lines_longer_than_80_chars
+                    '${AppLocalizations.of(context)!.discount} ${CouponList.couponList[checkout!.couponId!].discount}%',
+                value: discount?.toInt(),
+              ),
             const SizedBox(height: Const.space8),
             _BuildPriceDetail(
               title: AppLocalizations.of(context)!.price_total,
@@ -65,36 +64,37 @@ class _FooterSection extends StatelessWidget {
                 ),
                 AutoSizeText(
                   NumberFormat.currency(
-                    symbol: '\$',
+                    symbol: r'\$',
                   ).format(total ?? 0),
                   style: theme.textTheme.headline3,
                 ),
               ],
             ),
             const SizedBox(height: Const.space8),
-            (provider.isLoading == true)
-                ?const CustomLoadingIndicator()
-                : CustomElevatedButton(
-                    onTap: () {
-                      if (provider.addressSelected == null) {
-                        showToast(
-                            msg: AppLocalizations.of(context)!
-                                .choose_the_destination_address);
-                      } else if (provider.paymentSelected == null) {
-                        showToast(
-                            msg: AppLocalizations.of(context)!
-                                .payment_method_not_selected);
-                      } else {
-                        provider.isLoading = true;
+            if (provider.isLoading == true)
+              const CustomLoadingIndicator()
+            else
+              CustomElevatedButton(
+                onTap: () {
+                  if (provider.addressSelected == null) {
+                    showToast(
+                        msg: AppLocalizations.of(context)!
+                            .choose_the_destination_address);
+                  } else if (provider.paymentSelected == null) {
+                    showToast(
+                        msg: AppLocalizations.of(context)!
+                            .payment_method_not_selected);
+                  } else {
+                    provider.isLoading = true;
 
-                        Future.delayed(const Duration(seconds: 2), () {
-                          Get.toNamed(Routes.checkoutSuccess);
-                          provider.isLoading = false;
-                        });
-                      }
-                    },
-                    label: AppLocalizations.of(context)!.buy_now,
-                  ),
+                    Future.delayed(const Duration(seconds: 2), () {
+                      Get.toNamed<dynamic>(Routes.checkoutSuccess);
+                      provider.isLoading = false;
+                    });
+                  }
+                },
+                label: AppLocalizations.of(context)!.buy_now,
+              ),
           ],
         ),
       );

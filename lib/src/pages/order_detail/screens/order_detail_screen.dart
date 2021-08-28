@@ -5,7 +5,7 @@ class OrderDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    var order = OrderList.orderList[1];
+    final order = OrderList.orderList[1];
 
     String _statusOrderLabelType(OrderStatus val) {
       switch (val) {
@@ -43,7 +43,7 @@ class OrderDetailScreen extends StatelessWidget {
               ),
               CustomTextButton(
                 label: AppLocalizations.of(context)!.show,
-                onTap: () => Get.toNamed(Routes.trackingOrder),
+                onTap: () => Get.toNamed<dynamic>(Routes.trackingOrder),
                 textColor: theme.primaryColor,
               )
             ],
@@ -68,7 +68,7 @@ class OrderDetailScreen extends StatelessWidget {
             shrinkWrap: true,
             physics:const ScrollPhysics(),
             itemBuilder: (context, index) {
-              var product = order.products![index];
+              final product = order.products![index];
               return OrderDetailCard(order: product);
             },
           ),
@@ -82,7 +82,7 @@ class OrderDetailScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                width: 150.0,
+                width: 150,
                 child: AutoSizeText(
                   AppLocalizations.of(context)!.shipping_code,
                   style: theme.textTheme.subtitle1,
@@ -101,7 +101,7 @@ class OrderDetailScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                width: 150.0,
+                width: 150,
                 child: AutoSizeText(
                   AppLocalizations.of(context)!.detail_address,
                   style: theme.textTheme.subtitle1,

@@ -15,11 +15,10 @@ class _BodySection extends StatelessWidget {
       itemCount: chatList!.length,
       shrinkWrap: true,
       controller: scrollController,
-      scrollDirection: Axis.vertical,
       dragStartBehavior: DragStartBehavior.down,
-      padding:const EdgeInsets.only(top: 25.0, left: 18.0),
+      padding:const EdgeInsets.only(top: 25, left: 18),
       itemBuilder: (context, index) {
-        var chat = chatList![index];
+        final chat = chatList![index];
         return _BuildChatBubble(
           chat: chat,
         );

@@ -18,7 +18,7 @@ class _BuildAddress extends StatelessWidget {
         const SizedBox(height: Const.space8),
         SizedBox(
           width: Screens.width(context),
-          height: 120.0,
+          height: 120,
           child: ListView.builder(
             itemCount: AddressList.addressList.length,
             scrollDirection: Axis.horizontal,
@@ -27,7 +27,7 @@ class _BuildAddress extends StatelessWidget {
               horizontal: Const.margin,
             ),
             itemBuilder: (context, index) {
-              var address = AddressList.addressList[index];
+              final address = AddressList.addressList[index];
 
               return AddressCard(
                 address: address,

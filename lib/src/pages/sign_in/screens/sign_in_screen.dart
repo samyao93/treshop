@@ -32,7 +32,7 @@ class _SignInScreenState extends State<SignInScreen> {
             child: ListView(
               padding: const EdgeInsets.symmetric(horizontal: Const.margin),
               children: [
-                const SizedBox(height: 50.0),
+                const SizedBox(height: 50),
                 SvgPicture.asset(
                   CustomIcon.logo,
                   width: Screens.width(context) / 10,
@@ -109,24 +109,25 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                 ),
                 const SizedBox(height: Const.space12),
-                (provider.isLoading)
-                    ?const CustomLoadingIndicator()
-                    : CustomElevatedButton(
-                        onTap: () {
-                          // if (_formKey.currentState!.validate()) {
-                          FocusScope.of(context).requestFocus(FocusNode());
-                          provider.isLoading = true;
+                if (provider.isLoading)
+                  const CustomLoadingIndicator()
+                else
+                  CustomElevatedButton(
+                    onTap: () {
+                      // if (_formKey.currentState!.validate()) {
+                      FocusScope.of(context).requestFocus(FocusNode());
+                      provider.isLoading = true;
 
-                          // ignore: cascade_invocations
-                          provider.signIn(
-                            context,
-                            email: _emailController!.text,
-                            password: _passwordController!.text,
-                          );
-                          // }
-                        },
-                        label: AppLocalizations.of(context)!.sign_in,
-                      ),
+                      // ignore: cascade_invocations
+                      provider.signIn(
+                        context,
+                        email: _emailController!.text,
+                        password: _passwordController!.text,
+                      );
+                      // }
+                    },
+                    label: AppLocalizations.of(context)!.sign_in,
+                  ),
                 const SizedBox(height: Const.space12),
                 Center(
                   child: Row(
@@ -140,7 +141,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         label: AppLocalizations.of(context)!.register,
                         enableUnderline: true,
                         textColor: theme.primaryColor,
-                        onTap: () => Get.toNamed(Routes.signUp),
+                        onTap: () => Get.toNamed<dynamic>(Routes.signUp),
                       )
                     ],
                   ),

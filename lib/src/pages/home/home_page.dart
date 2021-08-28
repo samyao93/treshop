@@ -8,14 +8,14 @@ import 'package:get/get.dart';
 import 'package:icon_badge/icon_badge.dart';
 import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/helpers/screens.dart';
+import 'package:treshop/src/list_data/category_list.dart';
+import 'package:treshop/src/list_data/product_list.dart';
+import 'package:treshop/src/providers/cart_provider.dart';
+import 'package:treshop/src/widgets/category_card.dart';
+import 'package:treshop/src/widgets/product_card.dart';
 
-import '../../helpers/constants.dart';
-import '../../helpers/screens.dart';
-import '../../list_data/category_list.dart';
-import '../../list_data/product_list.dart';
-import '../../providers/cart_provider.dart';
-import '../../widgets/category_card.dart';
-import '../../widgets/product_card.dart';
 
 part 'screens/home_screen.dart';
 part 'widgets/build_label_section.dart';

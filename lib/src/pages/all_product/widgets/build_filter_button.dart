@@ -22,10 +22,10 @@ class _BuildFilterButton extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: Card(
-          elevation: 8.0,
+          elevation: 8,
           margin: EdgeInsets.zero,
           child: Container(
-            height: 50.0,
+            height: 50,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: (isSort == true)
@@ -44,7 +44,7 @@ class _BuildFilterButton extends StatelessWidget {
                 Icon(
                   icon,
                   color: ColorLight.fontTitle,
-                  size: 18.0,
+                  size: 18,
                 ),
               const  SizedBox(width: Const.space12),
                 AutoSizeText(

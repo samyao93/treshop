@@ -22,10 +22,10 @@ class _BuildAppBar extends StatelessWidget {
       leading: Padding(
         padding: const EdgeInsets.only(left: Const.space12),
         child: InkWell(
-          borderRadius: BorderRadius.circular(30.0),
+          borderRadius: BorderRadius.circular(30),
           onTap: onLeadingTap,
           child: CircleAvatar(
-            radius: 25.0,
+            radius: 25,
             backgroundColor: theme.cardColor.withOpacity(.4),
             child: const Icon(
               Icons.arrow_back,
@@ -36,10 +36,10 @@ class _BuildAppBar extends StatelessWidget {
       ),
       actions: [
         InkWell(
-          borderRadius: BorderRadius.circular(30.0),
+          borderRadius: BorderRadius.circular(30),
           onTap: onFavoriteTap,
           child: CircleAvatar(
-            radius: 25.0,
+            radius: 25,
             backgroundColor: theme.cardColor.withOpacity(.4),
             child: Icon(
               (isLiked == true) ? Icons.favorite : Icons.favorite_border,
@@ -50,12 +50,11 @@ class _BuildAppBar extends StatelessWidget {
         const SizedBox(width: Const.margin),
       ],
       pinned: true,
-      expandedHeight: 300.0,
+      expandedHeight: 300,
       backgroundColor: theme.backgroundColor,
       flexibleSpace: FlexibleSpaceBar(
         background: Swiper(
           itemCount: product.images?.length,
-          autoplay: false,
           loop: false,
           pagination: const SwiperPagination(
             alignment: Alignment.bottomCenter,
@@ -65,7 +64,7 @@ class _BuildAppBar extends StatelessWidget {
             return CustomNetworkImage(
               image: image,
               width: Screens.width(context),
-              height: 300.0,
+              height: 300,
               fit: BoxFit.fitWidth,
               borderRadius: BorderRadius.zero,
             );

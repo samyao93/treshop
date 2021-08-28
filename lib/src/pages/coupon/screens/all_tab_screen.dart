@@ -1,7 +1,7 @@
 part of '../coupon_page.dart';
 
 class _CouponListTabScreen extends StatelessWidget {
-  final List itemCount;
+  final List<CouponModel> itemCount;
 
   const _CouponListTabScreen({Key? key, required this.itemCount})
       : super(key: key);
@@ -17,7 +17,7 @@ class _CouponListTabScreen extends StatelessWidget {
             vertical: Const.margin,
           ),
           itemBuilder: (context, index) {
-            var coupon = itemCount[index];
+            final coupon = itemCount[index];
 
             return CouponCard(
               coupon: coupon,

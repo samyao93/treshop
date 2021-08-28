@@ -24,7 +24,7 @@ class _FooterSection extends StatelessWidget {
 
     return Container(
       width: Screens.width(context),
-      height: 95.0,
+      height: 95,
       alignment: Alignment.bottomCenter,
       margin:const EdgeInsets.fromLTRB(
         Const.margin,
@@ -43,14 +43,14 @@ class _FooterSection extends StatelessWidget {
                 children: [
                   Text(
                     AppLocalizations.of(context)!.qty,
-                    style: theme.textTheme.subtitle1!.copyWith(fontSize: 16.0),
+                    style: theme.textTheme.subtitle1!.copyWith(fontSize: 16),
                   ),
                 const  SizedBox(width: Const.space8),
                   InkWell(
                     onTap: onRemoveTap,
-                    borderRadius: BorderRadius.circular(25.0),
+                    borderRadius: BorderRadius.circular(25),
                     child: CircleAvatar(
-                      radius: 12.0,
+                      radius: 12,
                       backgroundColor: theme.primaryColor,
                       child:const Icon(
                         Icons.remove,
@@ -62,14 +62,14 @@ class _FooterSection extends StatelessWidget {
                const   SizedBox(width: Const.space8),
                   Text(
                     qty.toString(),
-                    style: theme.textTheme.bodyText2!.copyWith(fontSize: 16.0),
+                    style: theme.textTheme.bodyText2!.copyWith(fontSize: 16),
                   ),
                const   SizedBox(width: Const.space8),
                   InkWell(
                     onTap: onAddTap,
-                    borderRadius: BorderRadius.circular(25.0),
+                    borderRadius: BorderRadius.circular(25),
                     child: CircleAvatar(
-                      radius: 12.0,
+                      radius: 12,
                       backgroundColor: theme.primaryColor,
                       child:const Icon(
                         Icons.add,
@@ -86,13 +86,13 @@ class _FooterSection extends StatelessWidget {
                   AutoSizeText(
                     AppLocalizations.of(context)!.total,
                     style: theme.textTheme.subtitle1!.copyWith(
-                      fontSize: 16.0,
+                      fontSize: 16,
                     ),
                   ),
                 const  SizedBox(width: Const.space8),
                   AutoSizeText(
                       NumberFormat.currency(
-                        symbol: '\$',
+                        symbol: r'\$',
                       ).format(total),
                       style: theme.textTheme.headline3),
                 ],

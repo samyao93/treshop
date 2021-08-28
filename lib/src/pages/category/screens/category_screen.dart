@@ -23,16 +23,15 @@ class CategoryScreen extends StatelessWidget {
             itemCount: CategoryList.categoryList(context).length,
             crossAxisCount: 4,
             staggeredTileBuilder: (int index) =>const StaggeredTile.fit(2),
-            mainAxisSpacing: 15.0,
-            crossAxisSpacing: 15.0,
-            scrollDirection: Axis.vertical,
+            mainAxisSpacing: 15,
+            crossAxisSpacing: 15,
             shrinkWrap: true,
             physics:const ScrollPhysics(),
             padding:const EdgeInsets.symmetric(
-              horizontal: 18.0,
+              horizontal: 18,
             ),
             itemBuilder: (context, index) {
-              var category = CategoryList.categoryList(context)[index];
+              final category = CategoryList.categoryList(context)[index];
               return CategoryCard(
                 category: category,
                 cardType: CardType.grid,

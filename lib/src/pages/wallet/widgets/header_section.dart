@@ -7,14 +7,14 @@ class _HeaderSection extends StatelessWidget {
 
     return SizedBox(
       width: Screens.width(context),
-      height: 201.0,
+      height: 201,
       child: Stack(
         children: [
           Positioned(
-            top: 0.0,
-            left: 0.0,
-            right: 0.0,
-            bottom: 100.0,
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 100,
             child: Container(
               color: theme.primaryColor,
             ),
@@ -23,7 +23,7 @@ class _HeaderSection extends StatelessWidget {
             top: Const.margin,
             left: Const.margin,
             right: Const.margin,
-            bottom: 0.0,
+            bottom: 0,
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Const.margin),
@@ -55,7 +55,7 @@ class _HeaderSection extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           AutoSizeText(
-                            NumberFormat.currency(symbol: '\$').format(2500),
+                            NumberFormat.currency(symbol: r'\$').format(2500),
                             style: theme.textTheme.headline3,
                           ),
                           AutoSizeText(
@@ -75,15 +75,15 @@ class _HeaderSection extends StatelessWidget {
                       Column(
                         children: [
                           const CircleAvatar(
-                            radius: 22.0,
+                            radius: 22,
                             backgroundColor: Color(0xFFA872B1),
                             child: Icon(
                               FeatherIcons.plus,
                               color: Colors.white,
-                              size: 20.0,
+                              size: 20,
                             ),
                           ),
-                          const SizedBox(height: 5.0),
+                          const SizedBox(height: 5),
                           AutoSizeText(
                             AppLocalizations.of(context)!.top_up,
                             style: theme.textTheme.bodyText2,
@@ -93,15 +93,15 @@ class _HeaderSection extends StatelessWidget {
                       Column(
                         children: [
                           const CircleAvatar(
-                            radius: 22.0,
+                            radius: 22,
                             backgroundColor: Color(0xFF6D9BE1),
                             child: Icon(
                               FeatherIcons.creditCard,
                               color: Colors.white,
-                              size: 20.0,
+                              size: 20,
                             ),
                           ),
-                          const SizedBox(height: 5.0),
+                          const SizedBox(height: 5),
                           AutoSizeText(
                             AppLocalizations.of(context)!.pay,
                             style: theme.textTheme.bodyText2,
@@ -111,15 +111,15 @@ class _HeaderSection extends StatelessWidget {
                       Column(
                         children: [
                           const CircleAvatar(
-                            radius: 22.0,
+                            radius: 22,
                             backgroundColor: Color(0xFFFBB630),
                             child: Icon(
                               FeatherIcons.refreshCcw,
                               color: Colors.white,
-                              size: 20.0,
+                              size: 20,
                             ),
                           ),
-                          const SizedBox(height: 5.0),
+                          const SizedBox(height: 5),
                           AutoSizeText(
                             AppLocalizations.of(context)!.transfer,
                             style: theme.textTheme.bodyText2,

@@ -118,13 +118,13 @@ class _BuildProfileImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 100,
-      height: 100.0,
+      height: 100,
       alignment: Alignment.center,
       child: CircleAvatar(
-        radius: 50.0,
+        radius: 50,
         backgroundImage: CachedNetworkImageProvider(_userImage),
         child: const CircleAvatar(
-          radius: 50.0,
+          radius: 50,
           backgroundColor: Colors.black54,
           child: Icon(
             FeatherIcons.camera,

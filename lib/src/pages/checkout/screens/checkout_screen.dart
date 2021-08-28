@@ -17,8 +17,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   @override
   void initState() {
     super.initState();
-    checkout = Get.arguments;
-    var price = checkout!.products!.map((e) => e.price).toList();
+    checkout = Get.arguments as CheckoutModel;
+    final price = checkout!.products!.map((e) => e.price).toList();
     _priceTotal = price.fold(0, (p, c) => p! + c!);
     _couponId = checkout!.couponId;
     if (_couponId == null) {

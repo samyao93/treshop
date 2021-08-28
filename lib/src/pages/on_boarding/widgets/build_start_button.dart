@@ -13,12 +13,11 @@ class _BuildStartButton extends StatelessWidget {
         bottom: Screens.heigth(context) / 15,
         left: Const.margin,
         right: Const.margin,
-        child: CustomFadeTransition(
-          axis: Axis.vertical,
+        child: CustomFadeTransition( 
           duration:const Duration(milliseconds: 200),
           child: CustomElevatedButton(
             label: AppLocalizations.of(context)!.get_started,
-            onTap: () => Get.toNamed(Routes.signIn),
+            onTap: () => Get.toNamed<dynamic>(Routes.signIn),
           ),
         ),
       );

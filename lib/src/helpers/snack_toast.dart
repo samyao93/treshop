@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
+import 'package:treshop/src/helpers/colors.dart';
 
-import 'colors.dart';
 
 Future showToast(
     {required String msg, Color? backgroundColor, Color? textColor}) {
   return Fluttertoast.showToast(
     msg: msg,
     toastLength: Toast.LENGTH_SHORT,
-    fontSize: 16.0,
+    fontSize: 16,
     gravity: ToastGravity.CENTER,
     backgroundColor: ColorDark.card,
     textColor: textColor ?? Colors.white,
@@ -24,7 +24,7 @@ void showSnackbar(
   SnackPosition position = SnackPosition.BOTTOM,
 }) {
   final theme = Theme.of(context);
-  return Get.snackbar(
+  return Get.snackbar<dynamic>(
     '',
     '',
     titleText: Text(title, style: theme.textTheme.headline4),

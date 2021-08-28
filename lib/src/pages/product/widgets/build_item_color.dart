@@ -30,12 +30,12 @@ class _BuildItemColor extends StatelessWidget {
                     (e) => Padding(
                         padding: const EdgeInsets.only(right: Const.space12),
                         child: InkWell(
-                          borderRadius: BorderRadius.circular(25.0),
+                          borderRadius: BorderRadius.circular(25),
                           onTap: () {
                             provider.itemColorSelected = e.key;
                           },
                           child: CircleAvatar(
-                            radius: 20.0,
+                            radius: 20,
                             backgroundColor: e.value,
                             child: (provider.itemColorSelected == e.key)
                                 ? const Icon(Icons.check, color: Colors.white)

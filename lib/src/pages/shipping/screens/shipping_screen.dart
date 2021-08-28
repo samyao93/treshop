@@ -16,7 +16,7 @@ class ShippingScreen extends StatelessWidget {
           itemCount: ShippingList.shippingList.length,
           padding: const EdgeInsets.symmetric(horizontal: Const.margin),
           itemBuilder: (context, index) {
-            var shipping = ShippingList.shippingList[index];
+            final shipping = ShippingList.shippingList[index];
             return ListTile(
               contentPadding: EdgeInsets.zero,
               leading: Radio(
@@ -37,7 +37,7 @@ class ShippingScreen extends StatelessWidget {
                 style: theme.textTheme.subtitle2,
               ),
               trailing: AutoSizeText(
-                NumberFormat.currency(symbol: '\$').format(shipping.price),
+                NumberFormat.currency(symbol: r'\$').format(shipping.price),
                 style: theme.textTheme.headline3,
               ),
             );

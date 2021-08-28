@@ -2,7 +2,7 @@ part of '../search_page.dart';
 
 
 class _BodySection extends StatelessWidget {
-  final List itemCount;
+  final List<ProductModel> itemCount;
 
   const _BodySection({Key? key, required this.itemCount}) : super(key: key);
 
@@ -13,16 +13,15 @@ class _BodySection extends StatelessWidget {
         itemCount:itemCount.length,
         crossAxisCount: 4,
         staggeredTileBuilder: (int index) =>const StaggeredTile.fit(2),
-        mainAxisSpacing: 15.0,
-        crossAxisSpacing: 15.0,
-        scrollDirection: Axis.vertical,
+        mainAxisSpacing: 15,
+        crossAxisSpacing: 15, 
         shrinkWrap: true,
         physics:const ScrollPhysics(),
         padding:const EdgeInsets.symmetric(
-          horizontal: 18.0,
+          horizontal: 18,
         ),
         itemBuilder: (context, index) {
-          var product = itemCount[index];
+          final product = itemCount[index];
           return ProductCard(product: product);
         },
       ),

@@ -18,10 +18,10 @@ class CustomFadeTransition extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tween = MultiTween<_AniProps>()
-      ..add(_AniProps.opacity, Tween(begin: 0.0, end: 1.0))
+      ..add(_AniProps.opacity, Tween<dynamic>(begin: 0.0, end: 1.0))
       ..add(
         _AniProps.translateX,
-        Tween(begin: 30.0, end: 0.0),
+        Tween<dynamic>(begin: 30.0, end: 0.0),
        const Duration(milliseconds: 200),
         // Curves.fastOutSlowIn,
         Curves.bounceOut,

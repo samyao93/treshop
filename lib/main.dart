@@ -5,18 +5,18 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
+import 'package:treshop/l10n/l10n.dart';
+import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/helpers/routes.dart';
 import 'package:treshop/src/helpers/themes.dart';
 import 'package:treshop/src/providers/authentication_provider.dart';
 import 'package:treshop/src/providers/cart_provider.dart';
 import 'package:treshop/src/providers/checkout_provider.dart';
+import 'package:treshop/src/providers/locale_provider.dart';
 import 'package:treshop/src/providers/product_provider.dart';
 import 'package:treshop/src/providers/search_provider.dart';
-
-import 'l10n/l10n.dart';
-import 'src/helpers/constants.dart';
-import 'src/helpers/routes.dart';
-import 'src/providers/locale_provider.dart';
-import 'src/providers/theme_provider.dart';
+import 'package:treshop/src/providers/theme_provider.dart';
+ 
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

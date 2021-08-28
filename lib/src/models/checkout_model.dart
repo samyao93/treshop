@@ -1,4 +1,5 @@
-import 'cart_model.dart';
+
+import 'package:treshop/src/models/cart_model.dart';
 
 class CheckoutModel {
   final List<CartModel>? products;

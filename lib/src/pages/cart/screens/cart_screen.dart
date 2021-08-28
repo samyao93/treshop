@@ -20,7 +20,7 @@ class _CartScreenState extends State<CartScreen> {
 
     return Consumer<CartProvider>(
       builder: (context, provider, snapshot) {
-        var priceList = provider.cartList.map((cart) => cart.price);
+        final priceList = provider.cartList.map((cart) => cart.price);
         _total = priceList.fold(0, (p, c) => p! + c!);
         return Scaffold(
           appBar: CustomAppBar(
@@ -28,7 +28,7 @@ class _CartScreenState extends State<CartScreen> {
             title: AppLocalizations.of(context)!.cart,
             actions: [
               IconButton(
-                onPressed: () => Get.toNamed(Routes.search),
+                onPressed: () => Get.toNamed<dynamic>(Routes.search),
                 icon: const Icon(FeatherIcons.search),
               ),
             ],
@@ -43,7 +43,7 @@ class _CartScreenState extends State<CartScreen> {
                           return Divider(color: theme.hintColor);
                         },
                         itemBuilder: (context, index) {
-                          var cart = provider.cartList[index];
+                          final cart = provider.cartList[index];
                           return CartCard(
                             cart: cart,
                             onRemoveTap: () {
@@ -56,7 +56,7 @@ class _CartScreenState extends State<CartScreen> {
                     _FooterSection(
                       total: _total!.toInt(),
                       onCheckoutTap: () {
-                        Get.toNamed(Routes.checkout,
+                        Get.toNamed<dynamic>(Routes.checkout,
                             arguments: CheckoutModel(
                               products: provider.cartList,
                               couponId: provider.selectedCoupon,

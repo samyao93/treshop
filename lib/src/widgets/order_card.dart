@@ -7,8 +7,8 @@ import 'package:intl/intl.dart';
 import 'package:treshop/src/helpers/constants.dart';
 import 'package:treshop/src/helpers/screens.dart';
 import 'package:treshop/src/models/order_model.dart';
-
-import 'custom_network_image.dart';
+import 'package:treshop/src/widgets/custom_network_image.dart';
+ 
 
 class OrderCard extends StatelessWidget {
   final OrderModel order;
@@ -76,17 +76,17 @@ class OrderCard extends StatelessWidget {
     }
 
     return Card(
-      elevation: 8.0,
+      elevation: 8,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(Const.radius),
       ),
       margin:const EdgeInsets.only(bottom: Const.space15),
       child: InkWell(
-        onTap: ()=>Get.toNamed(Routes.orderDetail),
+        onTap: ()=>Get.toNamed<dynamic>(Routes.orderDetail),
         borderRadius: BorderRadius.circular(Const.radius),
         child: SizedBox(
           width: Screens.width(context),
-          height: 230.0,
+          height: 230,
           child: Column(
             children: [
               Padding(
@@ -115,7 +115,7 @@ class OrderCard extends StatelessWidget {
                   ],
                 ),
               ),
-              Divider(color: theme.backgroundColor, thickness: 2.0),
+              Divider(color: theme.backgroundColor, thickness: 2),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: Const.space15,
@@ -124,8 +124,8 @@ class OrderCard extends StatelessWidget {
                   children: [
                     CustomNetworkImage(
                       image: order.products!.first.productImage!,
-                      width: 65.0,
-                      height: 65.0,
+                      width: 65,
+                      height: 65,
                     ),
                     Expanded(
                       child: Padding(
@@ -148,9 +148,9 @@ class OrderCard extends StatelessWidget {
                                   style: theme.textTheme.subtitle2,
                                   maxLines: 1,
                                 ),
-                           const     SizedBox(width: 5.0),
+                           const     SizedBox(width: 5),
                                 CircleAvatar(
-                                  radius: 8.0,
+                                  radius: 8,
                                   backgroundColor:
                                       _colorType(order.products!.first.color!),
                                 ),
@@ -160,7 +160,7 @@ class OrderCard extends StatelessWidget {
                                   style: theme.textTheme.subtitle2,
                                   maxLines: 1,
                                 ),
-                              const  SizedBox(width: 5.0),
+                              const  SizedBox(width: 5),
                                 AutoSizeText(
                                   _sizeType(order.products!.first.size!),
                                   style: theme.textTheme.headline4,
@@ -172,7 +172,7 @@ class OrderCard extends StatelessWidget {
                                   style: theme.textTheme.subtitle2,
                                   maxLines: 1,
                                 ),
-                           const     SizedBox(width: 5.0),
+                           const     SizedBox(width: 5),
                                 AutoSizeText(
                                   order.products!.first.qty.toString(),
                                   style: theme.textTheme.headline4,
@@ -186,7 +186,7 @@ class OrderCard extends StatelessWidget {
                               children: [
                                 AutoSizeText(
                                   NumberFormat.currency(
-                                    symbol: '\$',
+                                    symbol: r'\$',
                                   ).format(order.products!.first.price),
                                   style: theme.textTheme.headline4,
                                   maxLines: 1,
@@ -205,11 +205,11 @@ class OrderCard extends StatelessWidget {
                   ],
                 ),
               ),
-              Divider(color: theme.backgroundColor, thickness: 2.0),
+              Divider(color: theme.backgroundColor, thickness: 2),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: Const.margin,
-                  vertical: 5.0,
+                  vertical: 5,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -221,14 +221,14 @@ class OrderCard extends StatelessWidget {
                             AppLocalizations.of(context)!.total_payment,
                             style: theme.textTheme.subtitle1),
                         AutoSizeText(
-                          NumberFormat.currency(symbol: '\$')
+                          NumberFormat.currency(symbol: r'\$')
                               .format(order.total),
                           style: theme.textTheme.headline4,
                         ),
                       ],
                     ),
                     Container(
-                      padding:const EdgeInsets.all(5.0),
+                      padding:const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         color: _statusOrderColorType(order.status!)
                             .withOpacity(.1),

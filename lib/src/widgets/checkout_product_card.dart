@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 
-import '../helpers/constants.dart';
-import '../models/cart_model.dart';
-import 'custom_network_image.dart';
+import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/models/cart_model.dart';
+import 'package:treshop/src/widgets/custom_network_image.dart';
 
 class ProductCheckoutCard extends StatelessWidget {
   const ProductCheckoutCard({
@@ -54,16 +54,16 @@ class ProductCheckoutCard extends StatelessWidget {
     }
 
     return Card(
-      elevation: 2.0,
+      elevation: 2,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(Const.radius),
       ),
       margin: const EdgeInsets.only(
         right: Const.space15,
-        bottom: 2.0,
+        bottom: 2,
       ),
       child: SizedBox(
-        width: 250.0,
+        width: 250,
         child: Column(
           children: [
             Padding(
@@ -73,8 +73,8 @@ class ProductCheckoutCard extends StatelessWidget {
                 children: [
                   CustomNetworkImage(
                     image: product.productImage!,
-                    width: 60.0,
-                    height: 60.0,
+                    width: 60,
+                    height: 60,
                   ),
                   const SizedBox(width: Const.space8),
                   Expanded(
@@ -86,7 +86,7 @@ class ProductCheckoutCard extends StatelessWidget {
                           style: theme.textTheme.headline3,
                           maxLines: 1,
                         ),
-                        const SizedBox(height: 5.0),
+                        const SizedBox(height: 5),
                         Row(
                           children: [
                             AutoSizeText(
@@ -94,9 +94,9 @@ class ProductCheckoutCard extends StatelessWidget {
                               style: theme.textTheme.subtitle2,
                               maxLines: 1,
                             ),
-                            const SizedBox(width: 5.0),
+                            const SizedBox(width: 5),
                             CircleAvatar(
-                              radius: 8.0,
+                              radius: 8,
                               backgroundColor: _colorType(product.color!),
                             ),
                             const SizedBox(width: Const.space8),
@@ -105,7 +105,7 @@ class ProductCheckoutCard extends StatelessWidget {
                               style: theme.textTheme.subtitle2,
                               maxLines: 1,
                             ),
-                            const SizedBox(width: 5.0),
+                            const SizedBox(width: 5),
                             AutoSizeText(
                               _sizeType(product.size!),
                               style: theme.textTheme.headline4,
@@ -121,7 +121,7 @@ class ProductCheckoutCard extends StatelessWidget {
                               style: theme.textTheme.subtitle2,
                               maxLines: 1,
                             ),
-                            const SizedBox(width: 5.0),
+                            const SizedBox(width: 5),
                             AutoSizeText(
                               product.qty.toString(),
                               style: theme.textTheme.headline4,
@@ -137,7 +137,7 @@ class ProductCheckoutCard extends StatelessWidget {
             ),
             Divider(color: theme.hintColor),
             Padding(
-              padding: const EdgeInsets.all(5.0),
+              padding: const EdgeInsets.all(5),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -146,7 +146,7 @@ class ProductCheckoutCard extends StatelessWidget {
                     style: theme.textTheme.subtitle1,
                   ),
                   AutoSizeText(
-                    NumberFormat.currency(symbol: '\$').format(product.price),
+                    NumberFormat.currency(symbol: r'\$').format(product.price),
                     style: theme.textTheme.headline3,
                   ),
                 ],

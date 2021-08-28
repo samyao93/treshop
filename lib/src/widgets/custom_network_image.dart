@@ -21,7 +21,7 @@ class CustomNetworkImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius:
-          (borderRadius == null) ? BorderRadius.circular(8.0) : borderRadius,
+          (borderRadius == null) ? BorderRadius.circular(8) : borderRadius,
       child: OctoImage(
         width: width,
         height: height,

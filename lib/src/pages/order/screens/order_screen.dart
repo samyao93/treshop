@@ -6,17 +6,17 @@ class OrderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        await Get.offAllNamed(Routes.profile);
+        await Get.offAllNamed<dynamic>(Routes.profile);
         return true;
       },
       child: Scaffold(
         appBar: CustomAppBar(
           context,
-          leadingOntap: () => Get.offAllNamed(Routes.profile),
+          leadingOntap: () => Get.offAllNamed<dynamic>(Routes.profile),
           title: AppLocalizations.of(context)!.my_orders,
           actions: [
             IconButton(
-              onPressed: () => Get.toNamed(Routes.search),
+              onPressed: () => Get.toNamed<dynamic>(Routes.search),
               icon: const Icon(FeatherIcons.search),
             ),
           ],
@@ -25,7 +25,7 @@ class OrderScreen extends StatelessWidget {
           itemCount: OrderList.orderList.length,
           padding: const EdgeInsets.symmetric(horizontal: Const.margin),
           itemBuilder: (context, index) {
-            var order = OrderList.orderList[index];
+            final order = OrderList.orderList[index];
 
             return OrderCard(order: order);
           },

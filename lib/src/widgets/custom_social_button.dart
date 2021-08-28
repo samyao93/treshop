@@ -2,8 +2,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../helpers/constants.dart';
-import '../helpers/screens.dart';
+import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/helpers/screens.dart';
 
 class CustomSocialButton extends StatelessWidget {
   final String label;
@@ -19,7 +19,7 @@ class CustomSocialButton extends StatelessWidget {
     final theme = Theme.of(context);
     return SizedBox(
       width: Screens.width(context),
-      height: 48.0,
+      height: 48,
       child: OutlinedButton(
         onPressed: onTap,
         style: OutlinedButton.styleFrom(

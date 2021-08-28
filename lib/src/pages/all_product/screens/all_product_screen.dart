@@ -15,11 +15,10 @@ class _AllProductScreenState extends State<AllProductScreen> {
   @override
   void initState() {
     super.initState();
-    _title = Get.arguments;
+    _title = Get.arguments as String;
   }
 
-  // ignore: always_declare_return_types
-  _priceSort(bool? val) async {
+  Future _priceSort(bool? val) async {
     switch (val) {
       case true:
         // ignore: omit_local_variable_types
@@ -46,7 +45,7 @@ class _AllProductScreenState extends State<AllProductScreen> {
           title: AppLocalizations.of(context)!.categories,
           actions: [
             IconButton(
-              onPressed: () => Get.toNamed(Routes.search),
+              onPressed: () => Get.toNamed<dynamic>(Routes.search),
               icon:const Icon(FeatherIcons.search),
             )
           ]),
@@ -54,14 +53,14 @@ class _AllProductScreenState extends State<AllProductScreen> {
         children: [
           Container(
             width: Screens.width(context),
-            height: 120.0,
+            height: 120,
             padding: const EdgeInsets.symmetric(horizontal: Const.margin),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AutoSizeText(
                   _title,
-                  style: theme.textTheme.headline1!.copyWith(fontSize: 30.0),
+                  style: theme.textTheme.headline1!.copyWith(fontSize: 30),
                 ),
               const  SizedBox(height: Const.space15),
                 Row(
@@ -83,7 +82,7 @@ class _AllProductScreenState extends State<AllProductScreen> {
                       icon: FeatherIcons.filter,
                       label: AppLocalizations.of(context)!.filter,
                       onTap: () {
-                        showFlexibleBottomSheet(
+                        showFlexibleBottomSheet<dynamic>(
                           minHeight: 0,
                           initHeight: 0.5,
                           maxHeight: 1,
@@ -110,16 +109,15 @@ class _AllProductScreenState extends State<AllProductScreen> {
               itemCount: productList.length,
               crossAxisCount: 4,
               staggeredTileBuilder: (int index) => const StaggeredTile.fit(2),
-              mainAxisSpacing: 15.0,
-              crossAxisSpacing: 15.0,
-              scrollDirection: Axis.vertical,
+              mainAxisSpacing: 15,
+              crossAxisSpacing: 15,
               shrinkWrap: true,
               physics:const ScrollPhysics(),
               padding:const EdgeInsets.symmetric(
-                horizontal: 18.0,
+                horizontal: 18,
               ),
               itemBuilder: (context, index) {
-                var product = productList[index];
+                final product = productList[index];
                 return ProductCard(product: product);
               },
             ),

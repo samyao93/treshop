@@ -31,7 +31,7 @@ class TrackingOrderScreen extends StatelessWidget {
             physics: const ScrollPhysics(),
             padding:const EdgeInsets.symmetric(horizontal: Const.margin),
             itemBuilder: (context, index) {
-              var tracking = TrackingList.trackingList[index];
+              final tracking = TrackingList.trackingList[index];
               return _TrackingTimeline(tracking: tracking);
             },
           )

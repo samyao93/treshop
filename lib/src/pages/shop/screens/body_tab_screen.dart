@@ -1,7 +1,7 @@
 part of '../shop_page.dart';
 
 class _BodyTabScreen extends StatelessWidget {
-  final List itemCount;
+  final List<CategoryModel> itemCount;
 
   const _BodyTabScreen({Key? key, required this.itemCount}) : super(key: key);
 
@@ -20,16 +20,15 @@ class _BodyTabScreen extends StatelessWidget {
           itemCount: itemCount.length,
           crossAxisCount: 4,
           staggeredTileBuilder: (int index) => const StaggeredTile.fit(2),
-          mainAxisSpacing: 15.0,
-          crossAxisSpacing: 15.0,
-          scrollDirection: Axis.vertical,
+          mainAxisSpacing: 15,
+          crossAxisSpacing: 15, 
           shrinkWrap: true,
           physics:const ScrollPhysics(),
           padding:const EdgeInsets.symmetric(
-            horizontal: 18.0,
+            horizontal: 18,
           ),
           itemBuilder: (context, index) {
-            var category = itemCount[index];
+            final category = itemCount[index];
             return CategoryCard(
               category: category,
               cardType: CardType.grid,

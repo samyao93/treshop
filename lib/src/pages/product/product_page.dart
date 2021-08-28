@@ -10,17 +10,16 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:readmore/readmore.dart';
-
-import '../../helpers/colors.dart';
-import '../../helpers/constants.dart';
-import '../../helpers/screens.dart';
-import '../../helpers/snack_toast.dart';
-import '../../models/cart_model.dart';
-import '../../models/product_model.dart';
-import '../../providers/cart_provider.dart';
-import '../../providers/product_provider.dart';
-import '../../widgets/custom_elevated_button.dart';
-import '../../widgets/custom_network_image.dart';
+import 'package:treshop/src/helpers/colors.dart';
+import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/helpers/screens.dart';
+import 'package:treshop/src/helpers/snack_toast.dart';
+import 'package:treshop/src/models/cart_model.dart';
+import 'package:treshop/src/models/product_model.dart';
+import 'package:treshop/src/providers/cart_provider.dart';
+import 'package:treshop/src/providers/product_provider.dart';
+import 'package:treshop/src/widgets/custom_elevated_button.dart';
+import 'package:treshop/src/widgets/custom_network_image.dart';
 
 part 'screens/product_screen.dart';
 part 'widgets/build_app_bar.dart';

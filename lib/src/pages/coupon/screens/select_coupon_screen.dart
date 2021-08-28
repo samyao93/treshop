@@ -14,7 +14,7 @@ class SelectCouponScreen extends StatelessWidget {
           itemCount: CouponList.couponList.length,
           padding: const EdgeInsets.symmetric(horizontal: Const.margin),
           itemBuilder: (context, index) {
-            var coupon = CouponList.couponList[index];
+            final coupon = CouponList.couponList[index];
 
             return CouponCard(
               coupon: coupon,

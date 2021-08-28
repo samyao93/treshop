@@ -6,16 +6,15 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-
-import '../../helpers/constants.dart';
-import '../../helpers/screens.dart';
-import '../../list_data/coupon_list.dart';
-import '../../models/checkout_model.dart';
-import '../../providers/cart_provider.dart';
-import '../../widgets/cart_card.dart';
-import '../../widgets/custom_app_bar.dart';
-import '../../widgets/custom_elevated_button.dart';
-import '../../widgets/empty_section.dart';
+import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/helpers/screens.dart';
+import 'package:treshop/src/list_data/coupon_list.dart';
+import 'package:treshop/src/models/checkout_model.dart';
+import 'package:treshop/src/providers/cart_provider.dart';
+import 'package:treshop/src/widgets/cart_card.dart';
+import 'package:treshop/src/widgets/custom_app_bar.dart';
+import 'package:treshop/src/widgets/custom_elevated_button.dart';
+import 'package:treshop/src/widgets/empty_section.dart';
 
 part 'screens/cart_screen.dart';
 part 'widgets/footer_section.dart';

@@ -44,7 +44,7 @@ class _BuildPaymentMethod extends StatelessWidget {
           _BuildLabelSection(
             label: AppLocalizations.of(context)!.payment_method,
             trailing: AppLocalizations.of(context)!.change,
-            onViewAllTap: () => Get.toNamed(Routes.payment),
+            onViewAllTap: () => Get.toNamed<dynamic>(Routes.payment),
           ),
         const  SizedBox(height: Const.space8),
           Padding(
@@ -64,8 +64,8 @@ class _BuildPaymentMethod extends StatelessWidget {
                 : Row(
                     children: [
                       Container(
-                        width: 50.0,
-                        height: 50.0,
+                        width: 50,
+                        height: 50,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(Const.radius),
                           color: Colors.white,

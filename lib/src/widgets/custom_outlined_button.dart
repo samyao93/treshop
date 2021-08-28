@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../helpers/colors.dart';
-import '../helpers/constants.dart';
+import 'package:treshop/src/helpers/colors.dart';
+import 'package:treshop/src/helpers/constants.dart';
 
 class CustomOutlinedButton extends StatelessWidget {
   final void Function()? onTap;
