@@ -29,7 +29,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Consumer<AuthenticationProvider>(
       builder: (context, provider, snapshot) {
