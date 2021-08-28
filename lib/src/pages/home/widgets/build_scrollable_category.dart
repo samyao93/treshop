@@ -10,7 +10,7 @@ class _BuildScrollableCategory extends StatelessWidget {
       children: [
         _BuildLabelSection(
           label: AppLocalizations.of(context)!.categories,
-          onViewAllTap: () {},
+          onViewAllTap: () =>Get.toNamed<dynamic>(Routes.category),
         ),
         const SizedBox(height: Const.space12),
         Container(
