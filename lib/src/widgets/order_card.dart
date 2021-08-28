@@ -192,6 +192,7 @@ class OrderCard extends StatelessWidget {
                                   maxLines: 1,
                                 ),
                                 AutoSizeText(
+                                  // ignore: lines_longer_than_80_chars
                                   '${order.products!.length} ${AppLocalizations.of(context)!.items}',
                                   style: theme.textTheme.subtitle1,
                                   maxLines: 1,
