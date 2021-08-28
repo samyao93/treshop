@@ -12,14 +12,17 @@ class _BuildEmailTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     final _theme = Theme.of(context);
 
-    return CustomTextFormField(
-      controller: emailController,
-      borderType: BorderType.outline,
-      textFieldType: TextFieldType.email,
-      hintText: AppLocalizations.of(context)!.email,
-      prefixIcon: Icon(
-        FeatherIcons.mail,
-        color: _theme.primaryColor,
+    return CustomShakeTransition(
+      duration: const Duration(milliseconds: 1000),
+      child: CustomTextFormField(
+        controller: emailController,
+        borderType: BorderType.outline,
+        textFieldType: TextFieldType.email,
+        hintText: AppLocalizations.of(context)!.email,
+        prefixIcon: Icon(
+          FeatherIcons.mail,
+          color: _theme.primaryColor,
+        ),
       ),
     );
   }

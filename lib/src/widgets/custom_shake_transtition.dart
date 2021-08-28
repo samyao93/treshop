@@ -14,7 +14,7 @@ class CustomShakeTransition extends StatelessWidget {
     this.duration = const Duration(milliseconds: 700),
     this.offset = 140.0,
     this.child,
-    this.curve = Curves.easeOutQuint,
+    this.curve = Curves.decelerate,
     this.axis = Axis.horizontal,
   }) : super(key: key);
 

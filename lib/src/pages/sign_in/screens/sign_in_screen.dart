@@ -16,6 +16,7 @@ class _SignInScreenState extends State<SignInScreen> {
     _emailController = TextEditingController();
     _passwordController = TextEditingController();
   }
+
   @override
   void dispose() {
     super.dispose();
@@ -31,11 +32,7 @@ class _SignInScreenState extends State<SignInScreen> {
         padding: const EdgeInsets.symmetric(horizontal: Const.margin),
         children: [
           const SizedBox(height: 50),
-          SvgPicture.asset(
-            CustomIcon.logo,
-            width: Screens.width(context) / 10,
-            height: Screens.width(context) / 10,
-          ),
+          const _BuildLogo(),
           const SizedBox(height: Const.space25),
           const _BuildSocialButton(),
           const SizedBox(height: Const.space25),
@@ -63,3 +60,5 @@ class _SignInScreenState extends State<SignInScreen> {
     );
   }
 }
+
+

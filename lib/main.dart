@@ -16,11 +16,9 @@ import 'package:treshop/src/providers/locale_provider.dart';
 import 'package:treshop/src/providers/product_provider.dart';
 import 'package:treshop/src/providers/search_provider.dart';
 import 'package:treshop/src/providers/theme_provider.dart';
- 
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const MyApp());
@@ -28,7 +26,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -44,7 +41,7 @@ class MyApp extends StatelessWidget {
       child: Consumer2<ThemeProvider, LocaleProvider>(
         builder: (context, theme, locale, snapshot) {
           return GetMaterialApp(
-            title: 'Furney',
+            title: 'Treshop',
             locale: locale.locale,
             theme: themeLight(context),
             darkTheme: themeDark(context),
@@ -56,7 +53,7 @@ class MyApp extends StatelessWidget {
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
             ],
-            initialRoute: Routes.splash,
+            initialRoute: Routes.signIn,
             supportedLocales: L10n.all,
             getPages: allRoutes,
           );

@@ -7,12 +7,15 @@ class _BuildForgotPasswordButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.topRight,
-      child: CustomTextButton(
-        label: AppLocalizations.of(context)!.forgot_password,
-        enableUnderline: true,
-        onTap: () {},
+    return CustomShakeTransition(
+      duration: const Duration(milliseconds: 1200),
+      child: Align(
+        alignment: Alignment.topRight,
+        child: CustomTextButton(
+          label: AppLocalizations.of(context)!.forgot_password,
+          enableUnderline: true,
+          onTap: () {},
+        ),
       ),
     );
   }

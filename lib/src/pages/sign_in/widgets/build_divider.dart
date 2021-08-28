@@ -7,17 +7,20 @@ class _BuildDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     final _theme = Theme.of(context);
 
-    return Row(
-      children: [
-        Expanded(child: Divider(color: _theme.hintColor)),
-        const SizedBox(width: Const.space12),
-        AutoSizeText(
-          AppLocalizations.of(context)!.or_login_with_email,
-          style: _theme.textTheme.headline4,
-        ),
-        const SizedBox(width: Const.space12),
-        Expanded(child: Divider(color: _theme.hintColor)),
-      ],
+    return CustomShakeTransition(
+      duration: const Duration(milliseconds: 950),
+      child: Row(
+        children: [
+          Expanded(child: Divider(color: _theme.hintColor)),
+          const SizedBox(width: Const.space12),
+          AutoSizeText(
+            AppLocalizations.of(context)!.or_login_with_email,
+            style: _theme.textTheme.headline4,
+          ),
+          const SizedBox(width: Const.space12),
+          Expanded(child: Divider(color: _theme.hintColor)),
+        ],
+      ),
     );
   }
 }

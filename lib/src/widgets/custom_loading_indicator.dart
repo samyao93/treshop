@@ -6,6 +6,7 @@ class CustomLoadingIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SpinKitRing(
+      size: 35,
       color: Theme.of(context).primaryColor,
     );
   }

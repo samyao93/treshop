@@ -13,18 +13,21 @@ class _BuildSignInButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _authProvider = Provider.of<AuthenticationProvider>(context);
-    return CustomElevatedButton(
-      onTap: () {
-        FocusScope.of(context).requestFocus(FocusNode());
-        _authProvider.isLoading = true;
-        // ignore: cascade_invocations
-        _authProvider.signIn(
-          context,
-          email: emailController.text,
-          password: passwordController.text,
-        );
-      },
-      label: AppLocalizations.of(context)!.sign_in,
+    return CustomFadeTransition(
+      duration: const Duration(milliseconds: 900),
+      child: CustomElevatedButton(
+        onTap: () {
+          FocusScope.of(context).requestFocus(FocusNode());
+          _authProvider.isLoading = true;
+          // ignore: cascade_invocations
+          _authProvider.signIn(
+            context,
+            email: emailController.text,
+            password: passwordController.text,
+          );
+        },
+        label: AppLocalizations.of(context)!.sign_in,
+      ),
     );
   }
 }
