@@ -11,7 +11,7 @@ class CategoryScreen extends StatelessWidget {
         title: AppLocalizations.of(context)!.categories,
       ),
       body: ResponsiveGridList(
-        desiredItemWidth: 200,
+        desiredItemWidth: 100,
         minSpacing: Const.margin,
         children: CategoryList.categoryList(context).map((e) {
           final category = e;

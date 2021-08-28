@@ -12,7 +12,7 @@ class _BodyTabScreen extends StatelessWidget {
         const SizedBox(height: Const.space25),
         Expanded(
           child: ResponsiveGridList(
-            desiredItemWidth: 170,
+            desiredItemWidth: 100,
             minSpacing: Const.margin,
             children: itemCount.map((e) {
               final category = e;
