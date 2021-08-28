@@ -8,7 +8,6 @@ import 'package:treshop/src/helpers/constants.dart';
 import 'package:treshop/src/helpers/screens.dart';
 import 'package:treshop/src/models/order_model.dart';
 import 'package:treshop/src/widgets/custom_network_image.dart';
- 
 
 class OrderCard extends StatelessWidget {
   final OrderModel order;
@@ -17,7 +16,7 @@ class OrderCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-   Color _colorType(int val) {
+    Color _colorType(int val) {
       switch (val) {
         case 0:
           return const Color(0xFF6D9BE1);
@@ -36,7 +35,7 @@ class OrderCard extends StatelessWidget {
       }
     }
 
-   String _sizeType(int val) {
+    String _sizeType(int val) {
       switch (val) {
         case 0:
           return 'M';
@@ -49,7 +48,7 @@ class OrderCard extends StatelessWidget {
       }
     }
 
-  Color  _statusOrderColorType(OrderStatus val) {
+    Color _statusOrderColorType(OrderStatus val) {
       switch (val) {
         case OrderStatus.onDelivery:
           return const Color(0xFFE77E1D);
@@ -80,9 +79,9 @@ class OrderCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(Const.radius),
       ),
-      margin:const EdgeInsets.only(bottom: Const.space15),
+      margin: const EdgeInsets.only(bottom: Const.space15),
       child: InkWell(
-        onTap: ()=>Get.toNamed<dynamic>(Routes.orderDetail),
+        onTap: () => Get.toNamed<dynamic>(Routes.orderDetail),
         borderRadius: BorderRadius.circular(Const.radius),
         child: SizedBox(
           width: Screens.width(context),
@@ -104,7 +103,7 @@ class OrderCard extends StatelessWidget {
                           AppLocalizations.of(context)!.trendias_Shop,
                           style: theme.textTheme.headline4,
                         ),
-                     const   SizedBox(height: Const.space8),
+                        const SizedBox(height: Const.space8),
                         AutoSizeText(
                           DateFormat.yMMMd().format(order.dateOrder!),
                           style: theme.textTheme.subtitle2,
@@ -140,7 +139,7 @@ class OrderCard extends StatelessWidget {
                               style: theme.textTheme.headline3,
                               maxLines: 1,
                             ),
-                      const      SizedBox(height: Const.space8),
+                            const SizedBox(height: Const.space8),
                             Row(
                               children: [
                                 AutoSizeText(
@@ -148,31 +147,31 @@ class OrderCard extends StatelessWidget {
                                   style: theme.textTheme.subtitle2,
                                   maxLines: 1,
                                 ),
-                           const     SizedBox(width: 5),
+                                const SizedBox(width: 5),
                                 CircleAvatar(
                                   radius: 8,
                                   backgroundColor:
                                       _colorType(order.products!.first.color!),
                                 ),
-                            const    SizedBox(width: Const.space8),
+                                const SizedBox(width: Const.space8),
                                 AutoSizeText(
                                   AppLocalizations.of(context)!.size,
                                   style: theme.textTheme.subtitle2,
                                   maxLines: 1,
                                 ),
-                              const  SizedBox(width: 5),
+                                const SizedBox(width: 5),
                                 AutoSizeText(
                                   _sizeType(order.products!.first.size!),
                                   style: theme.textTheme.headline4,
                                   maxLines: 1,
                                 ),
-                          const      SizedBox(width: Const.space8),
+                                const SizedBox(width: Const.space8),
                                 AutoSizeText(
                                   AppLocalizations.of(context)!.qty,
                                   style: theme.textTheme.subtitle2,
                                   maxLines: 1,
                                 ),
-                           const     SizedBox(width: 5),
+                                const SizedBox(width: 5),
                                 AutoSizeText(
                                   order.products!.first.qty.toString(),
                                   style: theme.textTheme.headline4,
@@ -180,19 +179,20 @@ class OrderCard extends StatelessWidget {
                                 ),
                               ],
                             ),
-                          const  SizedBox(height: Const.space8),
+                            const SizedBox(height: Const.space8),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 AutoSizeText(
                                   NumberFormat.currency(
-                                    symbol: r'\$',
+                                    symbol: r'$',
+                                    decimalDigits: 0,
                                   ).format(order.products!.first.price),
                                   style: theme.textTheme.headline4,
                                   maxLines: 1,
                                 ),
                                 AutoSizeText(
-             '${order.products!.length} ${AppLocalizations.of(context)!.items}',
+                                  '${order.products!.length} ${AppLocalizations.of(context)!.items}',
                                   style: theme.textTheme.subtitle1,
                                   maxLines: 1,
                                 ),
@@ -221,14 +221,16 @@ class OrderCard extends StatelessWidget {
                             AppLocalizations.of(context)!.total_payment,
                             style: theme.textTheme.subtitle1),
                         AutoSizeText(
-                          NumberFormat.currency(symbol: r'\$')
-                              .format(order.total),
+                          NumberFormat.currency(
+                            symbol: r'$',
+                            decimalDigits: 0,
+                          ).format(order.total),
                           style: theme.textTheme.headline4,
                         ),
                       ],
                     ),
                     Container(
-                      padding:const EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         color: _statusOrderColorType(order.status!)
                             .withOpacity(.1),

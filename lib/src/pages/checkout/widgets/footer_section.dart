@@ -64,7 +64,8 @@ class _FooterSection extends StatelessWidget {
                 ),
                 AutoSizeText(
                   NumberFormat.currency(
-                    symbol: r'\$',
+                    symbol: r'$',
+                     decimalDigits: 0,
                   ).format(total ?? 0),
                   style: theme.textTheme.headline3,
                 ),

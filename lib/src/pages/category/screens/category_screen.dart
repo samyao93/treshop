@@ -10,35 +10,15 @@ class CategoryScreen extends StatelessWidget {
         context,
         title: AppLocalizations.of(context)!.categories,
       ),
-      body: ListView(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: Const.margin,
-              vertical: Const.space12,
-            ),
-            child: Image.asset(Images.shopDeals),
-          ),
-          StaggeredGridView.countBuilder(
-            itemCount: CategoryList.categoryList(context).length,
-            crossAxisCount: 4,
-            staggeredTileBuilder: (int index) =>const StaggeredTile.fit(2),
-            mainAxisSpacing: 15,
-            crossAxisSpacing: 15,
-            shrinkWrap: true,
-            physics:const ScrollPhysics(),
-            padding:const EdgeInsets.symmetric(
-              horizontal: 18,
-            ),
-            itemBuilder: (context, index) {
-              final category = CategoryList.categoryList(context)[index];
-              return CategoryCard(
-                category: category,
-                cardType: CardType.grid,
-              );
-            },
-          ),
-        ],
+      body: ResponsiveGridList(
+        desiredItemWidth: 200,
+        minSpacing: Const.margin,
+        children: CategoryList.categoryList(context).map((e) {
+          final category = e;
+          return CategoryCard(
+            category: category,
+          );
+        }).toList(),
       ),
     );
   }

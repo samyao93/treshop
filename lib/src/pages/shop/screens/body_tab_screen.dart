@@ -7,33 +7,20 @@ class _BodyTabScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: Const.margin,
-            vertical: Const.space12,
+        const SizedBox(height: Const.space25),
+        Expanded(
+          child: ResponsiveGridList(
+            desiredItemWidth: 170,
+            minSpacing: Const.margin,
+            children: itemCount.map((e) {
+              final category = e;
+              return CategoryCard(
+                category: category,
+              );
+            }).toList(),
           ),
-          child: Image.asset(Images.shopDeals),
-        ),
-        StaggeredGridView.countBuilder(
-          itemCount: itemCount.length,
-          crossAxisCount: 4,
-          staggeredTileBuilder: (int index) => const StaggeredTile.fit(2),
-          mainAxisSpacing: 15,
-          crossAxisSpacing: 15, 
-          shrinkWrap: true,
-          physics:const ScrollPhysics(),
-          padding:const EdgeInsets.symmetric(
-            horizontal: 18,
-          ),
-          itemBuilder: (context, index) {
-            final category = itemCount[index];
-            return CategoryCard(
-              category: category,
-              cardType: CardType.grid,
-            );
-          },
         ),
       ],
     );

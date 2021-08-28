@@ -24,9 +24,8 @@ class _BuildScrollableCategory extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               final category = CategoryList.categoryList(context)[index];
-              return CategoryCard(
+              return _BuildCategoryCard(
                 category: category,
-                cardType: CardType.horizontal,
               );
             },
           ),

@@ -10,7 +10,7 @@ class _BuildItemSize extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    final _theme = Theme.of(context);
     return Consumer<ProductProvider>(builder: (context, provider, snapshot) {
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: Const.margin),
@@ -19,9 +19,9 @@ class _BuildItemSize extends StatelessWidget {
           children: [
             AutoSizeText(
               AppLocalizations.of(context)!.item_size,
-              style: theme.textTheme.headline3,
+              style: _theme.textTheme.headline3,
             ),
-        const    SizedBox(height: Const.space8),
+            const SizedBox(height: Const.space8),
             Row(
               children: product.itemSize!
                   .asMap()
@@ -36,12 +36,14 @@ class _BuildItemSize extends StatelessWidget {
                         borderRadius: BorderRadius.circular(25),
                         child: CircleAvatar(
                           radius: 20,
-                          backgroundColor: theme.cardColor,
+                          backgroundColor: (provider.itemSizeSelected == e.key)
+                              ? _theme.primaryColor
+                              : _theme.cardColor,
                           child: AutoSizeText(
                             e.value,
-                            style: theme.textTheme.headline4!.copyWith(
+                            style: _theme.textTheme.headline4?.copyWith(
                               color: (provider.itemSizeSelected == e.key)
-                                  ? theme.primaryColor
+                                  ? Colors.white
                                   : null,
                             ),
                           ),

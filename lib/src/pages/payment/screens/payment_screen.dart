@@ -23,7 +23,7 @@ class PaymentScreen extends StatelessWidget {
               ),
               leading: CircleAvatar(
                 radius: 25,
-                backgroundColor: theme.hintColor.withOpacity(.5),
+                backgroundColor: theme.cardColor,
                 child: Padding(
                   padding: const EdgeInsets.all(Const.space12),
                   child: SvgPicture.asset(

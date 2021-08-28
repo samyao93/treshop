@@ -55,7 +55,9 @@ class _HeaderSection extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           AutoSizeText(
-                            NumberFormat.currency(symbol: r'\$').format(2500),
+                            NumberFormat.currency(
+                    symbol: r'$',
+                     decimalDigits: 0,).format(2500),
                             style: theme.textTheme.headline3,
                           ),
                           AutoSizeText(

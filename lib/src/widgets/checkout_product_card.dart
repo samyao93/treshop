@@ -146,7 +146,10 @@ class ProductCheckoutCard extends StatelessWidget {
                     style: theme.textTheme.subtitle1,
                   ),
                   AutoSizeText(
-                    NumberFormat.currency(symbol: r'\$').format(product.price),
+                    NumberFormat.currency(
+                    symbol: r'$',
+                     decimalDigits: 0,
+                    ).format(product.price),
                     style: theme.textTheme.headline3,
                   ),
                 ],

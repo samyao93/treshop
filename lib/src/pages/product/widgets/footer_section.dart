@@ -92,7 +92,7 @@ class _FooterSection extends StatelessWidget {
                 const  SizedBox(width: Const.space8),
                   AutoSizeText(
                       NumberFormat.currency(
-                        symbol: r'\$',
+                        symbol: r'$',
                       ).format(total),
                       style: theme.textTheme.headline3),
                 ],

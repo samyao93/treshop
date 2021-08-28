@@ -61,7 +61,10 @@ class TransactionCard extends StatelessWidget {
         style: theme.textTheme.subtitle2,
       ),
       trailing: AutoSizeText(
-        NumberFormat.currency(symbol: r'\$').format(200),
+        NumberFormat.currency(
+          symbol: r'$',
+          decimalDigits: 0,
+        ).format(200),
         style: theme.textTheme.headline3,
       ),
     );

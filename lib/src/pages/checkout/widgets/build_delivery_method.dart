@@ -51,7 +51,10 @@ class _BuildDeliveryMethod extends StatelessWidget {
                   ),
                 ),
                 AutoSizeText(
-                  NumberFormat.currency(symbol: r'\$').format(ShippingList
+                  NumberFormat.currency(
+                    symbol: r'$',
+                     decimalDigits: 0,
+                  ).format(ShippingList
                       .shippingList[checkout.shippingSelected].price),
                   style: theme.textTheme.headline3!.copyWith(
                     color: ColorLight.fontTitle,

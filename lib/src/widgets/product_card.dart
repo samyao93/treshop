@@ -1,12 +1,10 @@
-import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:octo_image/octo_image.dart';
 import 'package:treshop/src/helpers/constants.dart';
-import 'package:treshop/src/helpers/screens.dart';
 import 'package:treshop/src/models/product_model.dart';
-import 'package:treshop/src/widgets/custom_network_image.dart';
  
 
 class ProductCard extends StatelessWidget {
@@ -19,63 +17,103 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    final _theme = Theme.of(context);
 
     return InkWell(
-      onTap: () => Get.toNamed<dynamic>(Routes.product, arguments: product),
+      onTap: () =>
+          Get.toNamed<dynamic>(Routes.product, arguments: product),
       borderRadius: BorderRadius.circular(Const.radius),
-      child: Card(
-        margin: EdgeInsets.zero,
-        shape: RoundedRectangleBorder(
+      child: Container(
+        // width: 170,
+        height: 280,
+        padding: const EdgeInsets.all(5),
+        decoration: BoxDecoration(
+          color: _theme.cardColor,
           borderRadius: BorderRadius.circular(Const.radius),
         ),
-        child: Container(
-          margin: const EdgeInsets.all(Const.space12),
-          height: 240,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Stack(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomNetworkImage(
-                    image: product.images!.first,
-                    borderRadius: BorderRadius.circular(
-                      Const.radius,
-                    ), 
-                    height: Screens.width(context) / 2.0,
-                  ),
-                  Positioned(
-                    right: Const.space8,
-                    bottom: Const.space8,
-                    child: CircleAvatar(
-                      radius: 15,
-                      backgroundColor: theme.cardColor.withOpacity(.4),
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(FeatherIcons.heart),
-                        color: Colors.red,
-                        iconSize: 15,
-                      ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 5,
+                      horizontal: 10,
                     ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(Const.radius),
+                    ),
+                    child: Text(
+                      '30% OFF',
+                      style: _theme.textTheme.headline4,
+                    ),
+                  ),
+                  Icon(
+                    Icons.favorite,
+                    color: _theme.disabledColor,
                   )
                 ],
               ),
-              const SizedBox(height: Const.space12),
-              AutoSizeText(
-                product.name!,
-                style: theme.textTheme.headline4,
-                maxLines: 1,
+            ),
+            Expanded(
+              child: OctoImage(
+                image: CachedNetworkImageProvider(
+                  product.images!.first,
+                ),
               ),
-              const SizedBox(height: Const.space8),
-              AutoSizeText(
-                NumberFormat.currency(
-                  symbol: r'$',
-                ).format(product.price),
-                style: theme.textTheme.bodyText2,
-                maxLines: 1,
+            ),
+            const SizedBox(height: Const.space8),
+            Container(
+              // width: 170,
+              height: 70,
+              padding: const EdgeInsets.all(Const.space8),
+              decoration: BoxDecoration(
+                color: _theme.backgroundColor,
+                borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(Const.radius),
+                  bottomRight: Radius.circular(Const.radius),
+                ),
               ),
-            ],
-          ),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Text(
+                      product.name ?? '',
+                      maxLines: 1,
+                      style: _theme.textTheme.bodyText2,
+                    ),
+                  ),
+                  const SizedBox(height: Const.space8),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        NumberFormat.currency(
+                          symbol: r'$',
+                          decimalDigits: 0,
+                        ).format(700),
+                        style: _theme.textTheme.headline3,
+                      ),
+                      const SizedBox(width: Const.space5),
+                      Text(
+                        NumberFormat.currency(
+                          symbol: r'$',
+                          decimalDigits: 0,
+                        ).format(1000),
+                        style: _theme.textTheme.subtitle2?.copyWith(
+                          decoration: TextDecoration.lineThrough,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );

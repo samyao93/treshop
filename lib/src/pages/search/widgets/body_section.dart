@@ -9,21 +9,13 @@ class _BodySection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: StaggeredGridView.countBuilder(
-        itemCount:itemCount.length,
-        crossAxisCount: 4,
-        staggeredTileBuilder: (int index) =>const StaggeredTile.fit(2),
-        mainAxisSpacing: 15,
-        crossAxisSpacing: 15, 
-        shrinkWrap: true,
-        physics:const ScrollPhysics(),
-        padding:const EdgeInsets.symmetric(
-          horizontal: 18,
-        ),
-        itemBuilder: (context, index) {
-          final product = itemCount[index];
+      child: ResponsiveGridList(
+        desiredItemWidth: 170,
+        minSpacing: Const.margin,
+        children: itemCount.map((e) {
+          final product = e;
           return ProductCard(product: product);
-        },
+        }).toList(),
       ),
     );
   }

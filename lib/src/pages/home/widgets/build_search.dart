@@ -31,6 +31,7 @@ class _BuildSearch extends StatelessWidget {
             hintText: AppLocalizations.of(context)!.search_anything_you_like,
             enabledBorder: InputBorder.none,
             focusedBorder: InputBorder.none,
+            border: InputBorder.none,
             prefixIcon: IconButton(
               icon: const Icon(Icons.search),
               onPressed: onSearchTap,

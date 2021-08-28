@@ -130,7 +130,7 @@ class CartCard extends StatelessWidget {
                     const SizedBox(height: Const.space8),
                     AutoSizeText(
                       NumberFormat.currency(
-                        symbol: r'\$',
+                        symbol: r'$',
                       ).format(cart.price),
                       style: theme.textTheme.headline4,
                       maxLines: 1,

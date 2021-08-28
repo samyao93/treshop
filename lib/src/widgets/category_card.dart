@@ -6,48 +6,18 @@ import 'package:get/get.dart';
 import 'package:treshop/src/helpers/constants.dart';
 import 'package:treshop/src/models/category_model.dart';
 
-enum CardType { grid, horizontal }
-
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
     Key? key,
     required this.category,
-    required this.cardType,
-  }) : super(key: key);
-
-  final CategoryModel category;
-  final CardType cardType;
-
-  @override
-  Widget build(BuildContext context) {
-    StatelessWidget _cardType(CardType type) {
-      switch (type) {
-        case CardType.grid:
-          return _GridCard(category: category);
-        case CardType.horizontal:
-          return _HorizontalCard(category: category);
-
-        default:
-          return _HorizontalCard(category: category);
-      }
-    }
-
-    return _cardType(cardType);
-  }
-}
-
-class _GridCard extends StatelessWidget {
-  const _GridCard({
-    Key? key,
-    required this.category,
   }) : super(key: key);
 
   final CategoryModel category;
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
+    final _theme = Theme.of(context);
+    
     return Card(
       margin: const EdgeInsets.only(
         right: Const.space15,
@@ -71,7 +41,7 @@ class _GridCard extends StatelessWidget {
               const SizedBox(height: Const.space8),
               AutoSizeText(
                 category.name!,
-                style: theme.textTheme.headline4,
+                style: _theme.textTheme.headline4,
               )
             ],
           ),
@@ -80,39 +50,4 @@ class _GridCard extends StatelessWidget {
     );
   }
 }
-
-class _HorizontalCard extends StatelessWidget {
-  const _HorizontalCard({
-    Key? key,
-    required this.category,
-  }) : super(key: key);
-
-  final CategoryModel category;
-
-  @override
-  Widget build(BuildContext context) {
-
-    return Card(
-      margin: const EdgeInsets.only(
-        right: Const.space15,
-        bottom: 2,
-      ),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(Const.radius),
-      ),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(Const.radius),
-        onTap: () => Get.toNamed<dynamic>(
-          Routes.allProduct,
-          arguments: category.name,
-        ),
-        child: Container(
-          width: 50,
-          height: 50,
-          padding: const EdgeInsets.all(Const.space8),
-          child: SvgPicture.asset(category.icon!),
-        ),
-      ),
-    );
-  }
-}
+ 

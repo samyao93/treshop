@@ -1,6 +1,5 @@
 part of '../order_detail_page.dart';
 
-
 class _BuildPaymentInformation extends StatelessWidget {
   final String? label;
   final String? trailing;
@@ -34,8 +33,14 @@ class _BuildPaymentInformation extends StatelessWidget {
           (value == null)
               ? trailing!
               : (isDiscount == true)
-                  ? '-${NumberFormat.currency(symbol: r'\$').format(value)}'
-                  : NumberFormat.currency(symbol: r'\$').format(value),
+                  ? '-${NumberFormat.currency(
+                      symbol: r'$',
+                      decimalDigits: 0,
+                    ).format(value)}'
+                  : NumberFormat.currency(
+                      symbol: r'$',
+                      decimalDigits: 0,
+                    ).format(value),
           style: theme.textTheme.headline3,
         ),
       ],

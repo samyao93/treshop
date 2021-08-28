@@ -46,7 +46,7 @@ class _AllProductScreenState extends State<AllProductScreen> {
           actions: [
             IconButton(
               onPressed: () => Get.toNamed<dynamic>(Routes.search),
-              icon:const Icon(FeatherIcons.search),
+              icon: const Icon(FeatherIcons.search),
             )
           ]),
       body: Column(
@@ -62,7 +62,7 @@ class _AllProductScreenState extends State<AllProductScreen> {
                   _title,
                   style: theme.textTheme.headline1!.copyWith(fontSize: 30),
                 ),
-              const  SizedBox(height: Const.space15),
+                const SizedBox(height: Const.space15),
                 Row(
                   children: [
                     _BuildFilterButton(
@@ -77,7 +77,7 @@ class _AllProductScreenState extends State<AllProductScreen> {
                       },
                       isSort: true,
                     ),
-                const    SizedBox(width: 2),
+                    const SizedBox(width: 2),
                     _BuildFilterButton(
                       icon: FeatherIcons.filter,
                       label: AppLocalizations.of(context)!.filter,
@@ -105,21 +105,13 @@ class _AllProductScreenState extends State<AllProductScreen> {
             ),
           ),
           Expanded(
-            child: StaggeredGridView.countBuilder(
-              itemCount: productList.length,
-              crossAxisCount: 4,
-              staggeredTileBuilder: (int index) => const StaggeredTile.fit(2),
-              mainAxisSpacing: 15,
-              crossAxisSpacing: 15,
-              shrinkWrap: true,
-              physics:const ScrollPhysics(),
-              padding:const EdgeInsets.symmetric(
-                horizontal: 18,
-              ),
-              itemBuilder: (context, index) {
-                final product = productList[index];
+            child: ResponsiveGridList(
+              desiredItemWidth: 170,
+              minSpacing: Const.margin,
+              children: productList.map((e) {
+                final product = e;
                 return ProductCard(product: product);
-              },
+              }).toList(),
             ),
           ),
         ],

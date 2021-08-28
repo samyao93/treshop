@@ -4,6 +4,7 @@ class FavoriteScreen extends StatelessWidget {
   const FavoriteScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: CustomAppBar(
         context,
@@ -15,21 +16,13 @@ class FavoriteScreen extends StatelessWidget {
           )
         ],
       ),
-      body: StaggeredGridView.countBuilder(
-        itemCount: ProductList.allProduct.length,
-        crossAxisCount: 4,
-        staggeredTileBuilder: (int index) => const StaggeredTile.fit(2),
-        mainAxisSpacing: 15,
-        crossAxisSpacing: 15, 
-        shrinkWrap: true,
-        physics: const ScrollPhysics(),
-        padding: const EdgeInsets.symmetric(
-          horizontal: 18,
-        ),
-        itemBuilder: (context, index) {
-          final product = ProductList.allProduct[index];
+      body: ResponsiveGridList(
+        desiredItemWidth: 170,
+        minSpacing: Const.margin,
+        children: ProductList.allProduct.map((e) {
+          final product = e;
           return ProductCard(product: product);
-        },
+        }).toList(),
       ),
     );
   }

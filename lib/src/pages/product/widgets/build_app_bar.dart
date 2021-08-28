@@ -29,7 +29,7 @@ class _BuildAppBar extends StatelessWidget {
             backgroundColor: theme.cardColor.withOpacity(.4),
             child: const Icon(
               Icons.arrow_back,
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
         ),
