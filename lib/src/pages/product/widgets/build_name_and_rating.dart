@@ -21,7 +21,7 @@ class _BuildNameAndRating extends StatelessWidget {
           Expanded(
             child: AutoSizeText(
               product.name!,
-              style: theme.textTheme.headline3,
+              style: theme.textTheme.headline1,
               maxLines: 2,
             ),
           ),

@@ -9,9 +9,7 @@ class ProductScreen extends StatefulWidget {
 class _ProductScreenState extends State<ProductScreen> {
   bool _isLiked = false;
   int _qty = 1;
-  ProductModel? product;
-
-  Random rng = Random();
+  late ProductModel product;
 
   @override
   void initState() {
@@ -21,6 +19,8 @@ class _ProductScreenState extends State<ProductScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final _discountPrice = product.price! * (product.discount / 100);
+    final _price = product.price! - _discountPrice;
     return Scaffold(
       body: Column(
         children: [
@@ -28,29 +28,29 @@ class _ProductScreenState extends State<ProductScreen> {
             child: CustomScrollView(
               slivers: [
                 _BuildAppBar(
-                    product: product!,
-                    isLiked: _isLiked,
-                    onFavoriteTap: () {
-                      setState(() {
-                        _isLiked = !_isLiked;
-                      });
-                    },
-                    onLeadingTap: () {
-                      Future.delayed(
-                              const Duration(microseconds: 100), Get.back)
-                          .then((value) => setState(() {}));
-                    }),
+                  product: product,
+                  isLiked: _isLiked,
+                  onFavoriteTap: () {
+                    setState(() {
+                      _isLiked = !_isLiked;
+                    });
+                  },
+                  onLeadingTap: () {
+                    Future.delayed(const Duration(microseconds: 100), Get.back)
+                        .then((value) => setState(() {}));
+                  },
+                ),
                 SliverList(
                   delegate: SliverChildListDelegate(
                     [
                       const SizedBox(height: Const.margin),
-                      _BuildNameAndRating(product: product!),
+                      _BuildNameAndRating(product: product),
                       const SizedBox(height: Const.space25),
-                      _BuildDescription(product: product!),
+                      _BuildDescription(product: product),
                       const SizedBox(height: Const.space15),
-                      _BuildItemSize(product: product!),
+                      _BuildItemSize(product: product),
                       const SizedBox(height: Const.space15),
-                      _BuildItemColor(product: product!),
+                      _BuildItemColor(product: product),
                       const SizedBox(height: Const.space25),
                     ],
                   ),
@@ -59,9 +59,9 @@ class _ProductScreenState extends State<ProductScreen> {
             ),
           ),
           _FooterSection(
-            product: product!,
+            product: product,
             qty: _qty,
-            total: product!.price! * _qty,
+            total: _price.toInt() * _qty,
             onAddTap: () {
               setState(() => _qty = max(1, _qty + 1));
             },
@@ -73,35 +73,7 @@ class _ProductScreenState extends State<ProductScreen> {
               }
             },
             onAddToCartTap: () {
-              final productProv = Provider.of<ProductProvider>(
-                context,
-                listen: false,
-              );
-              final cart = Provider.of<CartProvider>(
-                context,
-                listen: false,
-              );
-
-              if (productProv.itemSizeSelected == null) {
-                showToast(
-                    msg: AppLocalizations.of(context)!
-                        .please_select_your_item_size);
-              } else if (productProv.itemColorSelected == null) {
-                showToast(
-                    msg: AppLocalizations.of(context)!
-                        .please_select_your_item_color);
-              } else {
-                showToast(msg: AppLocalizations.of(context)!.added_to_cart);
-                cart.cartList.add(CartModel(
-                  orderId: rng.nextInt(5000),
-                  color: productProv.itemColorSelected,
-                  price: product!.price! * _qty,
-                  productImage: product!.images!.first,
-                  productName: product!.name,
-                  qty: _qty,
-                  size: productProv.itemSizeSelected,
-                ));
-              }
+              showToast(msg: AppLocalizations.of(context)!.added_to_cart);
             },
           )
         ],

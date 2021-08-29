@@ -5,7 +5,6 @@ import 'package:intl/intl.dart';
 import 'package:octo_image/octo_image.dart';
 import 'package:treshop/src/helpers/constants.dart';
 import 'package:treshop/src/models/product_model.dart';
- 
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
@@ -18,10 +17,10 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _theme = Theme.of(context);
+    final _discountPrice = product.price! * (product.discount / 100);
 
     return InkWell(
-      onTap: () =>
-          Get.toNamed<dynamic>(Routes.product, arguments: product),
+      onTap: () => Get.toNamed<dynamic>(Routes.product, arguments: product),
       borderRadius: BorderRadius.circular(Const.radius),
       child: Container(
         // width: 170,
@@ -38,20 +37,23 @@ class ProductCard extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 5,
-                      horizontal: 10,
-                    ),
-                    decoration: BoxDecoration(
-                      color: _theme.backgroundColor,
-                      borderRadius: BorderRadius.circular(Const.radius),
-                    ),
-                    child: Text(
-                      '30% OFF',
-                      style: _theme.textTheme.headline4,
-                    ),
-                  ),
+                  if (product.discount != 0)
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 5,
+                        horizontal: 10,
+                      ),
+                      decoration: BoxDecoration(
+                        color: _theme.backgroundColor,
+                        borderRadius: BorderRadius.circular(Const.radius),
+                      ),
+                      child: Text(
+                        '${product.discount}% OFF',
+                        style: _theme.textTheme.headline4,
+                      ),
+                    )
+                  else
+                    const SizedBox(),
                   Icon(
                     Icons.favorite,
                     color: _theme.disabledColor,
@@ -79,6 +81,7 @@ class ProductCard extends StatelessWidget {
                 ),
               ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
                     child: Text(
@@ -88,28 +91,37 @@ class ProductCard extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: Const.space8),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        NumberFormat.currency(
-                          symbol: r'$',
-                          decimalDigits: 0,
-                        ).format(700),
-                        style: _theme.textTheme.headline3,
-                      ),
-                      const SizedBox(width: Const.space5),
-                      Text(
-                        NumberFormat.currency(
-                          symbol: r'$',
-                          decimalDigits: 0,
-                        ).format(1000),
-                        style: _theme.textTheme.subtitle2?.copyWith(
-                          decoration: TextDecoration.lineThrough,
+                  if (product.discount != 0)
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          NumberFormat.currency(
+                            symbol: r'$',
+                            decimalDigits: 0,
+                          ).format(product.price! - _discountPrice),
+                          style: _theme.textTheme.headline3,
                         ),
-                      ),
-                    ],
-                  ),
+                        const SizedBox(width: Const.space5),
+                        Text(
+                          NumberFormat.currency(
+                            symbol: r'$',
+                            decimalDigits: 0,
+                          ).format(product.price),
+                          style: _theme.textTheme.subtitle2?.copyWith(
+                            decoration: TextDecoration.lineThrough,
+                          ),
+                        ),
+                      ],
+                    )
+                  else
+                    Text(
+                      NumberFormat.currency(
+                        symbol: r'$',
+                        decimalDigits: 0,
+                      ).format(product.price),
+                      style: _theme.textTheme.headline3,
+                    ),
                 ],
               ),
             )

@@ -34,6 +34,7 @@
   "days": "Hari",
   "delivery_method": "Metode Pengiriman",
   "delivery_status": "Status pengiriman",
+  "description": "Deskripsi",
   "detail_address": "Alamat Detil",
   "detail_profile": "Profil Detail",
   "discount": "Diskon",

@@ -23,17 +23,17 @@ class _AllProductScreenState extends State<AllProductScreen> {
       case true:
         // ignore: omit_local_variable_types
         priceComparator = (a, b) => a.price!.compareTo(b.price!.toInt());
-        productList.sort(priceComparator);
+        ProductList.flashSaleProductList.sort(priceComparator);
         break;
       case false:
         // ignore: omit_local_variable_types
         priceComparator = (a, b) => b.price!.compareTo(a.price!.toInt());
-        productList.sort(priceComparator);
+        ProductList.flashSaleProductList.sort(priceComparator);
         break;
       default:
         // ignore: omit_local_variable_types
         priceComparator = (a, b) => a.price!.compareTo(b.price!.toInt());
-        productList.sort(priceComparator);
+        ProductList.flashSaleProductList.sort(priceComparator);
     }
   }
 
@@ -41,14 +41,16 @@ class _AllProductScreenState extends State<AllProductScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
-      appBar: CustomAppBar(context,
-          title: AppLocalizations.of(context)!.categories,
-          actions: [
-            IconButton(
-              onPressed: () => Get.toNamed<dynamic>(Routes.search),
-              icon: const Icon(FeatherIcons.search),
-            )
-          ]),
+      appBar: CustomAppBar(
+        context,
+        title: _title,
+        actions: [
+          IconButton(
+            onPressed: () => Get.toNamed<dynamic>(Routes.search),
+            icon: const Icon(FeatherIcons.search),
+          )
+        ],
+      ),
       body: Column(
         children: [
           Container(
@@ -106,9 +108,9 @@ class _AllProductScreenState extends State<AllProductScreen> {
           ),
           Expanded(
             child: ResponsiveGridList(
-              desiredItemWidth: 170,
+              desiredItemWidth: 150,
               minSpacing: Const.margin,
-              children: productList.map((e) {
+              children: ProductList.flashSaleProductList.map((e) {
                 final product = e;
                 return ProductCard(product: product);
               }).toList(),

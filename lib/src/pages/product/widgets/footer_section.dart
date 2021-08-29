@@ -20,13 +20,14 @@ class _FooterSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    final _theme = Theme.of(context);
 
     return Container(
       width: Screens.width(context),
-      height: 95,
+      height: 130,
       alignment: Alignment.bottomCenter,
-      margin:const EdgeInsets.fromLTRB(
+      color: _theme.cardColor,
+      padding: const EdgeInsets.fromLTRB(
         Const.margin,
         Const.space12,
         Const.margin,
@@ -43,74 +44,75 @@ class _FooterSection extends StatelessWidget {
                 children: [
                   Text(
                     AppLocalizations.of(context)!.qty,
-                    style: theme.textTheme.subtitle1!.copyWith(fontSize: 16),
+                    style: _theme.textTheme.subtitle1!.copyWith(fontSize: 16),
                   ),
-                const  SizedBox(width: Const.space8),
+                  const SizedBox(width: Const.space8),
                   InkWell(
                     onTap: onRemoveTap,
                     borderRadius: BorderRadius.circular(25),
                     child: CircleAvatar(
                       radius: 12,
-                      backgroundColor: theme.primaryColor,
-                      child:const Icon(
+                      backgroundColor: _theme.primaryColor,
+                      child: const Icon(
                         Icons.remove,
                         color: Colors.white,
                         size: 16,
                       ),
                     ),
                   ),
-               const   SizedBox(width: Const.space8),
+                  const SizedBox(width: Const.space8),
                   Text(
                     qty.toString(),
-                    style: theme.textTheme.bodyText2!.copyWith(fontSize: 16),
+                    style: _theme.textTheme.bodyText2!.copyWith(fontSize: 16),
                   ),
-               const   SizedBox(width: Const.space8),
+                  const SizedBox(width: Const.space8),
                   InkWell(
                     onTap: onAddTap,
                     borderRadius: BorderRadius.circular(25),
                     child: CircleAvatar(
                       radius: 12,
-                      backgroundColor: theme.primaryColor,
-                      child:const Icon(
+                      backgroundColor: _theme.primaryColor,
+                      child: const Icon(
                         Icons.add,
                         color: Colors.white,
                         size: 16,
                       ),
                     ),
                   ),
-                const  SizedBox(width: Const.space8),
+                  const SizedBox(width: Const.space8),
                 ],
               ),
               Row(
                 children: [
                   AutoSizeText(
                     AppLocalizations.of(context)!.total,
-                    style: theme.textTheme.subtitle1!.copyWith(
+                    style: _theme.textTheme.subtitle1!.copyWith(
                       fontSize: 16,
                     ),
                   ),
-                const  SizedBox(width: Const.space8),
+                  const SizedBox(width: Const.space8),
                   AutoSizeText(
-                      NumberFormat.currency(
-                        symbol: r'$',
-                      ).format(total),
-                      style: theme.textTheme.headline3),
+                    NumberFormat.currency(
+                      symbol: r'$',
+                    ).format(total),
+                    style: _theme.textTheme.headline3,
+                  ),
                 ],
               ),
             ],
           ),
-        const  SizedBox(height: Const.space25),
+          const SizedBox(height: Const.space25),
           CustomElevatedButton(
             onTap: onAddToCartTap,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
-            const    Icon(FeatherIcons.shoppingCart),
-              const  SizedBox(width: Const.space15),
+                const Icon(FeatherIcons.shoppingCart),
+                const SizedBox(width: Const.space15),
                 AutoSizeText(
                   AppLocalizations.of(context)!.add_to_cart,
-                  style: theme.textTheme.button,
+                  style: _theme.textTheme.button,
                 ),
               ],
             ),

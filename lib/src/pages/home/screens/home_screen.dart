@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     const _BuildScrollableCategory(),
                     const SizedBox(height: Const.space25),
                     _BuildScrollableProduct(
-                      itemList: ProductList.allProduct,
+                      itemList: ProductList.flashSaleProductList,
                       label: AppLocalizations.of(context)!.flash_sale,
                       onSeeAllTap: () => Get.toNamed<dynamic>(
                         Routes.allProduct,

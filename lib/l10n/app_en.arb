@@ -34,6 +34,7 @@
   "days": "Days",
   "delivery_method": "Delivery Method",
   "delivery_status": "Delivery Status",
+  "description": "Description",
   "detail_address": "Detail Address",
   "detail_profile": "Detail Profile",
   "discount": "Discount",

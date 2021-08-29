@@ -9,6 +9,7 @@ class ProductModel {
   final List<String>? images;
   final List<String>? itemSize;
   final List<Color>? itemColor;
+  final int discount;
 
   ProductModel({
     this.name,
@@ -19,5 +20,6 @@ class ProductModel {
     this.price,
     this.itemSize,
     this.itemColor,
+    this.discount = 0,
   });
 }
