@@ -36,8 +36,8 @@ class Routes {
   static const String category = '/category';
   static const String language = '/language';
   static const String resetPassword = '/resetPassword';
-  static const String resetPasswordOTP = '/resetPasswordOTP';
-  static const String resetPasswordEmail = '/resetPasswordEmail';
+  static const String newPassword = '/newPassword';
+  static const String resetPasswordSuccess = '/resetPasswordSuccess';
 }
 
 class CustomIcon {

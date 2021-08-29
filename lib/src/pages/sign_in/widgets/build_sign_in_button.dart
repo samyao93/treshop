@@ -14,7 +14,7 @@ class _BuildSignInButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final _authProvider = Provider.of<AuthenticationProvider>(context);
     return CustomFadeTransition(
-      duration: const Duration(milliseconds: 900),
+      duration: const Duration(milliseconds: 700),
       child: CustomElevatedButton(
         onTap: () {
           FocusScope.of(context).requestFocus(FocusNode());

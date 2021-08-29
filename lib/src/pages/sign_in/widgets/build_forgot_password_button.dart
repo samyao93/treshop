@@ -14,7 +14,7 @@ class _BuildForgotPasswordButton extends StatelessWidget {
         child: CustomTextButton(
           label: AppLocalizations.of(context)!.forgot_password,
           enableUnderline: true,
-          onTap: () {},
+          onTap: () =>Get.toNamed<dynamic>(Routes.resetPassword),
         ),
       ),
     );
