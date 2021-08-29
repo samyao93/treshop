@@ -37,7 +37,7 @@ class _BuildProductCard extends StatelessWidget {
                         horizontal: 10,
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: _theme.backgroundColor,
                         borderRadius: BorderRadius.circular(Const.radius),
                       ),
                       child: Text(
