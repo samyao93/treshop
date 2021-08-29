@@ -15,6 +15,7 @@ import 'package:treshop/src/pages/order_detail/order_detail_page.dart';
 import 'package:treshop/src/pages/payment/payment_page.dart';
 import 'package:treshop/src/pages/product/product_page.dart';
 import 'package:treshop/src/pages/profile_detail/profile_detail_page.dart';
+import 'package:treshop/src/pages/profile_edit/profile_edit_page.dart';
 import 'package:treshop/src/pages/reset_password/reset_password.dart';
 import 'package:treshop/src/pages/reset_password_success/reset_password_success_page.dart';
 import 'package:treshop/src/pages/search/search_page.dart';
@@ -142,5 +143,9 @@ List<GetPage> allRoutes = [
   GetPage<dynamic>(
     name: Routes.newPassword,
     page: () => const NewPasswordScreen(),
+  ),
+  GetPage<dynamic>(
+    name: Routes.profileEdit,
+    page: () => const ProfileEditScreen(),
   ),
 ];

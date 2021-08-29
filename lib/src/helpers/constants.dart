@@ -38,6 +38,7 @@ class Routes {
   static const String resetPassword = '/resetPassword';
   static const String newPassword = '/newPassword';
   static const String resetPasswordSuccess = '/resetPasswordSuccess';
+  static const String profileEdit = '/profileEdit';
 }
 
 class CustomIcon {
