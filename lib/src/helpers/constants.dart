@@ -35,6 +35,9 @@ class Routes {
   static const String chat = '/chat';
   static const String category = '/category';
   static const String language = '/language';
+  static const String resetPassword = '/resetPassword';
+  static const String resetPasswordOTP = '/resetPasswordOTP';
+  static const String resetPasswordEmail = '/resetPasswordEmail';
 }
 
 class CustomIcon {
@@ -71,5 +74,8 @@ class Images {
   static const String onBoarding1 = 'assets/on_boarding_1.svg';
   static const String onBoarding2 = 'assets/on_boarding_2.svg';
   static const String onBoarding3 = 'assets/on_boarding_3.svg';
+  static const String resetPasswordEmail = 'assets/reset_password_email.svg';
+  static const String resetPasswordOTP = 'assets/reset_password_otp.svg';
+  static const String resetPassword = 'assets/reset_password.svg';
   static const String shopDeals = 'assets/shop_deals.png';
 }

@@ -17,6 +17,7 @@ class _BuildAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final _themeProv = Provider.of<ThemeProvider>(context);
 
     return SliverAppBar(
       leading: Padding(
@@ -27,9 +28,9 @@ class _BuildAppBar extends StatelessWidget {
           child: CircleAvatar(
             radius: 25,
             backgroundColor: theme.cardColor.withOpacity(.4),
-            child: const Icon(
+            child:  Icon(
               Icons.arrow_back,
-              color: Colors.black,
+              color: _themeProv.isLightTheme ? Colors.black : Colors.white,
             ),
           ),
         ),

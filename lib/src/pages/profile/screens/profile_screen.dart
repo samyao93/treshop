@@ -96,7 +96,7 @@ class ProfileScreen extends StatelessWidget {
             onTap: () => Dialogs.showDialogWithLabel(context,
                 title: AppLocalizations.of(context)!.are_you_sure_want_to_quit,
                 labelButton: AppLocalizations.of(context)!.exit,
-                onTapButton: () => Get.offAllNamed<dynamic>(Routes.signIn)),
+                onTapButton: () => Get.offAllNamed<dynamic>(Routes.splash)),
             leading: Icon(FeatherIcons.logOut, color: theme.hintColor),
             title: AutoSizeText(AppLocalizations.of(context)!.log_out,
                 style: theme.textTheme.headline3),

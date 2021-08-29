@@ -14,10 +14,9 @@ import 'package:treshop/src/helpers/colors.dart';
 import 'package:treshop/src/helpers/constants.dart';
 import 'package:treshop/src/helpers/screens.dart';
 import 'package:treshop/src/helpers/snack_toast.dart';
-import 'package:treshop/src/models/cart_model.dart';
 import 'package:treshop/src/models/product_model.dart';
-import 'package:treshop/src/providers/cart_provider.dart';
 import 'package:treshop/src/providers/product_provider.dart';
+import 'package:treshop/src/providers/theme_provider.dart';
 import 'package:treshop/src/widgets/custom_elevated_button.dart';
 import 'package:treshop/src/widgets/custom_network_image.dart';
 

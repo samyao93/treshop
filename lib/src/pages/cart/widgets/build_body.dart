@@ -8,7 +8,7 @@ class _BuildBody extends StatefulWidget {
 }
 
 class __BuildBodyState extends State<_BuildBody> {
-  int? _total = 0;
+  var _total = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class __BuildBodyState extends State<_BuildBody> {
           ),
         ),
         _FooterSection(
-          total: _total!.toInt(),
+          total: _total.toInt(),
           onCheckoutTap: () {
             Get.toNamed<dynamic>(
               Routes.checkout,
