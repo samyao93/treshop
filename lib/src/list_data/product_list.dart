@@ -1,17 +1,5 @@
 import 'dart:ui';
-
 import 'package:treshop/src/models/product_model.dart';
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// https://i.ibb.co/vBQ8rkz/image-13.png
 
 class ProductList {
   static List<ProductModel> flashSaleProductList = [

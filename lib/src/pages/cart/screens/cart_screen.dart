@@ -7,8 +7,6 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
-  int? _total = 0;
-
   @override
   void initState() {
     super.initState();
@@ -16,65 +14,26 @@ class _CartScreenState extends State<CartScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return Consumer<CartProvider>(
-      builder: (context, provider, snapshot) {
-        final priceList = provider.cartList.map((cart) => cart.price);
-        _total = priceList.fold(0, (p, c) => p! + c!);
-        return Scaffold(
-          appBar: CustomAppBar(
-            context,
-            enableLeading: false,
-            title: AppLocalizations.of(context)!.cart,
-            actions: [
-              IconButton(
-                onPressed: () => Get.toNamed<dynamic>(Routes.search),
-                icon: const Icon(FeatherIcons.search),
-              ),
-            ],
+    return Scaffold(
+      appBar: CustomAppBar(
+        context,
+        enableLeading: false,
+        title: AppLocalizations.of(context)!.cart,
+        actions: [
+          IconButton(
+            onPressed: () => Get.toNamed<dynamic>(Routes.search),
+            icon: const Icon(FeatherIcons.search),
           ),
-          body: (provider.cartList.isNotEmpty)
-              ? Column(
-                  children: [
-                    Expanded(
-                      child: ListView.separated(
-                        itemCount: provider.cartList.length,
-                        separatorBuilder: (context, index) {
-                          return Divider(color: theme.hintColor);
-                        },
-                        itemBuilder: (context, index) {
-                          final cart = provider.cartList[index];
-                          return CartCard(
-                            cart: cart,
-                            onRemoveTap: () {
-                              provider.cartList.removeAt(index);
-                            },
-                          );
-                        },
-                      ),
-                    ),
-                    _FooterSection(
-                      total: _total!.toInt(),
-                      onCheckoutTap: () {
-                        Get.toNamed<dynamic>(Routes.checkout,
-                            arguments: CheckoutModel(
-                              products: provider.cartList,
-                              couponId: provider.selectedCoupon,
-                              total: _total,
-                            ));
-                      },
-                    )
-                  ],
-                )
-              : IllustrationWidget(
-                  icon: CustomIcon.shoppingBag,
-                  title: AppLocalizations.of(context)!.shopping_bag_is_empty,
-                  subtitle: AppLocalizations.of(context)!
-                      .looks_like_you_havent_added_any_item_to_your_cart_yet,
-                ),
-        );
-      },
+        ],
+      ),
+      body: (CartList.cartList.isNotEmpty)
+          ? const _BuildBody()
+          : IllustrationWidget(
+              icon: CustomIcon.shoppingBag,
+              title: AppLocalizations.of(context)!.shopping_bag_is_empty,
+              subtitle: AppLocalizations.of(context)!
+                  .looks_like_you_havent_added_any_item_to_your_cart_yet,
+            ),
     );
   }
 }

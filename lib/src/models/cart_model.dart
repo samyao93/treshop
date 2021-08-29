@@ -1,5 +1,3 @@
-
-
 class CartModel {
   final int? orderId;
   final int? qty;
