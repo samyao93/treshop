@@ -14,7 +14,7 @@ class ShopScreen extends StatelessWidget {
             appBar: CustomAppBar(
               context,
               enableLeading: false,
-              title: AppLocalizations.of(context)!.categories,
+              title: AppLocalizations.of(context)!.shop,
               actions: [
                 IconButton(
                   onPressed: () => Get.toNamed<dynamic>(Routes.search),

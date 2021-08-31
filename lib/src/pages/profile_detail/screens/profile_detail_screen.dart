@@ -19,7 +19,7 @@ class _ProfileDetailScreenState extends State<ProfileDetailScreen> {
 
     return Scaffold(
       appBar: CustomAppBar(context,
-          title: AppLocalizations.of(context)!.detail_profile,
+          title: AppLocalizations.of(context)!.profile,
           actions: [
             IconButton(
               onPressed: () => Get.toNamed<dynamic>(Routes.profileEdit),

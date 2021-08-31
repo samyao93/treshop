@@ -13,7 +13,7 @@ class _BuildAddress extends StatelessWidget {
         _BuildLabelSection(
           label: AppLocalizations.of(context)!.address,
           trailing: AppLocalizations.of(context)!.add_address,
-          onViewAllTap: (){}
+          onViewAllTap: ()=> Get.toNamed<dynamic>(Routes.addressAdd),
         ),
         const SizedBox(height: Const.space8),
         SizedBox(

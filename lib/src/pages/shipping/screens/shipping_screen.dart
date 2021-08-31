@@ -37,7 +37,7 @@ class ShippingScreen extends StatelessWidget {
                 style: theme.textTheme.subtitle2,
               ),
               trailing: AutoSizeText(
-                NumberFormat.currency(symbol: r'\$').format(shipping.price),
+                NumberFormat.currency(symbol: r'$').format(shipping.price),
                 style: theme.textTheme.headline3,
               ),
             );

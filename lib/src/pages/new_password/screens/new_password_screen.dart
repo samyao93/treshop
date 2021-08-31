@@ -49,7 +49,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
             duration: const Duration(milliseconds: 800),
             child: Center(
               child: Text(
-                AppLocalizations.of(context)!.forgot_password,
+                AppLocalizations.of(context)!.create_new_password,
                 textAlign: TextAlign.center,
                 style: _theme.textTheme.headline3,
               ),
@@ -61,7 +61,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
             child: Center(
               child: Text(
                 AppLocalizations.of(context)!
-                    .enter_your_registered_email_below_to_receive_password_reset_instruction,
+                    .your_new_password_must_be_different_from_previously_used_passwords,
                 style: _theme.textTheme.subtitle1,
                 textAlign: TextAlign.center,
               ),

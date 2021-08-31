@@ -34,6 +34,7 @@
   "connect_with_facebook": "Masuk dengan Facebook",
   "connect_with_google": "Masuk dengan Google",
   "contact_us": "Hubungi kami",
+  "create_new_password": "Buat password baru",
   "data_is_too_short": "Data terlalu pendek",
   "days": "Hari",
   "delete": "Hapus",
@@ -184,5 +185,6 @@
   "we_have_sent_a_password_recovery_instruction_to_your_email": "Kami telah mengirimkan instruksi pemulihan kata sandi ke email Anda",
   "women": "Wanita",
   "write_a_message": "Tulis sesuatu",
+  "your_new_password_must_be_different_from_previously_used_passwords": "Password baru kamu harus berbeda dari password sebelumnya.",
   "your_order_will_be_delivered_soon_thank_you_for_shopping": "Pesanan Anda akan segera dikirimkan.\\Terima kasih telah berbelanja!"
 }
