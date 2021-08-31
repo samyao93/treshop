@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:treshop/src/helpers/constants.dart';
+import 'package:treshop/src/pages/address/address_page.dart';
+import 'package:treshop/src/pages/address_add/address_add_page.dart';
 import 'package:treshop/src/pages/all_product/all_product_page.dart';
 import 'package:treshop/src/pages/bottom_navigation_bar/bottom_navigation_bar_page.dart';
 import 'package:treshop/src/pages/category/category_page.dart';
@@ -147,5 +149,13 @@ List<GetPage> allRoutes = [
   GetPage<dynamic>(
     name: Routes.profileEdit,
     page: () => const ProfileEditScreen(),
+  ),
+  GetPage<dynamic>(
+    name: Routes.address,
+    page: () => const AddressScreen(),
+  ),
+  GetPage<dynamic>(
+    name: Routes.addressAdd,
+    page: () => const AddressAddScreen(),
   ),
 ];

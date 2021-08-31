@@ -36,6 +36,15 @@ class ProfileScreen extends StatelessWidget {
           ),
           ListTile(
             contentPadding: EdgeInsets.zero,
+            onTap: () => Get.toNamed<dynamic>(Routes.address),
+            leading: Icon(FeatherIcons.mapPin, color: theme.hintColor),
+            title: AutoSizeText(AppLocalizations.of(context)!.address,
+                style: theme.textTheme.headline3),
+            trailing: Icon(FeatherIcons.chevronRight,
+                size: 16, color: theme.hintColor),
+          ),
+          ListTile(
+            contentPadding: EdgeInsets.zero,
             onTap: () => Get.toNamed<dynamic>(Routes.order),
             leading: Icon(FeatherIcons.truck, color: theme.hintColor),
             title: AutoSizeText(AppLocalizations.of(context)!.my_orders,

@@ -39,6 +39,8 @@ class Routes {
   static const String newPassword = '/newPassword';
   static const String resetPasswordSuccess = '/resetPasswordSuccess';
   static const String profileEdit = '/profileEdit';
+  static const String address = '/address';
+  static const String addressAdd = '/addressAdd';
 }
 
 class CustomIcon {
@@ -69,6 +71,8 @@ class CustomIcon {
   static const String bca = 'assets/bca.svg';
   static const String paypal = 'assets/paypal.svg';
   static const String gift = 'assets/gift.svg';
+  static const String house = 'assets/house.svg';
+  static const String office = 'assets/office.svg';
 }
 
 class Images {

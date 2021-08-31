@@ -86,7 +86,6 @@ class _BuildButtonIcon extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           CircleAvatar(
             radius: 25,
