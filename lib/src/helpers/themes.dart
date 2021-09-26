@@ -5,7 +5,6 @@ import 'package:treshop/src/helpers/colors.dart';
 
 ThemeData themeLight(BuildContext context) {
   return ThemeData(
-    buttonColor: ColorLight.primary,
     brightness: Brightness.light,
     backgroundColor: ColorLight.background,
     cardColor: ColorLight.card,
@@ -82,7 +81,6 @@ ThemeData themeLight(BuildContext context) {
 
 ThemeData themeDark(BuildContext context) {
   return ThemeData(
-    buttonColor: ColorDark.primary,
     brightness: Brightness.dark,
     backgroundColor: ColorDark.background,
     cardColor: ColorDark.card,

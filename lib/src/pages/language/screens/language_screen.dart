@@ -8,11 +8,15 @@ class LanguageScreen extends StatelessWidget {
     final theme = Theme.of(context);
 
     Text _title(String val) {
-      switch (val) {
+       switch (val) {
         case 'en':
           return Text('English', style: theme.textTheme.bodyText2);
         case 'id':
           return Text('Bahasa Indonesia', style: theme.textTheme.bodyText2);
+        case 'hi':
+          return Text('भारतीय भाषाएं', style: theme.textTheme.bodyText2);
+        case 'ar':
+          return Text('عربي', style: theme.textTheme.bodyText2);
         default:
           return Text('English', style: theme.textTheme.bodyText2);
       }
