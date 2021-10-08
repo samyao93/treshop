@@ -73,6 +73,7 @@ class CartCard extends StatelessWidget {
               image: cart.productImage!,
               width: 120,
               height: 120,
+              fit: BoxFit.contain,
             ),
             Expanded(
               child: Padding(
