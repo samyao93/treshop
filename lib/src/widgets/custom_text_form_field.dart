@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 import 'package:treshop/src/helpers/colors.dart';
 import 'package:treshop/src/helpers/constants.dart';
 import 'package:treshop/src/providers/theme_provider.dart';
- 
 
 enum TextFieldType { alphabet, email, text, password, phoneNumber, number }
 enum BorderType { outline, underline, none }
@@ -46,9 +45,12 @@ class CustomTextFormField extends StatelessWidget {
 
     final alphabetValidator = MultiValidator([
       RequiredValidator(
-          errorText: AppLocalizations.of(context)!.please_enter_a_value),
-      PatternValidator(r'^[A-Za-z_ .,]+$',
-          errorText: AppLocalizations.of(context)!.only_characters_are_allowed),
+        errorText: AppLocalizations.of(context)!.please_enter_a_value,
+      ),
+      PatternValidator(
+        r'^[A-Za-z_ .,]+$',
+        errorText: AppLocalizations.of(context)!.only_characters_are_allowed,
+      ),
     ]);
 
     final emailValidator = MultiValidator([
@@ -57,40 +59,56 @@ class CustomTextFormField extends StatelessWidget {
             AppLocalizations.of(context)!.please_enter_your_email_address,
       ),
       EmailValidator(
-          errorText: AppLocalizations.of(context)!.invalid_email_address_format)
+        errorText: AppLocalizations.of(context)!.invalid_email_address_format,
+      )
     ]);
 
     final passwordValidator = MultiValidator([
       RequiredValidator(
-          errorText: AppLocalizations.of(context)!.please_enter_your_password),
-      MinLengthValidator(6,
-          errorText: AppLocalizations.of(context)!.invalid_password_format)
+        errorText: AppLocalizations.of(context)!.please_enter_your_password,
+      ),
+      MinLengthValidator(
+        6,
+        errorText: AppLocalizations.of(context)!.invalid_password_format,
+      )
     ]);
 
     final phoneNumberValidator = MultiValidator([
       RequiredValidator(
-          errorText:
-              AppLocalizations.of(context)!.please_enter_your_phone_number),
-      MinLengthValidator(10,
-          errorText: AppLocalizations.of(context)!.invalid_phone_number_format),
-      PatternValidator(r'^[0-9]+$',
-          errorText: AppLocalizations.of(context)!.invalid_phone_number_format),
+        errorText: AppLocalizations.of(context)!.please_enter_your_phone_number,
+      ),
+      MinLengthValidator(
+        10,
+        errorText: AppLocalizations.of(context)!.invalid_phone_number_format,
+      ),
+      PatternValidator(
+        r'^[0-9]+$',
+        errorText: AppLocalizations.of(context)!.invalid_phone_number_format,
+      ),
     ]);
 
     final textValidator = MultiValidator([
       RequiredValidator(
-          errorText: AppLocalizations.of(context)!.please_enter_a_value),
-      MinLengthValidator(1,
-          errorText: AppLocalizations.of(context)!.data_is_too_short),
+        errorText: AppLocalizations.of(context)!.please_enter_a_value,
+      ),
+      MinLengthValidator(
+        1,
+        errorText: AppLocalizations.of(context)!.data_is_too_short,
+      ),
     ]);
 
     final numberValidator = MultiValidator([
       RequiredValidator(
-          errorText: AppLocalizations.of(context)!.please_enter_a_value),
-      MinLengthValidator(1,
-          errorText: AppLocalizations.of(context)!.data_is_too_short),
-      PatternValidator(r'^[0-9]+$',
-          errorText: AppLocalizations.of(context)!.invalid_number_format),
+        errorText: AppLocalizations.of(context)!.please_enter_a_value,
+      ),
+      MinLengthValidator(
+        1,
+        errorText: AppLocalizations.of(context)!.data_is_too_short,
+      ),
+      PatternValidator(
+        r'^[0-9]+$',
+        errorText: AppLocalizations.of(context)!.invalid_number_format,
+      ),
     ]);
 
     TextInputType _keyboardType(TextFieldType textFieldType) {
@@ -106,8 +124,6 @@ class CustomTextFormField extends StatelessWidget {
         case TextFieldType.phoneNumber:
           return TextInputType.phone;
         case TextFieldType.text:
-          return TextInputType.text;
-        default:
           return TextInputType.text;
       }
     }
@@ -125,8 +141,6 @@ class CustomTextFormField extends StatelessWidget {
         case TextFieldType.phoneNumber:
           return phoneNumberValidator;
         case TextFieldType.text:
-          return textValidator;
-        default:
           return textValidator;
       }
     }
@@ -147,9 +161,6 @@ class CustomTextFormField extends StatelessWidget {
             ),
           );
         case BorderType.none:
-          return InputBorder.none;
-
-        default:
           return InputBorder.none;
       }
     }
@@ -175,9 +186,6 @@ class CustomTextFormField extends StatelessWidget {
           );
         case BorderType.none:
           return InputBorder.none;
-
-        default:
-          return InputBorder.none;
       }
     }
 
@@ -198,21 +206,17 @@ class CustomTextFormField extends StatelessWidget {
           );
         case BorderType.none:
           return InputBorder.none;
-        default:
-          return InputBorder.none;
       }
     }
 
     EdgeInsets _contentPadding(BorderType borderType) {
       switch (borderType) {
         case BorderType.underline:
-          return  EdgeInsets.zero;
+          return EdgeInsets.zero;
         case BorderType.outline:
           return const EdgeInsets.symmetric(horizontal: Const.margin);
         case BorderType.none:
           return const EdgeInsets.only(top: 15);
-        default:
-          return const EdgeInsets.symmetric(horizontal: Const.margin);
       }
     }
 

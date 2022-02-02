@@ -29,7 +29,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return Consumer<AuthenticationProvider>(
       builder: (context, provider, snapshot) {
         return Scaffold(
@@ -68,4 +67,3 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 }
-

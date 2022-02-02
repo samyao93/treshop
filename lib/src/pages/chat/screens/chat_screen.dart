@@ -62,8 +62,10 @@ class _ChatScreenState extends State<ChatScreen> {
   void sendMessageToBarber(ChatModel chat) {
     _textController.clear();
     Future.delayed(
-       const Duration(milliseconds: 500),
-        () => _scrollController
-            .jumpTo(_scrollController.position.maxScrollExtent));
+      const Duration(milliseconds: 500),
+      () => _scrollController.jumpTo(
+        _scrollController.position.maxScrollExtent,
+      ),
+    );
   }
 }

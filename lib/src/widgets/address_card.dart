@@ -22,55 +22,59 @@ class AddressCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return Consumer<CheckoutProvider>(builder: (context, checkout, snapshot) {
-      return Padding(
-        padding: const EdgeInsets.only(right: Const.space15),
-        child: InkWell(
-          onTap: onAddressTap,
-          borderRadius: BorderRadius.circular(Const.radius),
-          child: Container(
-            width: 250,
-            padding: const EdgeInsets.all(Const.space12),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(Const.radius),
-              color: (checkout.addressSelected == index)
-                  ? theme.primaryColor.withOpacity(.5)
-                  : theme.cardColor,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                AutoSizeText(address.location!,
-                    style: theme.textTheme.headline3),
-                const SizedBox(height: 5),
-                Row(
-                  children: [
-                    Expanded(
-                      child: AutoSizeText(
-                        address.fullName!,
+    return Consumer<CheckoutProvider>(
+      builder: (context, checkout, snapshot) {
+        return Padding(
+          padding: const EdgeInsets.only(right: Const.space15),
+          child: InkWell(
+            onTap: onAddressTap,
+            borderRadius: BorderRadius.circular(Const.radius),
+            child: Container(
+              width: 250,
+              padding: const EdgeInsets.all(Const.space12),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(Const.radius),
+                color: (checkout.addressSelected == index)
+                    ? theme.primaryColor.withOpacity(.5)
+                    : theme.cardColor,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AutoSizeText(
+                    address.location!,
+                    style: theme.textTheme.headline3,
+                  ),
+                  const SizedBox(height: 5),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: AutoSizeText(
+                          address.fullName!,
+                          style: theme.textTheme.bodyText2,
+                          maxLines: 1,
+                        ),
+                      ),
+                      const SizedBox(width: 5),
+                      AutoSizeText(
+                        address.phoneNumber.toString(),
                         style: theme.textTheme.bodyText2,
                         maxLines: 1,
                       ),
-                    ),
-                    const SizedBox(width: 5),
-                    AutoSizeText(
-                      address.phoneNumber.toString(),
-                      style: theme.textTheme.bodyText2,
-                      maxLines: 1,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 5),
-                AutoSizeText(
-                  address.address!,
-                  style: theme.textTheme.subtitle2,
-                  maxLines: 2,
-                ),
-              ],
+                    ],
+                  ),
+                  const SizedBox(height: 5),
+                  AutoSizeText(
+                    address.address!,
+                    style: theme.textTheme.subtitle2,
+                    maxLines: 2,
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-      );
-    });
+        );
+      },
+    );
   }
 }

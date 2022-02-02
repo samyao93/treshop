@@ -39,16 +39,14 @@ class __BuildBodyState extends State<_BuildBody> {
           ),
         ),
         _FooterSection(
-          total: _total.toInt(),
+          total: _total,
           onCheckoutTap: () {
             Get.toNamed<dynamic>(
               Routes.checkout,
               arguments: CheckoutModel(
-                  products: CartList.cartList,
-                  // couponId: provider.selectedCoupon,
-                  couponId: 2
-                  // total: _total,
-                  ),
+                products: CartList.cartList,
+                couponId: 2,
+              ),
             );
           },
         )

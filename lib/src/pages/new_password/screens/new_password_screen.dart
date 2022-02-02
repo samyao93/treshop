@@ -81,9 +81,11 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                 color: _theme.primaryColor,
               ),
               suffixIcon: IconButton(
-                icon: Icon((_obscureText == true)
-                    ? FeatherIcons.eye
-                    : FeatherIcons.eyeOff),
+                icon: Icon(
+                  (_obscureText == true)
+                      ? FeatherIcons.eye
+                      : FeatherIcons.eyeOff,
+                ),
                 color: _theme.primaryColor,
                 onPressed: () {
                   setState(() => _obscureText = !_obscureText);
@@ -105,9 +107,11 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                 color: _theme.primaryColor,
               ),
               suffixIcon: IconButton(
-                icon: Icon((_obscureText == true)
-                    ? FeatherIcons.eye
-                    : FeatherIcons.eyeOff),
+                icon: Icon(
+                  (_obscureText == true)
+                      ? FeatherIcons.eye
+                      : FeatherIcons.eyeOff,
+                ),
                 color: _theme.primaryColor,
                 onPressed: () {
                   setState(() => _obscureText = !_obscureText);

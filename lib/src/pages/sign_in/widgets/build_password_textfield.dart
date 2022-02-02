@@ -26,9 +26,11 @@ class _BuildPasswordTextField extends StatelessWidget {
           color: _theme.primaryColor,
         ),
         suffixIcon: IconButton(
-          icon: Icon((_authProv.obscureText == true)
-              ? FeatherIcons.eye
-              : FeatherIcons.eyeOff),
+          icon: Icon(
+            (_authProv.obscureText == true)
+                ? FeatherIcons.eye
+                : FeatherIcons.eyeOff,
+          ),
           color: _theme.primaryColor,
           onPressed: _authProv.obscureTextChanged,
         ),

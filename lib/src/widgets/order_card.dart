@@ -1,3 +1,5 @@
+// ignore_for_file: no_default_cases
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
@@ -219,8 +221,9 @@ class OrderCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         AutoSizeText(
-                            AppLocalizations.of(context)!.total_payment,
-                            style: theme.textTheme.subtitle1),
+                          AppLocalizations.of(context)!.total_payment,
+                          style: theme.textTheme.subtitle1,
+                        ),
                         AutoSizeText(
                           NumberFormat.currency(
                             symbol: r'$',

@@ -24,7 +24,8 @@ class _BuildAppBar extends StatelessWidget {
             borderRadius: BorderRadius.circular(Const.radius),
             image: const DecorationImage(
               image: CachedNetworkImageProvider(
-                  'https://i.pinimg.com/564x/c3/ab/e7/c3abe75c5b32f09748acdaa7d8df09dc.jpg'),
+                'https://i.pinimg.com/564x/c3/ab/e7/c3abe75c5b32f09748acdaa7d8df09dc.jpg',
+              ),
             ),
           ),
         ),

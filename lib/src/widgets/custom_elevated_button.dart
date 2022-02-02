@@ -38,10 +38,11 @@ class CustomElevatedButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: (isLoading == true) ? () {} : onTap,
         style: ElevatedButton.styleFrom(
-            primary: color,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(Const.radius),
-            )),
+          primary: color,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(Const.radius),
+          ),
+        ),
         child: (isLoading == true)
             ? const SpinKitRing(
                 size: 20,

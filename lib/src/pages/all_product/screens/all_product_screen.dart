@@ -22,17 +22,17 @@ class _AllProductScreenState extends State<AllProductScreen> {
     switch (val) {
       case true:
         // ignore: omit_local_variable_types
-        priceComparator = (a, b) => a.price!.compareTo(b.price!.toInt());
+        priceComparator = (a, b) => a.price!.compareTo(b.price!);
         ProductList.flashSaleProductList.sort(priceComparator);
         break;
       case false:
         // ignore: omit_local_variable_types
-        priceComparator = (a, b) => b.price!.compareTo(a.price!.toInt());
+        priceComparator = (a, b) => b.price!.compareTo(a.price!);
         ProductList.flashSaleProductList.sort(priceComparator);
         break;
       default:
         // ignore: omit_local_variable_types
-        priceComparator = (a, b) => a.price!.compareTo(b.price!.toInt());
+        priceComparator = (a, b) => a.price!.compareTo(b.price!);
         ProductList.flashSaleProductList.sort(priceComparator);
     }
   }

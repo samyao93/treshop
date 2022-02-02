@@ -82,29 +82,30 @@ class _AddressAddScreenState extends State<AddressAddScreen> {
             style: _theme.textTheme.bodyText2,
           ),
           Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: _locationList.asMap().entries.map((e) {
-                return SizedBox(
-                  width: 110,
-                  child: RadioListTile<String>(
-                    value: e.value,
-                    groupValue: _selectedLocation,
-                    contentPadding: EdgeInsets.zero,
-                    activeColor: _theme.primaryColor,
-                    selectedTileColor: _theme.hintColor,
-                    onChanged: (String? v) {
-                      setState(() {
-                        _selectedLocation = v!;
-                      });
-                    },
-                    title: Text(
-                      e.value,
-                      style: _theme.textTheme.subtitle1,
-                    ),
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: _locationList.asMap().entries.map((e) {
+              return SizedBox(
+                width: 110,
+                child: RadioListTile<String>(
+                  value: e.value,
+                  groupValue: _selectedLocation,
+                  contentPadding: EdgeInsets.zero,
+                  activeColor: _theme.primaryColor,
+                  selectedTileColor: _theme.hintColor,
+                  onChanged: (String? v) {
+                    setState(() {
+                      _selectedLocation = v!;
+                    });
+                  },
+                  title: Text(
+                    e.value,
+                    style: _theme.textTheme.subtitle1,
                   ),
-                );
-              }).toList()),
+                ),
+              );
+            }).toList(),
+          ),
           const SizedBox(height: Const.space15),
           CustomElevatedButton(
             onTap: () {

@@ -8,9 +8,9 @@ environment:
 
 dependencies:
   auto_size_text: ^3.0.0-nullsafety.0
-  bottom_sheet: ^1.0.3
-  cached_network_image: ^3.1.0
-  cupertino_icons: ^1.0.3
+  bottom_sheet: ^1.0.5
+  cached_network_image: ^3.2.0
+  cupertino_icons: ^1.0.4
   dots_indicator: ^2.0.0
   flutter:
     sdk: flutter
@@ -19,14 +19,14 @@ dependencies:
     sdk: flutter
   flutter_slidable: ^0.6.0
   flutter_spinkit: ^5.1.0
-  flutter_svg: ^0.22.0
+  flutter_svg: ^1.0.3
   flutter_swiper: ^1.1.6
   fluttertoast: ^8.0.8
   form_field_validator: ^1.1.0
-  get: ^4.3.8
-  google_fonts: ^2.1.0
+  get: ^4.6.1
+  google_fonts: ^2.2.0
   modal_bottom_sheet: ^2.0.0
-  octo_image: ^1.0.0+1
+  octo_image: ^1.0.1
   provider: ^6.0.1
   pull_to_refresh: ^2.0.0
   readmore: ^2.1.0
@@ -36,7 +36,7 @@ dependencies:
     git:
       url: https://github.com/educup/smoothratingbar
   timeline_tile: ^2.0.0
-  very_good_analysis: ^2.3.0
+  very_good_analysis: ^2.4.0
 
 dev_dependencies:
   flutter_test:

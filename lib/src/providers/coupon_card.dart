@@ -35,8 +35,6 @@ class CouponCard extends StatelessWidget {
           return null;
         case CouponCondition.exprired:
           return null;
-        default:
-          return null;
       }
     }
 
@@ -49,8 +47,6 @@ class CouponCard extends StatelessWidget {
           return AppLocalizations.of(context)!.used;
         case CouponCondition.exprired:
           return AppLocalizations.of(context)!.expired;
-        default:
-          return null;
       }
     }
 
@@ -73,11 +69,12 @@ class CouponCard extends StatelessWidget {
                       horizontal: Const.margin,
                     ),
                     decoration: BoxDecoration(
-                        color: theme.primaryColor,
-                        borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(Const.radius),
-                          topRight: Radius.circular(Const.radius),
-                        )),
+                      color: theme.primaryColor,
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(Const.radius),
+                        topRight: Radius.circular(Const.radius),
+                      ),
+                    ),
                     child: Row(
                       children: [
                         const Icon(
@@ -86,8 +83,10 @@ class CouponCard extends StatelessWidget {
                           color: Colors.white,
                         ),
                         const SizedBox(width: Const.space12),
-                        AutoSizeText(coupon.name!,
-                            style: theme.textTheme.headline3),
+                        AutoSizeText(
+                          coupon.name!,
+                          style: theme.textTheme.headline3,
+                        ),
                       ],
                     ),
                   ),
@@ -104,27 +103,35 @@ class CouponCard extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             RichText(
-                              text: TextSpan(children: [
-                                TextSpan(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
                                     text: '${coupon.discount}%',
                                     style: theme.textTheme.bodyText1!
-                                        .copyWith(fontSize: 25)),
-                                TextSpan(
+                                        .copyWith(fontSize: 25),
+                                  ),
+                                  TextSpan(
                                     text: ' OFF',
-                                    style: theme.textTheme.bodyText1),
-                              ]),
+                                    style: theme.textTheme.bodyText1,
+                                  ),
+                                ],
+                              ),
                             ),
                             RichText(
-                              text: TextSpan(children: [
-                                TextSpan(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
                                     text:
-                               '${AppLocalizations.of(context)!.valid_until} ',
-                                    style: theme.textTheme.subtitle2),
-                                TextSpan(
+                                        '${AppLocalizations.of(context)!.valid_until} ',
+                                    style: theme.textTheme.subtitle2,
+                                  ),
+                                  TextSpan(
                                     text: DateFormat.yMMMEd()
                                         .format(coupon.expired!),
-                                    style: theme.textTheme.subtitle2),
-                              ]),
+                                    style: theme.textTheme.subtitle2,
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),
@@ -160,21 +167,24 @@ class CouponCard extends StatelessWidget {
                       horizontal: Const.margin,
                     ),
                     decoration: BoxDecoration(
-                        color: theme.primaryColor,
-                        borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(Const.radius),
-                          topRight: Radius.circular(Const.radius),
-                        )),
+                      color: theme.primaryColor,
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(Const.radius),
+                        topRight: Radius.circular(Const.radius),
+                      ),
+                    ),
                     child: Row(
                       children: [
-                      const  Icon(
+                        const Icon(
                           Icons.card_giftcard,
                           size: 25,
                           color: Colors.white,
                         ),
-                     const   SizedBox(width: Const.space12),
-                        AutoSizeText(coupon.name!,
-                            style: theme.textTheme.headline3),
+                        const SizedBox(width: Const.space12),
+                        AutoSizeText(
+                          coupon.name!,
+                          style: theme.textTheme.headline3,
+                        ),
                       ],
                     ),
                   ),
@@ -191,27 +201,35 @@ class CouponCard extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             RichText(
-                              text: TextSpan(children: [
-                                TextSpan(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
                                     text: '${coupon.discount}%',
                                     style: theme.textTheme.bodyText1!
-                                        .copyWith(fontSize: 25)),
-                                TextSpan(
+                                        .copyWith(fontSize: 25),
+                                  ),
+                                  TextSpan(
                                     text: ' OFF',
-                                    style: theme.textTheme.bodyText1),
-                              ]),
+                                    style: theme.textTheme.bodyText1,
+                                  ),
+                                ],
+                              ),
                             ),
                             RichText(
-                              text: TextSpan(children: [
-                                TextSpan(
-                                    text: '${AppLocalizations.of(context)!
-                                            .valid_until} ',
-                                    style: theme.textTheme.subtitle2),
-                                TextSpan(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text:
+                                        '${AppLocalizations.of(context)!.valid_until} ',
+                                    style: theme.textTheme.subtitle2,
+                                  ),
+                                  TextSpan(
                                     text: DateFormat.yMMMEd()
                                         .format(coupon.expired!),
-                                    style: theme.textTheme.subtitle2),
-                              ]),
+                                    style: theme.textTheme.subtitle2,
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),

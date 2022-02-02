@@ -5,9 +5,12 @@ class _BuildPriceDetail extends StatelessWidget {
   final int? value;
   final bool isDiscount;
 
-  const _BuildPriceDetail(
-      {Key? key, required this.title, this.value, this.isDiscount = false})
-      : super(key: key);
+  const _BuildPriceDetail({
+    Key? key,
+    required this.title,
+    this.value,
+    this.isDiscount = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

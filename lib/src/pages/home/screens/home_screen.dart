@@ -49,8 +49,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       controller: _searchController,
                       onSearchTap: () {
                         FocusScope.of(context).requestFocus(FocusNode());
-                        Get.toNamed<dynamic>(Routes.search,
-                            arguments: _searchController?.text);
+                        Get.toNamed<dynamic>(
+                          Routes.search,
+                          arguments: _searchController?.text,
+                        );
                       },
                     ),
                     const SizedBox(height: Const.space25),

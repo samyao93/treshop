@@ -86,7 +86,7 @@ class _HeaderSection extends StatelessWidget {
       const    SizedBox(height: Const.space8),
           AutoSizeText(
             '$productFound ${AppLocalizations.of(context)!.products_found}',
-            style: theme.textTheme.headline3
+            style: theme.textTheme.headline3,
           )
         ],
       ),

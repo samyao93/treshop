@@ -42,8 +42,10 @@ class _TrackingTimeline extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: Const.space8),
-                    AutoSizeText(DateFormat.yMMMMd().format(DateTime.now()),
-                        style: theme.textTheme.subtitle2),
+                    AutoSizeText(
+                      DateFormat.yMMMMd().format(DateTime.now()),
+                      style: theme.textTheme.subtitle2,
+                    ),
                   ],
                 ),
                 const SizedBox(height: Const.space8),

@@ -1,6 +1,5 @@
 part of '../sign_up_page.dart';
 
-
 class _BuildGenderRadioButton extends StatelessWidget {
   const _BuildGenderRadioButton({
     Key? key,
@@ -23,27 +22,28 @@ class _BuildGenderRadioButton extends StatelessWidget {
             ),
             const SizedBox(height: Const.space8),
             Wrap(
-                crossAxisAlignment: WrapCrossAlignment.center,
-                alignment: WrapAlignment.center,
-                children: _authProv.genderList.asMap().entries.map((e) {
-                  return SizedBox(
-                    width: 110,
-                    child: RadioListTile<String>(
-                      value: e.value,
-                      groupValue: _authProv.gender,
-                      contentPadding: EdgeInsets.zero,
-                      activeColor: _theme.primaryColor,
-                      selectedTileColor: _theme.hintColor,
-                      onChanged: (String? v) {
-                        _authProv.gender = v!;
-                      },
-                      title: AutoSizeText(
-                        e.value,
-                        style: _theme.textTheme.subtitle1,
-                      ),
+              crossAxisAlignment: WrapCrossAlignment.center,
+              alignment: WrapAlignment.center,
+              children: _authProv.genderList.asMap().entries.map((e) {
+                return SizedBox(
+                  width: 110,
+                  child: RadioListTile<String>(
+                    value: e.value,
+                    groupValue: _authProv.gender,
+                    contentPadding: EdgeInsets.zero,
+                    activeColor: _theme.primaryColor,
+                    selectedTileColor: _theme.hintColor,
+                    onChanged: (String? v) {
+                      _authProv.gender = v!;
+                    },
+                    title: AutoSizeText(
+                      e.value,
+                      style: _theme.textTheme.subtitle1,
                     ),
-                  );
-                }).toList())
+                  ),
+                );
+              }).toList(),
+            )
           ],
         ),
       ),

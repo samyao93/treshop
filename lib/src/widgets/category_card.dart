@@ -17,7 +17,7 @@ class CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _theme = Theme.of(context);
-    
+
     return Card(
       margin: const EdgeInsets.only(
         right: Const.space15,
@@ -50,4 +50,3 @@ class CategoryCard extends StatelessWidget {
     );
   }
 }
- 

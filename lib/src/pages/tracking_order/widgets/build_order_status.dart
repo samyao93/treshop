@@ -1,3 +1,5 @@
+// ignore_for_file: no_default_cases
+
 part of '../tracking_order_page.dart';
 
 class _BuildOrderStatus extends StatelessWidget {

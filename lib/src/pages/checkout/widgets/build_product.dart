@@ -18,8 +18,9 @@ class _BuildProducts extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: Const.margin),
           child: AutoSizeText(
-     '${checkout!.products!.length} ${AppLocalizations.of(context)!.items}',
-              style: theme.textTheme.headline3),
+            '${checkout!.products!.length} ${AppLocalizations.of(context)!.items}',
+            style: theme.textTheme.headline3,
+          ),
         ),
         const SizedBox(height: Const.space8),
         SizedBox(
@@ -28,7 +29,7 @@ class _BuildProducts extends StatelessWidget {
           child: ListView.builder(
             itemCount: checkout!.products!.length,
             scrollDirection: Axis.horizontal,
-            physics:const BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.symmetric(
               horizontal: Const.margin,
             ),

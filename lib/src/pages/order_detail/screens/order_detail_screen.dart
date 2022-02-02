@@ -15,7 +15,7 @@ class OrderDetailScreen extends StatelessWidget {
           return AppLocalizations.of(context)!.packaging;
         case OrderStatus.success:
           return AppLocalizations.of(context)!.success;
-        default:
+        case OrderStatus.pending:
           return AppLocalizations.of(context)!.not_pay;
       }
     }
@@ -26,7 +26,7 @@ class OrderDetailScreen extends StatelessWidget {
         title: AppLocalizations.of(context)!.order_detail,
       ),
       body: ListView(
-        padding:const EdgeInsets.symmetric(horizontal: Const.margin),
+        padding: const EdgeInsets.symmetric(horizontal: Const.margin),
         children: [
           AutoSizeText(
             AppLocalizations.of(context)!.status,
@@ -51,33 +51,37 @@ class OrderDetailScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              AutoSizeText(AppLocalizations.of(context)!.shopping_date,
-                  style: theme.textTheme.bodyText2),
-              AutoSizeText(DateFormat.yMMMEd().format(order.dateOrder!),
-                  style: theme.textTheme.headline3),
+              AutoSizeText(
+                AppLocalizations.of(context)!.shopping_date,
+                style: theme.textTheme.bodyText2,
+              ),
+              AutoSizeText(
+                DateFormat.yMMMEd().format(order.dateOrder!),
+                style: theme.textTheme.headline3,
+              ),
             ],
           ),
-     const     SizedBox(height: Const.space15),
+          const SizedBox(height: Const.space15),
           AutoSizeText(
             '${order.products!.length} ${AppLocalizations.of(context)!.items}',
             style: theme.textTheme.headline3,
           ),
-       const   SizedBox(height: Const.space8),
+          const SizedBox(height: Const.space8),
           ListView.builder(
             itemCount: order.products!.length,
             shrinkWrap: true,
-            physics:const ScrollPhysics(),
+            physics: const ScrollPhysics(),
             itemBuilder: (context, index) {
               final product = order.products![index];
               return OrderDetailCard(order: product);
             },
           ),
-         const SizedBox(height: Const.space15),
+          const SizedBox(height: Const.space15),
           AutoSizeText(
             AppLocalizations.of(context)!.delivery_status,
             style: theme.textTheme.headline3,
           ),
-     const     SizedBox(height: Const.space8),
+          const SizedBox(height: Const.space8),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -96,7 +100,7 @@ class OrderDetailScreen extends StatelessWidget {
               ),
             ],
           ),
-         const SizedBox(height: Const.space8),
+          const SizedBox(height: Const.space8),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -109,18 +113,18 @@ class OrderDetailScreen extends StatelessWidget {
               ),
               Expanded(
                 child: AutoSizeText(
-    '403 Oakland Ave Street, A city, Florida, 32104, United States of America',
+                  '403 Oakland Ave Street, A city, Florida, 32104, United States of America',
                   style: theme.textTheme.headline4,
                 ),
               ),
             ],
           ),
-        const  SizedBox(height: Const.space15),
+          const SizedBox(height: Const.space15),
           AutoSizeText(
             AppLocalizations.of(context)!.payment_information,
             style: theme.textTheme.headline3,
           ),
-       const   SizedBox(height: Const.space8),
+          const SizedBox(height: Const.space8),
           _BuildPaymentInformation(
             label: AppLocalizations.of(context)!.payment_method,
             trailing: 'PayPal',
@@ -130,13 +134,13 @@ class OrderDetailScreen extends StatelessWidget {
             label: AppLocalizations.of(context)!.shipping_fee,
             value: 5,
           ),
-         const SizedBox(height: Const.space8),
+          const SizedBox(height: Const.space8),
           _BuildPaymentInformation(
             label: '${AppLocalizations.of(context)!.discount} 10%',
             value: 5,
             isDiscount: true,
           ),
-         const SizedBox(height: Const.space8),
+          const SizedBox(height: Const.space8),
           _BuildPaymentInformation(
             label: AppLocalizations.of(context)!.price_total,
             value: 50,
@@ -147,7 +151,7 @@ class OrderDetailScreen extends StatelessWidget {
             value: 50,
             isTotal: true,
           ),
-         const SizedBox(height: Const.space25),
+          const SizedBox(height: Const.space25),
         ],
       ),
     );

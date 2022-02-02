@@ -7,12 +7,13 @@ class CartModel {
   final String? productName;
   final String? productImage;
 
-  CartModel(
-      {this.orderId,
-      this.qty,
-      this.price,
-      this.size,
-      this.color,
-      this.productName,
-      this.productImage});
+  CartModel({
+    this.orderId,
+    this.qty,
+    this.price,
+    this.size,
+    this.color,
+    this.productName,
+    this.productImage,
+  });
 }

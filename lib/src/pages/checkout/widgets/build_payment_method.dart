@@ -1,6 +1,5 @@
 part of '../checkout_page.dart';
 
-
 class _BuildPaymentMethod extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -37,53 +36,56 @@ class _BuildPaymentMethod extends StatelessWidget {
       }
     }
 
-    return Consumer<CheckoutProvider>(builder: (context, checkout, snapshot) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _BuildLabelSection(
-            label: AppLocalizations.of(context)!.payment_method,
-            trailing: AppLocalizations.of(context)!.change,
-            onViewAllTap: () => Get.toNamed<dynamic>(Routes.payment),
-          ),
-        const  SizedBox(height: Const.space8),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: Const.margin),
-            child: (checkout.paymentSelected == null)
-                ? Padding(
-                    padding:
-                        const EdgeInsets.symmetric(vertical: Const.space12),
-                    child: Center(
-                      child: AutoSizeText(
-                        AppLocalizations.of(context)!
-                            .payment_method_not_selected,
-                        style: theme.textTheme.subtitle1,
-                      ),
-                    ),
-                  )
-                : Row(
-                    children: [
-                      Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(Const.radius),
-                          color: Colors.white,
-                        ),
-                        padding:const EdgeInsets.all(Const.space8),
-                        child: SvgPicture.asset(
-                          _paymentIconSelected(checkout.paymentSelected)!,
+    return Consumer<CheckoutProvider>(
+      builder: (context, checkout, snapshot) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _BuildLabelSection(
+              label: AppLocalizations.of(context)!.payment_method,
+              trailing: AppLocalizations.of(context)!.change,
+              onViewAllTap: () => Get.toNamed<dynamic>(Routes.payment),
+            ),
+            const SizedBox(height: Const.space8),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: Const.margin),
+              child: (checkout.paymentSelected == null)
+                  ? Padding(
+                      padding:
+                          const EdgeInsets.symmetric(vertical: Const.space12),
+                      child: Center(
+                        child: AutoSizeText(
+                          AppLocalizations.of(context)!
+                              .payment_method_not_selected,
+                          style: theme.textTheme.subtitle1,
                         ),
                       ),
-                    const  SizedBox(width: Const.space12),
-                      AutoSizeText(
+                    )
+                  : Row(
+                      children: [
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(Const.radius),
+                            color: Colors.white,
+                          ),
+                          padding: const EdgeInsets.all(Const.space8),
+                          child: SvgPicture.asset(
+                            _paymentIconSelected(checkout.paymentSelected)!,
+                          ),
+                        ),
+                        const SizedBox(width: Const.space12),
+                        AutoSizeText(
                           _paymentNameSelected(checkout.paymentSelected)!,
-                          style: theme.textTheme.bodyText1)
-                    ],
-                  ),
-          ),
-        ],
-      );
-    });
+                          style: theme.textTheme.bodyText1,
+                        )
+                      ],
+                    ),
+            ),
+          ],
+        );
+      },
+    );
   }
 }

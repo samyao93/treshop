@@ -49,6 +49,6 @@ class PaymentScreen extends StatelessWidget {
           },
         ),
       );
-    });
+    },);
   }
 }

@@ -23,8 +23,6 @@ class TransactionCard extends StatelessWidget {
           return FeatherIcons.download;
         case TransactionType.transfer:
           return FeatherIcons.refreshCcw;
-        default:
-          return FeatherIcons.gift;
       }
     }
 
@@ -35,8 +33,6 @@ class TransactionCard extends StatelessWidget {
         case TransactionType.topUp:
           return const Color(0xFF56E289);
         case TransactionType.transfer:
-          return const Color(0xFFFA1F1F);
-        default:
           return const Color(0xFFFA1F1F);
       }
     }

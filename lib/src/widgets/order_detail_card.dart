@@ -142,12 +142,15 @@ class OrderDetailCard extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      AutoSizeText(AppLocalizations.of(context)!.total_payment,
-                          style: theme.textTheme.subtitle1),
+                      AutoSizeText(
+                        AppLocalizations.of(context)!.total_payment,
+                        style: theme.textTheme.subtitle1,
+                      ),
                       AutoSizeText(
                         NumberFormat.currency(
-                    symbol: r'$',
-                     decimalDigits: 0,).format(order.price),
+                          symbol: r'$',
+                          decimalDigits: 0,
+                        ).format(order.price),
                         style: theme.textTheme.headline4,
                       ),
                     ],

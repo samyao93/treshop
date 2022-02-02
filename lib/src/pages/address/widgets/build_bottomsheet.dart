@@ -47,8 +47,9 @@ Future<dynamic> _onModalBottomSheetTap(BuildContext context) {
               onTap: () {
                 Get.back<dynamic>();
                 showToast(
-                    msg: AppLocalizations.of(context)!
-                        .select_as_primary_address_on_click);
+                  msg: AppLocalizations.of(context)!
+                      .select_as_primary_address_on_click,
+                );
               },
               title: Text(
                 AppLocalizations.of(context)!.select_as_primary_address,

@@ -46,7 +46,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
     return Scaffold(
       appBar: CustomAppBar(
         context,
-        title: AppLocalizations.of(context)!.edit_profile
+        title: AppLocalizations.of(context)!.edit_profile,
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: Const.margin),

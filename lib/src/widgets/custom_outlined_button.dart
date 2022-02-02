@@ -32,12 +32,10 @@ class CustomOutlinedButton extends StatelessWidget {
       child: OutlinedButton(
         onPressed: onTap,
         style: OutlinedButton.styleFrom(
-          onSurface:  Colors.red,
+          onSurface: Colors.red,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(Const.radius),
-            side: BorderSide(
-              color: theme.primaryColor
-            ),
+            side: BorderSide(color: theme.primaryColor),
           ),
         ),
         child: Text(

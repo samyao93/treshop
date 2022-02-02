@@ -10,9 +10,12 @@ class CustomSocialButton extends StatelessWidget {
   final VoidCallback onTap;
   final String icon;
 
-  const CustomSocialButton(
-      {Key? key, required this.label, required this.onTap, required this.icon})
-      : super(key: key);
+  const CustomSocialButton({
+    Key? key,
+    required this.label,
+    required this.onTap,
+    required this.icon,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +26,10 @@ class CustomSocialButton extends StatelessWidget {
       child: OutlinedButton(
         onPressed: onTap,
         style: OutlinedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(Const.space25),
-        )),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(Const.space25),
+          ),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
